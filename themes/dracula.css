@@ -28,12 +28,12 @@
 
 /* More customizations */
 
-.titlebutton { /* GTK3 */
+button.titlebutton { /* GTK3 */
   color: transparent;
   min-width: 18px;
   min-height: 18px;
 }
-.titlebutton:not(separator):backdrop {
+button.titlebutton:backdrop {
   opacity: 0.5;
 }
 
@@ -49,32 +49,32 @@ windowcontrols > button > image {
   padding: 0;
 }
 
-.titlebutton.close,
+button.titlebutton.close,
 windowcontrols > button.close {
   background-color: #ff5555;
 }
 
-.titlebutton.close:hover,
+button.titlebutton.close:hover,
 windowcontrols > button.close:hover {
   background-color: #ffa2a2;
 }
 
-.titlebutton.maximize,
+button.titlebutton.maximize,
 windowcontrols > button.maximize {
   background-color: #50fa7b;
 }
 
-.titlebutton.maximize:hover,
+button.titlebutton.maximize:hover,
 windowcontrols > button.maximize:hover {
   background-color: #9afcb3;
 }
 
-.titlebutton.minimize,
+button.titlebutton.minimize,
 windowcontrols > button.minimize {
   background-color: #ffb86c;
 }
 
-.titlebutton.minimize:hover,
+button.titlebutton.minimize:hover,
 windowcontrols > button.minimize:hover {
   background-color: #ffddb9;
 }
