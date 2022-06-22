@@ -1,0 +1,107 @@
+/*
+
+  Nord theme for libadwaita
+  and adw-gtk3 - https://github.com/lassekongo83/adw-gtk3
+
+  Colors from - https://www.nordtheme.com
+
+  1. If ~/.config/gtk-4.0/gtk.css and/or ~/.config/gtk-3.0/gtk.css exists, make backups
+  2. Enable the adw-gtk3-dark theme
+  3. Save this file to ~/.config/gtk-4.0/gtk.css
+  4. Make the file a symbolic link to ~/.config/gtk-3.0/gtk.css (or copy it to that location)
+  5. Close and re-open any open apps or log out and in again
+
+*/
+
+/* Global color definitions */
+
+@define-color window_bg_color #2E3440;
+@define-color window_fg_color #ECEFF4;
+@define-color view_bg_color #434C5E;
+@define-color view_fg_color @window_fg_color;
+@define-color accent_bg_color #8FBCBB;
+@define-color accent_color @accent_bg_color;
+@define-color headerbar_bg_color #3B4252;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color popover_bg_color #4C566A;
+@define-color popover_fg_color @view_fg_color;
+@define-color card_bg_color @popover_bg_color;
+@define-color card_fg_color @window_fg_color;
+
+/* More customizations */
+
+button.titlebutton { /* GTK3 */
+  color: transparent;
+  min-width: 18px;
+  min-height: 18px;
+}
+button.titlebutton:backdrop {
+  opacity: 0.5;
+}
+
+windowcontrols > button { /* GTK4 */
+  color: transparent;
+  min-width: 18px;
+  min-height: 18px;
+  border-radius: 100%;
+  padding: 0;
+  margin: 0 5px;
+}
+windowcontrols > button > image {
+  padding: 0;
+}
+
+button.titlebutton.close,
+windowcontrols > button.close {
+  background-color: #BF616A;
+}
+
+button.titlebutton.close:hover,
+windowcontrols > button.close:hover {
+  background-color: #d5979d;
+}
+
+button.titlebutton.maximize,
+windowcontrols > button.maximize {
+  background-color: #A3BE8C;
+}
+
+button.titlebutton.maximize:hover,
+windowcontrols > button.maximize:hover {
+  background-color: #cadabd;
+}
+
+button.titlebutton.minimize,
+windowcontrols > button.minimize {
+  background-color: #EBCB8B;
+}
+
+button.titlebutton.minimize:hover,
+windowcontrols > button.minimize:hover {
+  background-color: #f6e8cc;
+}
+
+button.titlebutton.close:backdrop,
+button.titlebutton.maximize:backdrop,
+button.titlebutton.minimize:backdrop,
+windowcontrols > button.close:backdrop,
+windowcontrols > button.maximize:backdrop,
+windowcontrols > button.minimize:backdrop {
+  background-color: #4C566A;
+}
+
+button.titlebutton.close:hover:backdrop,
+button.titlebutton.maximize:hover:backdrop,
+button.titlebutton.minimize:hover:backdrop,
+windowcontrols > button.close:hover:backdrop,
+windowcontrols > button.maximize:hover:backdrop,
+windowcontrols > button.minimize:hover:backdrop {
+  background-color: #6d7a96;
+}
+
+.nautilus-window .sidebar {
+  background-color: @view_bg_color;
+}
+.nautilus-window .sidebar:backdrop {
+  background-color: @window_bg_color;
+}
