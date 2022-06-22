@@ -20,6 +20,10 @@ Flatpak apps may need a permission setting:
 sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0
 ```
 
+If you don't use GNOME you'll have to make sure that `~/.config/gtk-3.0/gtk.css` and `~/.config/gtk-4.0/gtk.css` aren't being automatically managed by your DE/WM.
+
+*These colors were created for GTK3/GTK4 applications. Other apps aren't supported. Look into the documentation of other toolkits on how to create themes for them.*
+
 ### Supported named colors
 
 Libadwaita named colors - https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1.1/named-colors.html
@@ -42,4 +46,4 @@ popover_bg_color   # The background color of popovers and menus
 popover_fg_color   # The text color on popovers (not 100% implemented)
 ```
 
-*Note that GTK-4 use a lot of transparent widgets, adw-gtk3 doesn't. This is because of performance reasons. So some colors may not look the same if you compare a libadwaita app with a GTK-3 app. (It should still be close enough.)*
+*Note that GTK4 use a lot of transparent widgets, adw-gtk3 doesn't. This is because of performance reasons. So some colors may not look the same if you compare a libadwaita app with a GTK3 app. (It should still be close enough.)*
