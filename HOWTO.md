@@ -13,7 +13,7 @@ Here's an example on how to change the accent colors in the adw-gtk3 theme.
 ```
 3. Save the file. This does not change seamlessly, so you'll have to close and re-open any apps.
 
-If you want to use the same colors in libadwaita/GTK4 simply copy or create a symbolic link from `~/.config/gtk-3.0/gtk.css` to `~/.config/gtk-4.0/gtk.css` or vice versa.
+If you want to use the same colors in libadwaita/GTK4 simply copy or create a symbolic link from `~/.config/gtk-3.0/gtk.css` to `~/.config/gtk-4.0/gtk.css` or vice versa. `ln -s ~/.config/gtk-4.0/gtk.css ~/.config/gtk-3.0/gtk.css`
 
 Flatpak apps may need a permission setting:
 ```bash
