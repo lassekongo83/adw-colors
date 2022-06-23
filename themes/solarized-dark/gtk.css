@@ -1,0 +1,19 @@
+/* solarized dark colours - use with dark style selected */
+
+@define-color accent_color #586e75;
+@define-color accent_bg_color #586e75;
+
+@define-color window_bg_color #002b36;
+@define-color window_fg_color #eee8d5;
+
+@define-color headerbar_bg_color #073642;
+@define-color headerbar_fg_color #eee8d5;
+
+@define-color popover_bg_color #073642;
+@define-color popover_fg_color #eee8d5;
+
+@define-color view_bg_color #073642;
+@define-color view_fg_color #eee8d5;
+
+@define-color card_bg_color #123a44;
+@define-color card_fg_color #fdf6e3;

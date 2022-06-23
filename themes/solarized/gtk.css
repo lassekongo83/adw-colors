@@ -1,0 +1,20 @@
+/* solarized light colours */
+@define-color accent_color #dbd6c4;
+@define-color accent_bg_color #dbd6c4;
+
+@define-color window_bg_color #eee8d5;
+@define-color window_fg_color #073642;
+
+@define-color headerbar_bg_color #fdf6e3;
+@define-color headerbar_fg_color #073642;
+
+@define-color popover_bg_color #fdf6e3;
+@define-color popover_fg_color #073642;
+
+@define-color view_bg_color #fdf6e3;
+@define-color view_fg_color #073642;
+
+@define-color card_bg_color #eee8d5;
+@define-color card_fg_color #073642;
+
+
