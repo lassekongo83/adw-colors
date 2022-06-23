@@ -40,6 +40,28 @@ decoration:backdrop {
               0 0 0 1px shade(@headerbar_bg_color, 1.1);
 }
 
+.maximized decoration,
+.fullscreen decoration {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ssd decoration { box-shadow: 0 0 0 1px shade(@headerbar_bg_color, 1.3); }
+.ssd decoration:backdrop { box-shadow: 0 0 0 1px shade(@headerbar_bg_color, 1.1); }
+
+messagedialog.csd decoration,
+.csd.popup decoration {
+  box-shadow: 0 1px 2px rgba(0,0,0, 0.8),
+              0 0 0 1px alpha(shade(@headerbar_bg_color, 1.3), 0.9);
+}
+
+.solid-csd decoration {
+  box-shadow: inset 0 0 0 5px alpha(currentColor, 0.5),
+              inset 0 0 0 4px @headerbar_bg_color,
+              inset 0 0 0 1px alpha(currentColor, 0.5);
+}
+.solid-csd decoration:backdrop { box-shadow: inset 0 0 0 3px @window_bg_color; }
+
 .tiled decoration,
 .tiled-top decoration,
 .tiled-bottom decoration,
