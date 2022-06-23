@@ -4,7 +4,7 @@ Libadwaita and adw-gtk3 can be customized with GTK named colors.
 
 Here's an example on how to change the accent colors in libadwaita and the adw-gtk3 theme.
 
-1. Create or modify `~/.config/gtk-4.0/gtk.css` *(Make backups if `~/.config/gtk-4.0/gtk.css` and `~/.config/gtk-3.0/gtk.css`) exists.*
+1. Create or modify `~/.config/gtk-4.0/gtk.css` *(Make backups if `~/.config/gtk-4.0/gtk.css` and `~/.config/gtk-3.0/gtk.css` exists).*
 2. Add:
 ```css
 /* Replace @green_4 with any css color value */
