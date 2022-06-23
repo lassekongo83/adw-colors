@@ -8,4 +8,4 @@ Style [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/) and [adw-gt
 | Color theme | Screenshot |
 |:------------|:-----------|
 | [Dracula](https://github.com/lassekongo83/adw-colors/tree/main/themes/dracula/gtk.css) | ![dracula](/themes/dracula/dracula.png?raw=true) |
-| [Nord](https://github.com/lassekongo83/adw-colors/tree/main/themes/nord/gtk.css) | ![nord](/themes/nord/nord.png?raw=true) |
+| [Nord](https://github.com/lassekongo83/adw-colors/tree/main/themes/nord/gtk.css) | ![nord](/themes/nord/nord.png?raw=true) | [Peninsula-dark](https://github.com/lassekongo83/adw-colors/tree/main/themes/Peninsula-dark/gtk.css) | ![Peninsula-dark](/themes/Peninsula-dark/peninsula-dark.png?raw=true) |

@@ -1,9 +1,9 @@
 /*
 
-  Nord theme for libadwaita
+  Peninsula-dark theme for libadwaita
   and adw-gtk3 - https://github.com/lassekongo83/adw-gtk3
 
-  Colors from - https://www.nordtheme.com
+  Colors from - https://gitlab.gnome.org/luc14n0/gnome-text-editor/-/blob/main/data/styles/peninsula-dark.xml
 
   1. If ~/.config/gtk-4.0/gtk.css and/or ~/.config/gtk-3.0/gtk.css exists, make backups
   2. Enable the adw-gtk3-dark theme
@@ -15,15 +15,15 @@
 
 /* Global color definitions */
 
-@define-color window_bg_color #2E3440;
-@define-color window_fg_color #ECEFF4;
-@define-color view_bg_color #434C5E;
+@define-color window_bg_color #292a30;
+@define-color window_fg_color #dfdfe0;
+@define-color view_bg_color #2f3036;
 @define-color view_fg_color @window_fg_color;
-@define-color accent_bg_color #8FBCBB;
+@define-color accent_bg_color #ff806c;
 @define-color accent_color @accent_bg_color;
-@define-color headerbar_bg_color #3B4252;
+@define-color headerbar_bg_color #3a3b40;
 @define-color headerbar_fg_color @window_fg_color;
-@define-color popover_bg_color #4C566A;
+@define-color popover_bg_color @headerbar_bg_color;
 @define-color popover_fg_color @view_fg_color;
 @define-color card_bg_color @popover_bg_color;
 @define-color card_fg_color @window_fg_color;
@@ -58,6 +58,13 @@ button.titlebutton:backdrop {
   opacity: 0.5;
 }
 
+.titlebar, headerbar {
+  border-bottom-color: alpha(currentColor, 0.15);
+}
+.titlebar:backdrop, headerbar:backdrop {
+  border-bottom-color: alpha(currentColor, 0.2);
+}
+
 windowcontrols > button { /* GTK4 */
   color: transparent;
   min-width: 18px;
@@ -71,33 +78,39 @@ windowcontrols > button > image {
 }
 
 button.titlebutton.close,
-windowcontrols > button.close {
-  background-color: #BF616A;
+windowcontrols > button.close,
+button.titlebutton.close:hover:backdrop,
+windowcontrols > button.close:hover:backdrop {
+  background-color: #e86150;
 }
 
 button.titlebutton.close:hover,
 windowcontrols > button.close:hover {
-  background-color: #d5979d;
+  background-color: #f19e94;
 }
 
 button.titlebutton.maximize,
-windowcontrols > button.maximize {
-  background-color: #A3BE8C;
+windowcontrols > button.maximize,
+button.titlebutton.maximize:hover:backdrop,
+windowcontrols > button.maximize:hover:backdrop {
+  background-color: #75c2b3;
 }
 
 button.titlebutton.maximize:hover,
 windowcontrols > button.maximize:hover {
-  background-color: #cadabd;
+  background-color: #aad9d0;
 }
 
 button.titlebutton.minimize,
-windowcontrols > button.minimize {
-  background-color: #EBCB8B;
+windowcontrols > button.minimize,
+button.titlebutton.minimize:hover:backdrop,
+windowcontrols > button.minimize:hover:backdrop {
+  background-color: #d7c781;
 }
 
 button.titlebutton.minimize:hover,
 windowcontrols > button.minimize:hover {
-  background-color: #f6e8cc;
+  background-color: #e9e1bb;
 }
 
 button.titlebutton.close:backdrop,
@@ -106,17 +119,17 @@ button.titlebutton.minimize:backdrop,
 windowcontrols > button.close:backdrop,
 windowcontrols > button.maximize:backdrop,
 windowcontrols > button.minimize:backdrop {
-  background-color: #4C566A;
+  background-color: #707f8c;
 }
 
-button.titlebutton.close:hover:backdrop,
+/*button.titlebutton.close:hover:backdrop,
 button.titlebutton.maximize:hover:backdrop,
 button.titlebutton.minimize:hover:backdrop,
 windowcontrols > button.close:hover:backdrop,
 windowcontrols > button.maximize:hover:backdrop,
 windowcontrols > button.minimize:hover:backdrop {
-  background-color: #6d7a96;
-}
+  background-color: #9aa5ae;
+}*/
 
 .nautilus-window .sidebar {
   background-color: @view_bg_color;
