@@ -29,19 +29,34 @@ Libadwaita named colors - https://gnome.pages.gitlab.gnome.org/libadwaita/doc/ma
 Adw-gtk3 currently only supports these named colors:
 
 ```
-window_bg_color    # The main background color used on GtkWindow
-window_fg_color    # The main foreground text color
-view_bg_color      # A secondary background color used in icon views, text fields, etc
-view_fg_color      # Secondary foreground text color
-accent_bg_color    # Something colorful!
-accent_fg_color    # The text over the accent color
-accent_color       # Can be the same as accent_bg_color, but maybe with a slightly brighter tone
-headerbar_bg_color # The headerbar background
-headerbar_fg_color # The headerbar foreground text color (not 100% implemented)
-card_bg_color      # The background color of lists
-card_fg_color      # The text color on lists (not 100% implemented)
-popover_bg_color   # The background color of popovers and menus
-popover_fg_color   # The text color on popovers (not 100% implemented)
+window_bg_color          # The main background color used on GtkWindow
+window_fg_color          # The main foreground text color
+view_bg_color            # A secondary background color used in icon views, text fields, etc
+view_fg_color            # Secondary foreground text color
+accent_bg_color          # Something colorful!
+accent_fg_color          # The text over the accent color
+accent_color             # Can be the same as accent_bg_color, but maybe with a slightly brighter tone
+headerbar_bg_color       # The headerbar background
+headerbar_backdrop_color # The headerbar backdrop state background
+headerbar_fg_color       # The headerbar foreground text color (not 100% implemented)
+card_bg_color            # The background color of lists
+card_fg_color            # The text color on lists (not 100% implemented)
+popover_bg_color         # The background color of popovers and menus
+popover_fg_color         # The text color on popovers (not 100% implemented)
+
+# Warning, error, success colors, etc. fg_colors not 100% implemented.
+warning_bg_color
+warning_fg_color
+warning_color
+error_bg_color
+error_fg_color
+error_color
+success_bg_color
+success_fg_color
+success_color
+destructive_bg_color
+destructive_fg_color
+destructive_color
 ```
 
 *Keep in mind that GTK4 use a lot of transparent widgets, adw-gtk3 doesn't. GTK3 can be CPU heavy with too much transparency. If you compare a libadwaita app with a GTK3 app you may notice that some colors aren't exactly matched. (It should still be close enough.)*
