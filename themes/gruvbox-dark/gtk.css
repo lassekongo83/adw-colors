@@ -1,0 +1,82 @@
+/*
+
+  Gruvbox theme for libadwaita
+  and adw-gtk3 - https://github.com/lassekongo83/adw-gtk3
+
+  Colors from - https://github.com/morhetz/gruvbox
+
+  1. If ~/.config/gtk-4.0/gtk.css and/or ~/.config/gtk-3.0/gtk.css exists, make backups
+  2. Enable the adw-gtk3-dark theme
+  3. Save this file to ~/.config/gtk-4.0/gtk.css
+  4. Make the file a symbolic link to ~/.config/gtk-3.0/gtk.css (or copy it to that location)
+  5. Close and re-open any open apps or log out and in again
+
+*/
+
+/* Global color definitions */
+
+@define-color window_bg_color #282828;
+@define-color window_fg_color #ebdbb2;
+@define-color view_bg_color #3c3836;
+@define-color view_fg_color @window_fg_color;
+@define-color accent_bg_color #928374;
+@define-color accent_color @accent_bg_color;
+@define-color headerbar_bg_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color popover_bg_color #44475a;
+@define-color popover_fg_color @view_fg_color;
+@define-color card_bg_color rgba(255, 255, 255, 0.08);
+@define-color card_fg_color @window_fg_color;
+
+/* More customizations */
+
+button.titlebutton { /* GTK3 */
+  color: transparent;
+  min-width: 18px;
+  min-height: 18px;
+}
+button.titlebutton:backdrop {
+  opacity: 0.5;
+}
+
+windowcontrols > button { /* GTK4 */
+  color: transparent;
+  min-width: 18px;
+  min-height: 18px;
+  border-radius: 100%;
+  padding: 0;
+  margin: 0 5px;
+}
+windowcontrols > button > image {
+  padding: 0;
+}
+
+button.titlebutton.close,
+windowcontrols > button.close {
+  background-color: #ff5555;
+}
+
+button.titlebutton.close:hover,
+windowcontrols > button.close:hover {
+  background-color: #ffa2a2;
+}
+
+button.titlebutton.maximize,
+windowcontrols > button.maximize {
+  background-color: #50fa7b;
+}
+
+button.titlebutton.maximize:hover,
+windowcontrols > button.maximize:hover {
+  background-color: #9afcb3;
+}
+
+button.titlebutton.minimize,
+windowcontrols > button.minimize {
+  background-color: #ffb86c;
+}
+
+button.titlebutton.minimize:hover,
+windowcontrols > button.minimize:hover {
+  background-color: #ffddb9;
+}
