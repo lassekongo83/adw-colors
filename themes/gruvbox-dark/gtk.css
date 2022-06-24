@@ -52,31 +52,46 @@ windowcontrols > button > image {
 }
 
 button.titlebutton.close,
-windowcontrols > button.close {
-  background-color: #ff5555;
+windowcontrols > button.close,
+button.titlebutton.close:hover:backdrop,
+windowcontrols > button.close:hover:backdrop {
+  background-color: #cc241d;
 }
 
 button.titlebutton.close:hover,
 windowcontrols > button.close:hover {
-  background-color: #ffa2a2;
+  background-color: #fb4934;
 }
 
 button.titlebutton.maximize,
-windowcontrols > button.maximize {
-  background-color: #50fa7b;
+windowcontrols > button.maximize,
+button.titlebutton.maximize:hover:backdrop,
+windowcontrols > button.maximize:hover:backdrop {
+  background-color: #98971a;
 }
 
 button.titlebutton.maximize:hover,
 windowcontrols > button.maximize:hover {
-  background-color: #9afcb3;
+  background-color: #b8bb26;
 }
 
 button.titlebutton.minimize,
-windowcontrols > button.minimize {
-  background-color: #ffb86c;
+windowcontrols > button.minimize,
+button.titlebutton.minimize:hover:backdrop,
+windowcontrols > button.minimize:hover:backdrop {
+  background-color: #d79921;
 }
 
 button.titlebutton.minimize:hover,
 windowcontrols > button.minimize:hover {
-  background-color: #ffddb9;
+  background-color: #fabd2f;
+}
+
+button.titlebutton.close:backdrop,
+button.titlebutton.maximize:backdrop,
+button.titlebutton.minimize:backdrop,
+windowcontrols > button.close:backdrop,
+windowcontrols > button.maximize:backdrop,
+windowcontrols > button.minimize:backdrop {
+  background-color: #665c54;
 }
