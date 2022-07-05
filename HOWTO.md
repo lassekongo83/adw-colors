@@ -38,7 +38,7 @@ accent_fg_color          # The text over the accent color
 accent_color             # Can be the same as accent_bg_color, but maybe with a slightly brighter tone
 headerbar_bg_color       # The headerbar background
 headerbar_backdrop_color # The headerbar backdrop state background
-headerbar_fg_color       # The headerbar foreground text color (not 100% implemented)
+headerbar_fg_color       # The headerbar foreground text color
 card_bg_color            # The background color of lists
 card_fg_color            # The text color on lists (not 100% implemented)
 popover_bg_color         # The background color of popovers and menus
