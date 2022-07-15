@@ -1,0 +1,126 @@
+// A slightly higher contrast version of libadwaita and adw-gtk3
+// Light theme version
+// THIS THEME IS UNFINISHED - WORK IN PROGRESS
+
+// Gtk color functions
+@function gtkalpha($c,$a) {
+  @return unquote("alpha(#{$c},#{$a})");
+}
+
+@function gtkmix($c1,$c2,$r) {
+  $ratio: 1 -  $r / 100%; // match SCSS mix()
+  @return unquote("mix(#{$c1},#{$c2},#{$ratio})");
+}
+
+@function gtkshade($c,$s) {
+  @return unquote("shade(#{$c},#{$s})");
+}
+
+@function gtkcolor($c) {
+  @return unquote("@#{$c}");
+}
+
+// Color values are set here
+@define-color window_bg_color #fafafa;
+@define-color window_fg_color #000000;
+@define-color view_bg_color #ffffff;
+@define-color view_fg_color @window_fg_color;
+@define-color accent_bg_color #0049a3;
+@define-color accent_fg_color #ffffff;
+@define-color accent_color @accent_bg_color;
+@define-color headerbar_bg_color #ebebeb;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color popover_bg_color @view_bg_color;
+@define-color popover_fg_color @view_fg_color;
+@define-color card_bg_color @view_bg_color;
+@define-color card_fg_color @view_fg_color;
+// These variables are the ones we use
+$window_bg_color: gtkcolor(window_bg_color);
+$window_fg_color: gtkcolor(window_fg_color);
+$view_bg_color: gtkcolor(view_bg_color);
+$view_fg_color: gtkcolor(view_fg_color);
+$accent_bg_color: gtkcolor(accent_bg_color);
+$accent_fg_color: gtkcolor(accent_fg_color);
+$accent_color: gtkcolor(accent_color);
+$headerbar_bg_color: gtkcolor(headerbar_bg_color);
+$headerbar_fg_color: gtkcolor(headerbar_fg_color);
+$popover_bg_color: gtkcolor(popover_bg_color);
+$popover_fg_color: gtkcolor(popover_fg_color);
+$card_bg_color: gtkcolor(card_bg_color);
+$card_fg_color: gtkcolor(card_fg_color);
+
+// Other variables for this theme
+$border_color: gtkalpha(currentColor, .15);
+$trough_color: gtkalpha(currentColor, .3);
+$trough_hover_color: gtkalpha(currentColor, .4);
+$trough_active_color: gtkalpha(currentColor, .5);
+
+// Misc
+.dim-label {
+  opacity: 0.9;
+}
+
+// Titlebuttons
+windowcontrols > button > image,
+button.titlebutton {
+  &:not(:backdrop) {
+    color: $window_fg_color;
+    box-shadow: inset 0 0 0 1px $border_color;
+  }
+  &:backdrop {
+    background-color: transparent;
+  }
+}
+
+// Higher contrast troughs
+switch {
+  background-color: $trough_color;
+
+  &:hover:not(:checked) {
+    background-color: $trough_hover_color;
+  }
+
+  &:checked {
+    color: $window_fg_color;
+    background-color: $accent_bg_color;
+    &:hover {
+      background-image: image(gtkalpha(currentColor, .1));
+      &:active { background-image: image(transparentize(black, .8)); }
+    }
+  }
+}
+
+scale,
+progressbar {
+  trough:not(:backdrop) {
+    background-color: $trough_color;
+    color: $window_fg_color;
+  }
+}
+
+// Scrollbars
+scrollbar {
+  slider {
+    color: $window_fg_color;
+    background-color: gtkalpha(currentColor, .6);
+    &:hover {
+      background-color: gtkalpha(currentColor, .8);
+    }
+    &:active {
+      background-color: $accent_bg_color;
+    }
+  }
+
+  &.overlay-indicator {
+    opacity: 1;
+  }
+}
+
+// Apps
+.nautilus-list-view {
+  .view:selected, .view:selected:hover {
+    background-color: $accent_bg_color;
+    color: $accent_fg_color;
+  }
+}
