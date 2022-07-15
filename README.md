@@ -10,7 +10,8 @@ Style [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/) and [adw-gt
 1. Copy one of the files below to `~/.config/gtk-4.0/gtk.css` (Make backups if the file already exists).
 2. Enable the corresponding color preference in libadwaita and adw-gtk3. [e.g Dark for dark color themes.]
 3. Create a symbolic link to the gtk-3.0 folder: `ln -s ~/.config/gtk-4.0/gtk.css ~/.config/gtk-3.0/gtk.css`
-4. Restart any open applications or log out and in again.
+4. If you use flatpak apps, run: `sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0`
+5. Restart any open applications or log out and in again.
   
 <div align="center">
 
