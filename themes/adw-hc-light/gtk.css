@@ -27,6 +27,11 @@ button.titlebutton:backdrop {
   background-color: transparent;
 }
 
+windowcontrols > button > image:backdrop:hover,
+button.titlebutton:backdrop:hover {
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.15);
+}
+
 switch {
   background-color: alpha(currentColor,0.3);
 }
