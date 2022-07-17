@@ -9,4 +9,4 @@ SASSC_OPT="-M -t expanded"
 
 echo Generating the css...
 
-sassc $SASSC_OPT adw-hc-light.scss gtk.css
+sassc $SASSC_OPT gtk.scss gtk.css
