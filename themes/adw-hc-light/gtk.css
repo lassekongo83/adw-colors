@@ -2,7 +2,7 @@
 @define-color window_fg_color #000000;
 @define-color view_bg_color #ffffff;
 @define-color view_fg_color @window_fg_color;
-@define-color accent_bg_color #0049a3;
+@define-color accent_bg_color #0d47a1;
 @define-color accent_fg_color #ffffff;
 @define-color accent_color @accent_bg_color;
 @define-color headerbar_bg_color #ebebeb;
@@ -69,6 +69,18 @@ scrollbar slider:active {
 
 scrollbar.overlay-indicator {
   opacity: 1;
+}
+
+notebook > header tab:checked.reorderable-page,
+tabbar tab:checked {
+  background-color: @view_bg_color;
+  box-shadow: inset 0 -3px @accent_bg_color;
+}
+
+notebook > header tab:checked.reorderable-page:backdrop,
+tabbar tab:checked:backdrop {
+  background-color: @window_bg_color;
+  box-shadow: inset 0 -3px shade(@window_bg_color,0.9);
 }
 
 .nautilus-list-view .view:selected, .nautilus-list-view .view:selected:hover {
