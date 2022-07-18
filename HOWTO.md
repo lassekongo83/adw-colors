@@ -40,9 +40,9 @@ headerbar_bg_color       # The headerbar background
 headerbar_backdrop_color # The headerbar backdrop state background
 headerbar_fg_color       # The headerbar foreground text color
 card_bg_color            # The background color of lists
-card_fg_color            # The text color on lists (not 100% implemented)
+card_fg_color            # The text color on libhandy lists
 popover_bg_color         # The background color of popovers and menus
-popover_fg_color         # The text color on popovers (not 100% implemented)
+popover_fg_color         # The text color on popovers
 
 # Warning, error, success colors, etc. fg_colors not 100% implemented.
 warning_bg_color
