@@ -1,0 +1,97 @@
+/*
+
+  Gruvbox theme for libadwaita
+  and adw-gtk3 - https://github.com/lassekongo83/adw-gtk3
+
+  Colors from - https://github.com/morhetz/gruvbox
+
+  1. If ~/.config/gtk-4.0/gtk.css and/or ~/.config/gtk-3.0/gtk.css exists, make backups
+  2. Enable the adw-gtk3-dark theme
+  3. Save this file to ~/.config/gtk-4.0/gtk.css
+  4. Make the file a symbolic link to ~/.config/gtk-3.0/gtk.css (or copy it to that location)
+  5. Close and re-open any open apps or log out and in again
+
+*/
+
+/* Global color definitions */
+
+@define-color window_bg_color #282828;
+@define-color window_fg_color #ebdbb2;
+@define-color view_bg_color #3c3836;
+@define-color view_fg_color @window_fg_color;
+@define-color accent_bg_color #928374;
+@define-color accent_color @accent_bg_color;
+@define-color headerbar_bg_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color popover_bg_color #627321;
+@define-color popover_fg_color @view_fg_color;
+@define-color card_bg_color rgba(255, 255, 255, 0.08);
+@define-color card_fg_color @window_fg_color;
+
+/* More customizations */
+
+button.titlebutton { /* GTK3 */
+  color: transparent;
+  min-width: 18px;
+  min-height: 18px;
+}
+button.titlebutton:backdrop {
+  opacity: 0.5;
+}
+
+windowcontrols > button { /* GTK4 */
+  color: transparent;
+  min-width: 18px;
+  min-height: 18px;
+  border-radius: 100%;
+  padding: 0;
+  margin: 0 5px;
+}
+windowcontrols > button > image {
+  padding: 0;
+}
+
+button.titlebutton.close,
+windowcontrols > button.close,
+button.titlebutton.close:hover:backdrop,
+windowcontrols > button.close:hover:backdrop {
+  background-color: #cc241d;
+}
+
+button.titlebutton.close:hover,
+windowcontrols > button.close:hover {
+  background-color: #fb4934;
+}
+
+button.titlebutton.maximize,
+windowcontrols > button.maximize,
+button.titlebutton.maximize:hover:backdrop,
+windowcontrols > button.maximize:hover:backdrop {
+  background-color: #98971a;
+}
+
+button.titlebutton.maximize:hover,
+windowcontrols > button.maximize:hover {
+  background-color: #b8bb26;
+}
+
+button.titlebutton.minimize,
+windowcontrols > button.minimize,
+button.titlebutton.minimize:hover:backdrop,
+windowcontrols > button.minimize:hover:backdrop {
+  background-color: #d79921;
+}
+
+button.titlebutton.minimize:hover,
+windowcontrols > button.minimize:hover {
+  background-color: #fabd2f;
+}
+
+button.titlebutton.close:backdrop,
+button.titlebutton.maximize:backdrop,
+button.titlebutton.minimize:backdrop,
+windowcontrols > button.close:backdrop,
+windowcontrols > button.maximize:backdrop,
+windowcontrols > button.minimize:backdrop {
+  background-color: #665c54;
+}

@@ -1,0 +1,148 @@
+@define-color window_bg_color #242424;
+@define-color window_fg_color #ffffff;
+@define-color view_bg_color #1e1e1e;
+@define-color view_fg_color @window_fg_color;
+@define-color accent_bg_color @blue_3;
+@define-color accent_fg_color #ffffff;
+@define-color accent_color @blue_4;
+@define-color headerbar_bg_color #303030;
+@define-color headerbar_backdrop_color @view_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+.dim-label {
+  opacity: 0.9;
+}
+
+decoration {
+  box-shadow: 0 3px 12px 1px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+decoration:backdrop {
+  box-shadow: 0 3px 12px 1px transparent, 0 2px 6px 2px rgba(0, 0, 0, 0.14), 0 0 0 1px transparent;
+}
+
+.maximized decoration, .fullscreen decoration {
+  box-shadow: none;
+}
+
+.tiled decoration, .tiled-top decoration, .tiled-right decoration, .tiled-bottom decoration, .tiled-left decoration {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3), 0 0 0 20px transparent;
+}
+
+.tiled decoration:backdrop, .tiled-top decoration:backdrop, .tiled-right decoration:backdrop, .tiled-bottom decoration:backdrop, .tiled-left decoration:backdrop {
+  box-shadow: 0 0 0 1px transparent, 0 0 0 20px transparent;
+}
+
+.popup decoration {
+  box-shadow: none;
+}
+
+.ssd decoration {
+  box-shadow: 0 0 0 1px alpha(currentColor,0.5);
+}
+
+.ssd decoration:backdrop {
+  box-shadow: 0 0 0 1px alpha(currentColor,0.5);
+}
+
+.ssd.maximized decoration, .ssd.maximized decoration:backdrop {
+  box-shadow: none;
+}
+
+.csd.popup decoration {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px alpha(rgba(255, 255, 255, 0.3),0.9);
+}
+
+window.csd {
+  outline: 1px solid rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
+}
+
+window.csd:backdrop {
+  outline-color: transparent;
+}
+
+headerbar {
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.5);
+  border-bottom: none;
+}
+
+headerbar:backdrop {
+  box-shadow: none;
+}
+
+windowcontrols > button > image:not(:backdrop),
+button.titlebutton:not(:backdrop) {
+  color: @window_fg_color;
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.5);
+}
+
+windowcontrols > button > image:backdrop,
+button.titlebutton:backdrop {
+  background-color: transparent;
+}
+
+windowcontrols > button > image:backdrop:hover,
+button.titlebutton:backdrop:hover {
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.5);
+}
+
+switch {
+  background-color: alpha(currentColor,0.3);
+}
+
+switch:hover:not(:checked) {
+  background-color: alpha(currentColor,0.4);
+}
+
+switch:checked {
+  color: @window_fg_color;
+  background-color: @accent_bg_color;
+}
+
+switch:checked:hover {
+  background-image: image(alpha(currentColor,0.1));
+}
+
+switch:checked:hover:active {
+  background-image: image(rgba(0, 0, 0, 0.2));
+}
+
+scale trough:not(:backdrop),
+progressbar trough:not(:backdrop) {
+  background-color: alpha(currentColor,0.3);
+  color: @window_fg_color;
+}
+
+scrollbar slider {
+  color: @window_fg_color;
+  background-color: alpha(currentColor,0.6);
+}
+
+scrollbar slider:hover {
+  background-color: alpha(currentColor,0.8);
+}
+
+scrollbar slider:active {
+  background-color: @accent_bg_color;
+}
+
+scrollbar.overlay-indicator {
+  opacity: 1;
+}
+
+notebook > header tab:checked.reorderable-page,
+tabbar tab:checked {
+  background-color: shade(@headerbar_bg_color,1.2);
+  box-shadow: inset 0 -3px @accent_bg_color;
+}
+
+notebook > header tab:checked.reorderable-page:backdrop,
+tabbar tab:checked:backdrop {
+  background-color: @window_bg_color;
+  box-shadow: inset 0 -3px shade(@window_bg_color,1.4);
+}
+
+.nautilus-list-view .view:selected, .nautilus-list-view .view:selected:hover {
+  background-color: @accent_bg_color;
+  color: @accent_fg_color;
+}

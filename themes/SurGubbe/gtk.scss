@@ -1,0 +1,179 @@
+// SurGubbe theme for libadwaita
+// and adw-gtk3 - https://github.com/lassekongo83/adw-gtk3
+// Colors inspired by Mac OS Big Sur
+
+// How to use: https://github.com/lassekongo83/adw-colors
+
+// If you make any modifications to this file you'll have to run:
+// sassc -M -t expanded gtk.scss gtk.css
+// to generate the css file.
+
+// Gtk color functions
+@function gtkalpha($c,$a) {
+  @return unquote("alpha(#{$c},#{$a})");
+}
+
+@function gtkmix($c1,$c2,$r) {
+  $ratio: 1 -  $r / 100%; // match SCSS mix()
+  @return unquote("mix(#{$c1},#{$c2},#{$ratio})");
+}
+
+@function gtkshade($c,$s) {
+  @return unquote("shade(#{$c},#{$s})");
+}
+
+@function gtkcolor($c) {
+  @return unquote("@#{$c}");
+}
+
+// Color values are set here
+@define-color window_bg_color #f5f5f5;
+@define-color window_fg_color #363636;
+@define-color view_bg_color #ffffff;
+@define-color view_fg_color @window_fg_color;
+@define-color accent_bg_color #2e78dc;
+@define-color accent_fg_color #ffffff;
+@define-color accent_color @accent_bg_color;
+@define-color headerbar_bg_color shade(@window_bg_color, .96);
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color popover_bg_color @view_bg_color;
+@define-color popover_fg_color @view_fg_color;
+@define-color card_bg_color @view_bg_color;
+@define-color card_fg_color @view_fg_color;
+// These variables are the ones we use
+$window_bg_color: gtkcolor(window_bg_color);
+$window_fg_color: gtkcolor(window_fg_color);
+$view_bg_color: gtkcolor(view_bg_color);
+$view_fg_color: gtkcolor(view_fg_color);
+$accent_bg_color: gtkcolor(accent_bg_color);
+$accent_fg_color: gtkcolor(accent_fg_color);
+$accent_color: gtkcolor(accent_color);
+$headerbar_bg_color: gtkcolor(headerbar_bg_color);
+$headerbar_fg_color: gtkcolor(headerbar_fg_color);
+$popover_bg_color: gtkcolor(popover_bg_color);
+$popover_fg_color: gtkcolor(popover_fg_color);
+$card_bg_color: gtkcolor(card_bg_color);
+$card_fg_color: gtkcolor(card_fg_color);
+
+// Other variables used in this theme
+$titlebutton_close: #ff605c;
+$titlebutton_maximize: #00ca4e;
+$titlebutton_minimize: #ffbd44;
+$darker_shade: #e1dfe1;
+$darkest_shade: #c0bfc0;
+$border_color: gtkalpha(currentColor, .15);
+
+$titlebutton_size: 16px;
+
+// Titlebuttons
+button.titlebutton,
+windowcontrols > button {
+  color: transparent;
+  min-width: $titlebutton_size;
+  min-height: $titlebutton_size;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+}
+
+button.titlebutton:backdrop {
+  opacity: 0.5; // Match gtk4 backdrop opacity
+}
+
+windowcontrols > button {
+  border-radius: 100%;
+  padding: 0;
+  margin: 0 5px;
+
+  > image { padding: 0; }
+}
+
+button.titlebutton,
+windowcontrols > button {
+
+  $hover_shade: 0.9;
+
+  &.close {
+    &, &:hover:backdrop {
+      background-color: $titlebutton_close;
+    }
+
+    &:hover {
+      background-color: gtkshade($titlebutton_close, $hover_shade);
+    }
+  }
+
+  &.maximize {
+    &, &:hover:backdrop {
+      background-color: $titlebutton_maximize;
+    }
+
+    &:hover {
+      background-color: gtkshade($titlebutton_maximize, $hover_shade);
+    }
+  }
+
+  &.minimize {
+    &, &:hover:backdrop {
+      background-color: $titlebutton_minimize;
+    }
+
+    &:hover {
+      background-color: gtkshade($titlebutton_minimize, $hover_shade);
+    }
+  }
+}
+
+button.titlebutton,
+windowcontrols > button {
+  &.close:backdrop,
+  &.maximize:backdrop,
+  &.minimize:backdrop {
+    background-color: $darkest_shade;
+  }
+}
+
+// Tabs
+notebook > header tab:not(:backdrop):not(:checked).reorderable-page,
+tabbar tab:not(:backdrop):not(:checked) {
+  // normal tab
+  background-color: $darker_shade;
+  box-shadow: none;
+  border-bottom: 1px solid $border_color;
+}
+
+notebook > header tab:hover:not(:backdrop):not(:checked).reorderable-page,
+tabbar tab:hover:not(:backdrop):not(:checked) {
+  // hovered tab
+  background-color: gtkshade($darker_shade, 0.96);
+}
+
+notebook > header tab:not(:backdrop):checked.reorderable-page,
+tabbar tab:not(:backdrop):checked {
+  // active tab
+  background-color: $view_bg_color;
+  box-shadow: none;
+  border-bottom: 1px solid $border_color;
+}
+
+notebook > header tab:backdrop.reorderable-page,
+tabbar tab:backdrop {
+  box-shadow: none;
+  background-color: gtkmix($window_bg_color, $darker_shade, 50%);
+}
+
+notebook > header tab:checked:backdrop.reorderable-page,
+tabbar tab:checked:backdrop {
+  background-color: $window_bg_color;
+}
+
+tabbar tab {
+  border: 0;
+}
+
+// Apps
+.nautilus-window .sidebar {
+  background-color: gtkmix($window_bg_color, $view_bg_color, 50%);
+  &:backdrop {
+    background-color: $window_bg_color;
+  }
+}

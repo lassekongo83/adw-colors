@@ -1,0 +1,94 @@
+@define-color window_bg_color #fafafa;
+@define-color window_fg_color #000000;
+@define-color view_bg_color #ffffff;
+@define-color view_fg_color @window_fg_color;
+@define-color accent_bg_color #0d47a1;
+@define-color accent_fg_color #ffffff;
+@define-color accent_color @accent_bg_color;
+@define-color headerbar_bg_color #ebebeb;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color popover_bg_color @view_bg_color;
+@define-color popover_fg_color @view_fg_color;
+@define-color card_bg_color @view_bg_color;
+@define-color card_fg_color @view_fg_color;
+.dim-label {
+  opacity: 0.9;
+}
+
+windowcontrols > button > image:not(:backdrop),
+button.titlebutton:not(:backdrop) {
+  color: @window_fg_color;
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.15);
+}
+
+windowcontrols > button > image:backdrop,
+button.titlebutton:backdrop {
+  background-color: transparent;
+}
+
+windowcontrols > button > image:backdrop:hover,
+button.titlebutton:backdrop:hover {
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.15);
+}
+
+switch {
+  background-color: alpha(currentColor,0.3);
+}
+
+switch:hover:not(:checked) {
+  background-color: alpha(currentColor,0.4);
+}
+
+switch:checked {
+  color: @window_fg_color;
+  background-color: @accent_bg_color;
+}
+
+switch:checked:hover {
+  background-image: image(alpha(currentColor,0.1));
+}
+
+switch:checked:hover:active {
+  background-image: image(rgba(0, 0, 0, 0.2));
+}
+
+scale trough:not(:backdrop),
+progressbar trough:not(:backdrop) {
+  background-color: alpha(currentColor,0.3);
+  color: @window_fg_color;
+}
+
+scrollbar slider {
+  color: @window_fg_color;
+  background-color: alpha(currentColor,0.6);
+}
+
+scrollbar slider:hover {
+  background-color: alpha(currentColor,0.8);
+}
+
+scrollbar slider:active {
+  background-color: @accent_bg_color;
+}
+
+scrollbar.overlay-indicator {
+  opacity: 1;
+}
+
+notebook > header tab:checked.reorderable-page,
+tabbar tab:checked {
+  background-color: @view_bg_color;
+  box-shadow: inset 0 -3px @accent_bg_color;
+}
+
+notebook > header tab:checked.reorderable-page:backdrop,
+tabbar tab:checked:backdrop {
+  background-color: @window_bg_color;
+  box-shadow: inset 0 -3px shade(@window_bg_color,0.9);
+}
+
+.nautilus-list-view .view:selected, .nautilus-list-view .view:selected:hover {
+  background-color: @accent_bg_color;
+  color: @accent_fg_color;
+}
