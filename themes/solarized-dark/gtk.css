@@ -1,0 +1,35 @@
+/* solarized dark colours - use with dark style selected */
+
+@define-color accent_color #586e75;
+@define-color accent_bg_color #1f444d;
+@define-color accent_fg_color #eee8d5;
+
+@define-color window_bg_color #002b36;
+@define-color window_fg_color #eee8d5;
+
+@define-color headerbar_bg_color #07313b;
+@define-color headerbar_fg_color #eee8d5;
+@define-color headerbar_backdrop_color #002b36;
+
+@define-color popover_bg_color #123a44;
+@define-color popover_fg_color #eee8d5;
+
+@define-color view_bg_color #073642;
+@define-color view_fg_color #eee8d5;
+
+@define-color card_bg_color #123a44;
+@define-color card_fg_color #fdf6e3;
+
+
+@define-color warning_bg_color #CB4B16;
+@define-color warning_fg_color #eee8d5;
+@define-color warning_color #CB4B16;
+@define-color error_bg_color #DC322F;
+@define-color error_fg_color #eee8d5;
+@define-color error_color #DC322F;
+@define-color success_bg_color #859900;
+@define-color success_fg_color #eee8d5;
+@define-color success_color #859900;
+@define-color destructive_bg_color #D33682;
+@define-color destructive_fg_color #eee8d5;
+@define-color destructive_color #D33682;
