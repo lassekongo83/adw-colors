@@ -27,6 +27,8 @@ sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override -
 | [Nord](https://github.com/lassekongo83/adw-colors/tree/main/themes/nord/gtk.css) | ![nord](/themes/nord/nord.png?raw=true) 
 | [Peninsula-dark](https://github.com/lassekongo83/adw-colors/tree/main/themes/Peninsula-dark/gtk.css) | ![Peninsula-dark](/themes/Peninsula-dark/peninsula-dark.png?raw=true) |
 [Gruvbox-dark](https://github.com/lassekongo83/adw-colors/blob/main/themes/gruvbox-dark/gtk.css) | ![gruvbox-dark](/themes/gruvbox-dark/gruvbox-dark.png?raw=true) | [WryOpussum](https://github.com/WryOpussum) |
+| [Solarized](https://github.com/lassekongo83/adw-colors/blob/main/themes/solarized/gtk.css) | ![solarized](/themes/solarized/solarized.png?raw=true) | [davidphilipbarr](https://github.com/davidphilipbarr) |
+| [Solarized-dark](https://github.com/lassekongo83/adw-colors/blob/main/themes/solarized-dark/gtk.css) | ![solarized](/themes/solarized-dark/solarized-dark.png?raw=true) | [davidphilipbarr](https://github.com/davidphilipbarr) |
 | [adw-hc-dark](https://github.com/lassekongo83/adw-colors/blob/main/themes/adw-hc-dark/gtk.css) | A slightly higher contrast libadwaita dark theme. [Screenshot](/themes/adw-hc-dark/screenshot.png?raw=true). |
 | [adw-hc-light](https://github.com/lassekongo83/adw-colors/blob/main/themes/adw-hc-light/gtk.css) | A slightly higher contrast libadwaita light theme. [Screenshot](/themes/adw-hc-light/screenshot.png?raw=true). |
 
