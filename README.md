@@ -21,8 +21,8 @@ sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override -
 <div align="center">
 
 ## Available themes
-| Color theme | Info | Submitted by |
-|:------------|:-----|:-------------|
+| Color theme | Info / Screenshot | Submitted by |
+|:------------|:------------------|:-------------|
 | [Dracula](https://github.com/lassekongo83/adw-colors/tree/main/themes/dracula/gtk.css) | ![dracula](/themes/dracula/dracula.png?raw=true) |
 | [Nord](https://github.com/lassekongo83/adw-colors/tree/main/themes/nord/gtk.css) | ![nord](/themes/nord/nord.png?raw=true) 
 | [Peninsula-dark](https://github.com/lassekongo83/adw-colors/tree/main/themes/Peninsula-dark/gtk.css) | ![Peninsula-dark](/themes/Peninsula-dark/peninsula-dark.png?raw=true) |
