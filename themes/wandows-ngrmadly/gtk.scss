@@ -1,0 +1,260 @@
+// Wandows-ngrmadly theme for libadwaita
+// and adw-gtk3 - https://github.com/lassekongo83/adw-gtk3
+
+// THIS THEME IS UNFINISHED, USE AT YOUR OWN RISK
+
+// How to use: https://github.com/lassekongo83/adw-colors
+
+// If you make any modifications to this file you'll have to run:
+// sassc -M -t expanded gtk.scss gtk.css
+// to generate the css file.
+
+// Gtk color functions
+@function gtkalpha($c,$a) {
+  @return unquote("alpha(#{$c},#{$a})");
+}
+
+@function gtkmix($c1,$c2,$r) {
+  $ratio: 1 -  $r / 100%; // match SCSS mix()
+  @return unquote("mix(#{$c1},#{$c2},#{$ratio})");
+}
+
+@function gtkshade($c,$s) {
+  @return unquote("shade(#{$c},#{$s})");
+}
+
+@function gtkcolor($c) {
+  @return unquote("@#{$c}");
+}
+
+// Color values are set here
+@define-color window_bg_color #ebebeb;
+@define-color window_fg_color #3f3f3f;
+@define-color view_bg_color #ffffff;
+@define-color view_fg_color @window_fg_color;
+@define-color accent_bg_color #0078d4;
+@define-color accent_fg_color #ffffff;
+@define-color accent_color @accent_bg_color;
+@define-color headerbar_bg_color shade(@window_bg_color, 0.96);
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color popover_bg_color @view_bg_color;
+@define-color popover_fg_color @view_fg_color;
+@define-color card_bg_color @view_bg_color;
+@define-color card_fg_color @view_fg_color;
+// These variables are the ones we use
+$window_bg_color: gtkcolor(window_bg_color);
+$window_fg_color: gtkcolor(window_fg_color);
+$view_bg_color: gtkcolor(view_bg_color);
+$view_fg_color: gtkcolor(view_fg_color);
+$accent_bg_color: gtkcolor(accent_bg_color);
+$accent_fg_color: gtkcolor(accent_fg_color);
+$accent_color: gtkcolor(accent_color);
+$headerbar_bg_color: gtkcolor(headerbar_bg_color);
+$headerbar_backdrop_color: gtkcolor(headerbar_backdrop_color);
+$headerbar_fg_color: gtkcolor(headerbar_fg_color);
+$popover_bg_color: gtkcolor(popover_bg_color);
+$popover_fg_color: gtkcolor(popover_fg_color);
+$card_bg_color: gtkcolor(card_bg_color);
+$card_fg_color: gtkcolor(card_fg_color);
+
+// Other variables for this theme
+$border_color: gtkalpha(currentColor, .15);
+$close_button: #d35f5f;
+
+$headerbar_height: 38px;
+$titlebutton_width: 24px;
+$titlebutton_height: 24px;
+
+// Decoration
+window {
+  outline: none; // GTK4 window outline
+}
+
+// Headerbar
+headerbar {
+  min-height: $headerbar_height;
+
+  button {
+    &:not(.close):not(.maximize):not(.minimize) {
+      margin-top: 4px;
+      margin-bottom: 4px;
+      padding: 2px 4px;
+    }
+
+    &.image-button {
+      min-width: 22px;
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+
+    &.toggle {
+      padding: 0;
+    }
+  }
+
+  entry {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+// Titlebuttons
+windowcontrols > button,
+button.titlebutton:not(.appmenu) {
+  min-width: $titlebutton_width;
+  min-height: $titlebutton_height;
+  border-radius: 2px;
+}
+
+windowcontrols > button,
+button.titlebutton {
+  &.close {
+    background-color: transparent;
+    > image {
+      color: transparent;
+      background-image: url('assets/titlebutton-close.png');
+    }
+
+    &:hover {
+      background-color: $close_button;
+      > image {
+        background-image: url('assets/titlebutton-close-hover.png');
+      }
+    }
+
+    &:backdrop {
+      &:not(:hover) > image {
+        opacity: 0.5;
+      }
+      &:hover > image {
+        background-image: url('assets/titlebutton-close.png');
+      }
+    }
+  }
+
+  &.maximize {
+    background-color: transparent;
+    > image {
+      color: transparent;
+      background-image: url('assets/titlebutton-maximize.png');
+    }
+
+    &:hover {
+      > image {
+        background-image: url('assets/titlebutton-maximize-hover.png');
+      }
+    }
+
+    &:backdrop {
+      &:not(:hover) > image {
+        opacity: 0.5;
+      }
+      &:hover > image {
+        background-image: url('assets/titlebutton-maximize.png');
+      }
+    }
+  }
+
+  &.minimize {
+    background-color: transparent;
+    > image {
+      color: transparent;
+      background-image: url('assets/titlebutton-minimize.png');
+    }
+
+    &:hover {
+      > image {
+        background-image: url('assets/titlebutton-minimize-hover.png');
+      }
+    }
+
+    &:backdrop {
+      &:not(:hover) > image {
+        opacity: 0.5;
+      }
+      &:hover > image {
+        background-image: url('assets/titlebutton-minimize.png');
+      }
+    }
+  }
+
+  &.maximize, &.minimize {
+    &:hover {
+      background-color: $accent_bg_color;
+      color: $accent_fg_color;
+    }
+  }
+
+  &.close, &.maximize, &.minimize {
+    &:backdrop {
+      &:hover {
+        background-color: gtkshade($headerbar_backdrop_color, 0.9);
+      }
+    }
+  }
+}
+
+headerbar, .titlebar {
+  .maximized & {
+    button.titlebutton {
+      &.maximize {
+        > image {
+          color: transparent;
+          background-image: url('assets/titlebutton-unmaximize.png');
+        }
+
+        &:hover {
+          > image {
+            background-image: url('assets/titlebutton-unmaximize-hover.png');
+          }
+        }
+
+        &:backdrop {
+          &:not(:hover) > image {
+            opacity: 0.5;
+          }
+          &:hover > image {
+           background-image: url('assets/titlebutton-unmaximize.png');
+          }
+        }
+      }
+    }
+  }
+}
+
+windowcontrols > button {
+  padding: 0;
+  margin: 0;
+  > image {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+}
+
+// Tabs
+notebook > header tab:checked.reorderable-page,
+tabbar tab:checked {
+  background-color: $view_bg_color;
+  &:backdrop {
+    background-color: $window_bg_color;
+  }
+}
+
+// Apps
+.nautilus-window {
+  .path-bar-box,
+  .nautilus-path-bar {
+    background: none;
+  }
+
+  headerbar {
+    .linked button.toggle.popup {
+      &:not(:hover):not(:active):not(:checked) {
+        background: none;
+      }
+      border: none;
+    }
+  }
+}
