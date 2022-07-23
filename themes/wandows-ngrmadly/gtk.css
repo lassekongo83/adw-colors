@@ -12,8 +12,15 @@
 @define-color popover_fg_color @view_fg_color;
 @define-color card_bg_color @view_bg_color;
 @define-color card_fg_color @view_fg_color;
-window {
+window,
+decoration,
+decoration-overlay {
   outline: none;
+  border-radius: 0;
+}
+
+headerbar, .titlebar {
+  border-radius: 0;
 }
 
 headerbar {
@@ -43,99 +50,33 @@ headerbar entry {
 
 windowcontrols > button,
 button.titlebutton:not(.appmenu) {
-  min-width: 24px;
-  min-height: 24px;
-  border-radius: 2px;
+  min-width: 38px;
+  min-height: 38px;
+  border-radius: 0;
+  padding: 0;
 }
 
-windowcontrols > button.close,
-button.titlebutton.close {
-  background-color: transparent;
+button.titlebutton:not(.appmenu) {
+  margin: 0 -6px 0 0;
 }
 
-windowcontrols > button.close > image,
-button.titlebutton.close > image {
-  color: transparent;
-  background-image: url("assets/titlebutton-close.png");
+windowcontrols button.close {
+  margin: 0 -6px 0 0;
 }
 
-windowcontrols > button.close:hover,
-button.titlebutton.close:hover {
-  background-color: #d35f5f;
+windowcontrols button.maximize, windowcontrols button.minimize {
+  margin: 0 -2px 0 0;
 }
 
-windowcontrols > button.close:hover > image,
-button.titlebutton.close:hover > image {
-  background-image: url("assets/titlebutton-close-hover.png");
-}
-
-windowcontrols > button.close:backdrop:not(:hover) > image,
-button.titlebutton.close:backdrop:not(:hover) > image {
-  opacity: 0.5;
-}
-
-windowcontrols > button.close:backdrop:hover > image,
-button.titlebutton.close:backdrop:hover > image {
-  background-image: url("assets/titlebutton-close.png");
-}
-
-windowcontrols > button.maximize,
-button.titlebutton.maximize {
-  background-color: transparent;
-}
-
-windowcontrols > button.maximize > image,
-button.titlebutton.maximize > image {
-  color: transparent;
-  background-image: url("assets/titlebutton-maximize.png");
-}
-
-windowcontrols > button.maximize:hover > image,
-button.titlebutton.maximize:hover > image {
-  background-image: url("assets/titlebutton-maximize-hover.png");
-}
-
-windowcontrols > button.maximize:backdrop:not(:hover) > image,
-button.titlebutton.maximize:backdrop:not(:hover) > image {
-  opacity: 0.5;
-}
-
-windowcontrols > button.maximize:backdrop:hover > image,
-button.titlebutton.maximize:backdrop:hover > image {
-  background-image: url("assets/titlebutton-maximize.png");
-}
-
-windowcontrols > button.minimize,
+windowcontrols > button.close, windowcontrols > button.maximize, windowcontrols > button.minimize,
+button.titlebutton.close,
+button.titlebutton.maximize,
 button.titlebutton.minimize {
   background-color: transparent;
-}
-
-windowcontrols > button.minimize > image,
-button.titlebutton.minimize > image {
+  transition-property: background-color;
   color: transparent;
-  background-image: url("assets/titlebutton-minimize.png");
-}
-
-windowcontrols > button.minimize:hover > image,
-button.titlebutton.minimize:hover > image {
-  background-image: url("assets/titlebutton-minimize-hover.png");
-}
-
-windowcontrols > button.minimize:backdrop:not(:hover) > image,
-button.titlebutton.minimize:backdrop:not(:hover) > image {
-  opacity: 0.5;
-}
-
-windowcontrols > button.minimize:backdrop:hover > image,
-button.titlebutton.minimize:backdrop:hover > image {
-  background-image: url("assets/titlebutton-minimize.png");
-}
-
-windowcontrols > button.maximize:hover, windowcontrols > button.minimize:hover,
-button.titlebutton.maximize:hover,
-button.titlebutton.minimize:hover {
-  background-color: @accent_bg_color;
-  color: @accent_fg_color;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 windowcontrols > button.close:backdrop:hover, windowcontrols > button.maximize:backdrop:hover, windowcontrols > button.minimize:backdrop:hover,
@@ -145,26 +86,85 @@ button.titlebutton.minimize:backdrop:hover {
   background-color: shade(@headerbar_backdrop_color,0.9);
 }
 
-.maximized headerbar button.titlebutton.maximize > image, .maximized .titlebar button.titlebutton.maximize > image {
-  color: transparent;
-  background-image: url("assets/titlebutton-unmaximize.png");
-}
-
-.maximized headerbar button.titlebutton.maximize:hover > image, .maximized .titlebar button.titlebutton.maximize:hover > image {
-  background-image: url("assets/titlebutton-unmaximize-hover.png");
-}
-
-.maximized headerbar button.titlebutton.maximize:backdrop:not(:hover) > image, .maximized .titlebar button.titlebutton.maximize:backdrop:not(:hover) > image {
+windowcontrols > button.close:backdrop:not(:hover), windowcontrols > button.maximize:backdrop:not(:hover), windowcontrols > button.minimize:backdrop:not(:hover),
+button.titlebutton.close:backdrop:not(:hover),
+button.titlebutton.maximize:backdrop:not(:hover),
+button.titlebutton.minimize:backdrop:not(:hover) {
   opacity: 0.5;
 }
 
-.maximized headerbar button.titlebutton.maximize:backdrop:hover > image, .maximized .titlebar button.titlebutton.maximize:backdrop:hover > image {
+windowcontrols > button.maximize:hover, windowcontrols > button.minimize:hover,
+button.titlebutton.maximize:hover,
+button.titlebutton.minimize:hover {
+  background-color: @accent_bg_color;
+}
+
+windowcontrols > button.close,
+button.titlebutton.close {
+  background-image: url("assets/titlebutton-close.png");
+}
+
+windowcontrols > button.close:hover,
+button.titlebutton.close:hover {
+  background-color: #d35f5f;
+  background-image: url("assets/titlebutton-close-hover.png");
+}
+
+windowcontrols > button.close:backdrop:hover,
+button.titlebutton.close:backdrop:hover {
+  background-image: url("assets/titlebutton-close.png");
+}
+
+windowcontrols > button.maximize,
+button.titlebutton.maximize {
+  background-image: url("assets/titlebutton-maximize.png");
+}
+
+windowcontrols > button.maximize:hover,
+button.titlebutton.maximize:hover {
+  background-image: url("assets/titlebutton-maximize-hover.png");
+}
+
+windowcontrols > button.maximize:backdrop:hover,
+button.titlebutton.maximize:backdrop:hover {
+  background-image: url("assets/titlebutton-maximize.png");
+}
+
+windowcontrols > button.minimize,
+button.titlebutton.minimize {
+  background-image: url("assets/titlebutton-minimize.png");
+}
+
+windowcontrols > button.minimize:hover,
+button.titlebutton.minimize:hover {
+  background-image: url("assets/titlebutton-minimize-hover.png");
+}
+
+windowcontrols > button.minimize:backdrop:hover,
+button.titlebutton.minimize:backdrop:hover {
+  background-image: url("assets/titlebutton-minimize.png");
+}
+
+.maximized headerbar button.titlebutton.maximize,
+.maximized headerbar windowcontrols button.maximize, .maximized .titlebar button.titlebutton.maximize,
+.maximized .titlebar windowcontrols button.maximize {
+  background-image: url("assets/titlebutton-unmaximize.png");
+}
+
+.maximized headerbar button.titlebutton.maximize:hover,
+.maximized headerbar windowcontrols button.maximize:hover, .maximized .titlebar button.titlebutton.maximize:hover,
+.maximized .titlebar windowcontrols button.maximize:hover {
+  background-image: url("assets/titlebutton-unmaximize-hover.png");
+}
+
+.maximized headerbar button.titlebutton.maximize:backdrop:hover,
+.maximized headerbar windowcontrols button.maximize:backdrop:hover, .maximized .titlebar button.titlebutton.maximize:backdrop:hover,
+.maximized .titlebar windowcontrols button.maximize:backdrop:hover {
   background-image: url("assets/titlebutton-unmaximize.png");
 }
 
 windowcontrols > button {
   padding: 0;
-  margin: 0;
 }
 
 windowcontrols > button > image {

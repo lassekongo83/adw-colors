@@ -63,15 +63,22 @@ $border_color: gtkalpha(currentColor, .15);
 $close_button: #d35f5f;
 
 $headerbar_height: 38px;
-$titlebutton_width: 24px;
-$titlebutton_height: 24px;
+$titlebutton_width: $headerbar_height;
+$titlebutton_height: $headerbar_height;
 
 // Decoration
-window {
+window,
+decoration,
+decoration-overlay {
   outline: none; // GTK4 window outline
+  border-radius: 0;
 }
 
 // Headerbar
+headerbar, .titlebar {
+  border-radius: 0;
+}
+
 headerbar {
   min-height: $headerbar_height;
 
@@ -104,77 +111,36 @@ windowcontrols > button,
 button.titlebutton:not(.appmenu) {
   min-width: $titlebutton_width;
   min-height: $titlebutton_height;
-  border-radius: 2px;
+  border-radius: 0;
+  padding: 0;
+}
+
+button.titlebutton:not(.appmenu) {
+  margin: 0 -6px 0 0;
+}
+
+windowcontrols button {
+  &.close { margin: 0 -6px 0 0; }
+  &.maximize, &.minimize {
+    margin: 0 -2px 0 0;
+  }
 }
 
 windowcontrols > button,
 button.titlebutton {
-  &.close {
+  &.close, &.maximize, &.minimize {
     background-color: transparent;
-    > image {
-      color: transparent;
-      background-image: url('assets/titlebutton-close.png');
-    }
-
-    &:hover {
-      background-color: $close_button;
-      > image {
-        background-image: url('assets/titlebutton-close-hover.png');
-      }
-    }
+    transition-property: background-color;
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
 
     &:backdrop {
-      &:not(:hover) > image {
+      &:hover {
+        background-color: gtkshade($headerbar_backdrop_color, 0.9);
+      }
+      &:not(:hover) {
         opacity: 0.5;
-      }
-      &:hover > image {
-        background-image: url('assets/titlebutton-close.png');
-      }
-    }
-  }
-
-  &.maximize {
-    background-color: transparent;
-    > image {
-      color: transparent;
-      background-image: url('assets/titlebutton-maximize.png');
-    }
-
-    &:hover {
-      > image {
-        background-image: url('assets/titlebutton-maximize-hover.png');
-      }
-    }
-
-    &:backdrop {
-      &:not(:hover) > image {
-        opacity: 0.5;
-      }
-      &:hover > image {
-        background-image: url('assets/titlebutton-maximize.png');
-      }
-    }
-  }
-
-  &.minimize {
-    background-color: transparent;
-    > image {
-      color: transparent;
-      background-image: url('assets/titlebutton-minimize.png');
-    }
-
-    &:hover {
-      > image {
-        background-image: url('assets/titlebutton-minimize-hover.png');
-      }
-    }
-
-    &:backdrop {
-      &:not(:hover) > image {
-        opacity: 0.5;
-      }
-      &:hover > image {
-        background-image: url('assets/titlebutton-minimize.png');
       }
     }
   }
@@ -182,14 +148,48 @@ button.titlebutton {
   &.maximize, &.minimize {
     &:hover {
       background-color: $accent_bg_color;
-      color: $accent_fg_color;
     }
   }
 
-  &.close, &.maximize, &.minimize {
+  &.close {
+    background-image: url('assets/titlebutton-close.png');
+
+    &:hover {
+      background-color: $close_button;
+      background-image: url('assets/titlebutton-close-hover.png');
+    }
+
     &:backdrop {
       &:hover {
-        background-color: gtkshade($headerbar_backdrop_color, 0.9);
+        background-image: url('assets/titlebutton-close.png');
+      }
+    }
+  }
+
+  &.maximize {
+    background-image: url('assets/titlebutton-maximize.png');
+
+    &:hover {
+      background-image: url('assets/titlebutton-maximize-hover.png');
+    }
+
+    &:backdrop {
+      &:hover {
+        background-image: url('assets/titlebutton-maximize.png');
+      }
+    }
+  }
+
+  &.minimize {
+    background-image: url('assets/titlebutton-minimize.png');
+
+    &:hover {
+      background-image: url('assets/titlebutton-minimize-hover.png');
+    }
+
+    &:backdrop {
+      &:hover {
+        background-image: url('assets/titlebutton-minimize.png');
       }
     }
   }
@@ -197,24 +197,17 @@ button.titlebutton {
 
 headerbar, .titlebar {
   .maximized & {
-    button.titlebutton {
+    button.titlebutton,
+    windowcontrols button {
       &.maximize {
-        > image {
-          color: transparent;
-          background-image: url('assets/titlebutton-unmaximize.png');
-        }
+        background-image: url('assets/titlebutton-unmaximize.png');
 
         &:hover {
-          > image {
-            background-image: url('assets/titlebutton-unmaximize-hover.png');
-          }
+          background-image: url('assets/titlebutton-unmaximize-hover.png');
         }
 
         &:backdrop {
-          &:not(:hover) > image {
-            opacity: 0.5;
-          }
-          &:hover > image {
+          &:hover {
            background-image: url('assets/titlebutton-unmaximize.png');
           }
         }
@@ -225,7 +218,7 @@ headerbar, .titlebar {
 
 windowcontrols > button {
   padding: 0;
-  margin: 0;
+  //margin: 0;
   > image {
     padding: 0;
     border-radius: 0;
