@@ -27,11 +27,31 @@ button.titlebutton:backdrop {
 windowcontrols > button {
   border-radius: 100%;
   padding: 0;
-  margin: 0 5px;
+  margin: 0 3px;
 }
 
 windowcontrols > button > image {
   padding: 0;
+}
+
+button.titlebutton {
+  margin: 0 2px;
+}
+
+.titlebar .right {
+  margin-right: 8px;
+}
+
+.titlebar .left {
+  margin-left: 8px;
+}
+
+windowcontrols.end {
+  margin-right: 8px;
+}
+
+windowcontrols.start {
+  margin-left: 8px;
 }
 
 button.titlebutton.close, button.titlebutton.close:hover:backdrop,

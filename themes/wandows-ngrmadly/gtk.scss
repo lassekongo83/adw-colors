@@ -115,15 +115,24 @@ button.titlebutton:not(.appmenu) {
   padding: 0;
 }
 
-button.titlebutton:not(.appmenu) {
-  margin: 0 -6px 0 0;
-}
-
 windowcontrols button {
-  &.close { margin: 0 -6px 0 0; }
-  &.maximize, &.minimize {
+  &.close, &.maximize, &.minimize {
     margin: 0 -2px 0 0;
   }
+}
+
+button.titlebutton:not(.appmenu) {
+  margin: 0 -3px;
+}
+
+.titlebar {
+  .right { margin-right: -3px; }
+  .left { margin-left: -3px; }
+}
+
+windowcontrols {
+  &.end { margin-right: -4px; }
+  &.start { margin-left: -4px; }
 }
 
 windowcontrols > button,
