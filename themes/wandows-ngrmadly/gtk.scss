@@ -79,6 +79,13 @@ headerbar, .titlebar {
   border-radius: 0;
 }
 
+// Fix for libadwaita headerbar above sidebars
+leaflet > box ~ box headerbar {
+  min-height: $headerbar_height;
+  background: $window_bg_color;
+  box-shadow: inset -1px 0 $border_color;
+}
+
 headerbar {
   min-height: $headerbar_height;
 
@@ -241,6 +248,15 @@ tabbar tab:checked {
   background-color: $view_bg_color;
   &:backdrop {
     background-color: $window_bg_color;
+  }
+}
+
+// Sidebar rows
+.sidebar,
+.navigation-sidebar {
+  row.activatable:selected {
+    box-shadow: inset 0 0 0 1px gtkalpha($accent_bg_color, 0.4);
+    background: gtkalpha($accent_bg_color, 0.1);
   }
 }
 
