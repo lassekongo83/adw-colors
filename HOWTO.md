@@ -33,9 +33,9 @@ window_bg_color          # The main background color used on GtkWindow
 window_fg_color          # The main foreground text color
 view_bg_color            # A secondary background color used in icon views, text fields, etc
 view_fg_color            # Secondary foreground text color
-accent_bg_color          # Something colorful!
-accent_fg_color          # The text over the accent color
-accent_color             # Can be the same as accent_bg_color, but maybe with a slightly brighter tone
+accent_bg_color          # Color to indicate that a widget is important, interactive, or currently active
+accent_fg_color          # Color for text over widgets using accent_bg_color
+accent_color             # Mostly used for text labels. Can be the same as accent_bg_color
 headerbar_bg_color       # The headerbar background
 headerbar_backdrop_color # The headerbar backdrop state background
 headerbar_fg_color       # The headerbar foreground text color
@@ -44,19 +44,22 @@ card_fg_color            # The text color on libhandy lists
 popover_bg_color         # The background color of popovers and menus
 popover_fg_color         # The text color on popovers
 
-# Warning, error, success colors, etc. fg_colors not 100% implemented.
-warning_bg_color
-warning_fg_color
-warning_color
-error_bg_color
-error_fg_color
-error_color
-success_bg_color
-success_fg_color
-success_color
-destructive_bg_color
-destructive_fg_color
-destructive_color
+warning_bg_color         # Background for widgets and elements that show a warning
+warning_fg_color         # Foreground for widgets and elements that show a warning
+warning_color            # Warning text label
+error_bg_color           # Background for widgets and elements that show an error
+error_fg_color           # Foreground for widgets and elements that show an error
+error_color              # Error text label
+success_bg_color         # Background for widgets and elements that show a successful action
+success_fg_color         # Foreground for widgets and elements that show a successful action
+success_color            # Success text label
+destructive_bg_color     # The destructive color indicates a dangerous action, such as deleting a file
+destructive_fg_color     # Destructive foreground color
+destructive_color        # Destructive text label
+
+# Custom colors (GTK3 only)
+panel_bg_color           # Background for XFCE4 panel
+panel_fg_color           # Foreground for XFCE4 panel
 ```
 
 Plus the colors from the [theme's palette](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk/src/adw-gtk3/gtk-3.0/_palette.scss).
