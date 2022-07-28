@@ -1,0 +1,205 @@
+// Nord theme for libadwaita
+// and adw-gtk3 - https://github.com/lassekongo83/adw-gtk3
+
+// Colors from - https://www.nordtheme.com
+
+// How to use: https://github.com/lassekongo83/adw-colors
+
+// If you make any modifications to this file you'll have to run:
+// sassc -M -t expanded gtk.scss gtk.css
+// to generate the css file.
+
+// Gtk color functions
+@function gtkalpha($c,$a) {
+  @return unquote("alpha(#{$c},#{$a})");
+}
+
+@function gtkmix($c1,$c2,$r) {
+  $ratio: 1 -  $r / 100%; // match SCSS mix()
+  @return unquote("mix(#{$c1},#{$c2},#{$ratio})");
+}
+
+@function gtkshade($c,$s) {
+  @return unquote("shade(#{$c},#{$s})");
+}
+
+@function gtkcolor($c) {
+  @return unquote("@#{$c}");
+}
+
+// Color values are set here
+@define-color window_bg_color #2E3440;
+@define-color window_fg_color #ECEFF4;
+@define-color view_bg_color #434C5E;
+@define-color view_fg_color @window_fg_color;
+@define-color accent_bg_color #8FBCBB;
+@define-color accent_fg_color #ffffff;
+@define-color accent_color @accent_bg_color;
+@define-color headerbar_bg_color #3B4252;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color popover_bg_color #4C566A;
+@define-color popover_fg_color @view_fg_color;
+@define-color card_bg_color @popover_bg_color;
+@define-color card_fg_color @window_fg_color;
+// These variables are the ones we use
+$window_bg_color: gtkcolor(window_bg_color);
+$window_fg_color: gtkcolor(window_fg_color);
+$view_bg_color: gtkcolor(view_bg_color);
+$view_fg_color: gtkcolor(view_fg_color);
+$accent_bg_color: gtkcolor(accent_bg_color);
+$accent_fg_color: gtkcolor(accent_fg_color);
+$accent_color: gtkcolor(accent_color);
+$headerbar_bg_color: gtkcolor(headerbar_bg_color);
+$headerbar_backdrop_color: gtkcolor(headerbar_backdrop_color);
+$headerbar_fg_color: gtkcolor(headerbar_fg_color);
+$popover_bg_color: gtkcolor(popover_bg_color);
+$popover_fg_color: gtkcolor(popover_fg_color);
+$card_bg_color: gtkcolor(card_bg_color);
+$card_fg_color: gtkcolor(card_fg_color);
+
+// Other variables for this theme
+$border_color: gtkalpha(currentColor, .15);
+$titlebutton_close: #BF616A;
+$titlebutton_maximize: #A3BE8C;
+$titlebutton_minimize: #EBCB8B;
+$titlebutton_backdrop: #4C566A;
+$titlebutton_close_hover: #d5979d;
+$titlebutton_maximize_hover: #cadabd;
+$titlebutton_minimize_hover: #f6e8cc;
+$titlebutton_backdrop_hover: #6d7a96;
+$titlebutton_size: 18px;
+
+// GTK3 decoration
+decoration {
+  $wm_border: gtkshade($headerbar_bg_color, 1.3);
+  $wm_border_backdrop: gtkshade($headerbar_bg_color, 1.1);
+
+  box-shadow: 0 3px 12px 1px rgba(0,0,0, 0.7),
+              0 0 0 1px $wm_border;
+  &:backdrop {
+    box-shadow: 0 3px 12px 1px transparent,
+                0 2px 6px 2px rgba(0,0,0, 0.4),
+                0 0 0 1px $wm_border_backdrop;
+  }
+
+  .tiled &,
+  .tiled-top &,
+  .tiled-bottom &,
+  .tiled-right &,
+  .tiled-left & {
+    box-shadow: 0 0 0 1px $wm_border_backdrop,
+                0 0 0 20px transparent;
+  }
+
+  messagedialog.csd &,
+  .csd.popup &,
+  .maximized .csd.popup & {
+    box-shadow: 0 1px 2px rgba(0,0,0, 0.8),
+                0 0 0 1px gtkalpha($wm_border, 0.9);
+  }
+
+  .maximized .csd.popup & {
+    border-radius: 6px;
+  }
+
+  .maximized &,
+  .fullscreen & {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .ssd & { box-shadow: 0 0 0 1px $wm_border; }
+  .ssd &:backdrop { box-shadow: 0 0 0 1px $wm_border_backdrop; }
+  .ssd.maximized &,
+  .ssd.maximized &:backdrop { box-shadow: none; }
+
+  .solid-csd & {
+    box-shadow: inset 0 0 0 5px gtkalpha(currentColor, 0.5),
+                inset 0 0 0 4px $headerbar_bg_color,
+                inset 0 0 0 1px gtkalpha(currentColor, 0.5);
+  }
+  .solid-csd &:backdrop { box-shadow: inset 0 0 0 3px $window_bg_color; }
+}
+
+// Headerbars
+.titlebar, headerbar {
+  border-bottom-color: gtkalpha(currentColor, 0.15);
+  &:backdrop {
+    border-bottom-color: gtkalpha(currentColor, 0.2);
+  }
+}
+
+// Titlebuttons
+button.titlebutton,
+windowcontrols > button {
+  color: transparent;
+  min-width: $titlebutton_size;
+  min-height: $titlebutton_size;
+}
+
+button.titlebutton:backdrop {
+  opacity: 0.5;
+}
+
+windowcontrols > button {
+  border-radius: 100%;
+  padding: 0;
+  margin: 0 5px;
+
+  > image { padding: 0; }
+}
+
+button.titlebutton,
+windowcontrols > button {
+  &.close {
+    background-color: $titlebutton_close;
+
+    &:hover {
+      background-color: $titlebutton_close_hover;
+    }
+  }
+
+  &.maximize {
+    background-color: $titlebutton_maximize;
+
+    &:hover {
+      background-color: $titlebutton_maximize_hover;
+    }
+  }
+
+  &.minimize {
+    background-color: $titlebutton_minimize;
+
+    &:hover {
+      background-color: $titlebutton_minimize_hover;
+    }
+  }
+
+  &.close, &.maximize, &.minimize {
+    &:backdrop {
+      background-color: $titlebutton_backdrop;
+      &:hover {
+        background-color: $titlebutton_backdrop_hover;
+      }
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 3px rgba(0,0,0,0.3);
+    }
+  }
+}
+
+// Tabs
+notebook > header tab:not(:backdrop):checked.reorderable-page,
+tabbar tab:not(:backdrop):checked {
+  background-color: $headerbar_bg_color;
+}
+
+// Apps
+.nautilus-window .sidebar {
+  background-color: $view_bg_color;
+  &:backdrop {
+    background-color: $window_bg_color;
+  }
+}
