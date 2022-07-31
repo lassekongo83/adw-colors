@@ -32,7 +32,7 @@
             <td><a href="" title="github"></a></td>
         </tr>
         <tr>
-            <td><a href="./themes/Nord/gtk.css">Nord</a></td>
+            <td><a href="./themes/nord/gtk.css">Nord</a></td>
             <td><img src="./themes/nord/nord.png?raw=true" alt="Nord"></td>
             <td><a href="" title="github"></a></td>
         </tr>
@@ -42,7 +42,7 @@
             <td><a href="" title="github"></a></td>
         </tr>
         <tr>
-            <td><a href="./themes/Gruvbox-dark/gtk.css">Gruvbox-dark</a></td>
+            <td><a href="./themes/gruvbox-dark/gtk.css">Gruvbox-dark</a></td>
             <td><img src="./themes/gruvbox-dark/gruvbox-dark.png?raw=true" alt="Gruvbox-dark"></td>
             <td><a href="https://github.com/WryOpussum" title="github">WryOpussum</a></td>
         </tr>
@@ -62,12 +62,12 @@
             <td><a href="https://github.com/mobinjavari" title="github">MobinJavari</a></td>
         </tr>
         <tr>
-            <td><a href="./themes/Solarized/gtk.css">Solarized</a></td>
+            <td><a href="./themes/solarized/gtk.css">Solarized</a></td>
             <td><img src="./themes/solarized/solarized.png?raw=true" alt="Solarized"></td>
             <td><a href="https://github.com/davidphilipbarr" title="github">davidphilipbarr</a></td>
         </tr>
         <tr>
-            <td><a href="./themes/Solarized-dark/gtk.css">Solarized-dark</a></td>
+            <td><a href="./themes/solarized-dark/gtk.css">Solarized-dark</a></td>
             <td><img src="./themes/solarized-dark/solarized-dark.png?raw=true" alt="Solarized-dark"></td>
             <td><a href="https://github.com/davidphilipbarr" title="github">davidphilipbarr</a></td>
         </tr>
