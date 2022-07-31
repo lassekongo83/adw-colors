@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>adw-colors</h1>
+    <h1><a href="/">adw-colors</a></h1>
     <p> Style 
         <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/">libadwaita</a> and 
         <a href="https://github.com/lassekongo83/adw-gtk3">adw-gtk3</a> 
@@ -33,17 +33,17 @@
         </tr>
         <tr>
             <td><a href="./themes/Nord/gtk.css">Nord</a></td>
-            <td><img src="./themes/Nord/Nord.png?raw=true" alt="Nord"></td>
+            <td><img src="./themes/nord/nord.png?raw=true" alt="Nord"></td>
             <td><a href="" title="github"></a></td>
         </tr>
         <tr>
             <td><a href="./themes/Peninsula-dark/gtk.css">Peninsula-dark</a></td>
-            <td><img src="./themes/Peninsula-dark/Peninsula-dark.png?raw=true" alt="Peninsula-dark"></td>
+            <td><img src="./themes/Peninsula-dark/peninsula-dark.png?raw=true" alt="Peninsula-dark"></td>
             <td><a href="" title="github"></a></td>
         </tr>
         <tr>
             <td><a href="./themes/Gruvbox-dark/gtk.css">Gruvbox-dark</a></td>
-            <td><img src="./themes/Gruvbox-dark/Gruvbox-dark.png?raw=true" alt="Gruvbox-dark"></td>
+            <td><img src="./themes/gruvbox-dark/gruvbox-dark.png?raw=true" alt="Gruvbox-dark"></td>
             <td><a href="https://github.com/WryOpussum" title="github">WryOpussum</a></td>
         </tr>
         <tr>
@@ -63,12 +63,12 @@
         </tr>
         <tr>
             <td><a href="./themes/Solarized/gtk.css">Solarized</a></td>
-            <td><img src="./themes/Solarized/Solarized.png?raw=true" alt="Solarized"></td>
+            <td><img src="./themes/solarized/solarized.png?raw=true" alt="Solarized"></td>
             <td><a href="https://github.com/davidphilipbarr" title="github">davidphilipbarr</a></td>
         </tr>
         <tr>
             <td><a href="./themes/Solarized-dark/gtk.css">Solarized-dark</a></td>
-            <td><img src="./themes/Solarized-dark/Solarized-dark.png?raw=true" alt="Solarized-dark"></td>
+            <td><img src="./themes/solarized-dark/solarized-dark.png?raw=true" alt="Solarized-dark"></td>
             <td><a href="https://github.com/davidphilipbarr" title="github">davidphilipbarr</a></td>
         </tr>
         <tr>
