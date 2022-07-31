@@ -1,5 +1,5 @@
 <div align="center">
-    <h1><a href="/">adw-colors</a></h1>
+    <h1>Adw Colors</h1>
     <p> Style 
         <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/">libadwaita</a> and 
         <a href="https://github.com/lassekongo83/adw-gtk3">adw-gtk3</a> 
