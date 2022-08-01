@@ -1,36 +1,85 @@
 <div align="center">
-
-# adw-colors
-Style [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/) and [adw-gtk3](https://github.com/lassekongo83/adw-gtk3) with named colors.
-
-[How to create your own color themes.](https://github.com/lassekongo83/adw-colors/blob/main/HOWTO.md)
-
+    <h1>Adw Colors</h1>
+    <p> Style 
+        <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/">libadwaita</a> and 
+        <a href="https://github.com/lassekongo83/adw-gtk3">adw-gtk3</a> 
+        with named colors.
+    </p>
+    <a href="./HOWTO.md">How to create your own color themes.</a><br><br><br>
+    <ol align="left">
+        <li>Copy one of the files below to <code>~/.config/gtk-4.0/gtk.css</code> (Make backups if the file already exists).</li>
+        <li>Enable the corresponding color preference in <code>gnome-tweaks</code> and <code>gnome-control-center</code>. [e.g Dark for dark color themes.]</li>
+        <li>Create a symbolic link to the gtk-3.0 folder: <code>ln -s ~/.config/gtk-4.0/gtk.css ~/.config/gtk-3.0/gtk.css</code></li>
+        <li>If you use flatpak apps, run:</li><br>
+        <pre><code>sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0</code></pre>
+        <li>Restart any open applications or log out and in again.</li>
+    </ol>
 </div>
 
-1. Copy one of the files below to `~/.config/gtk-4.0/gtk.css` (Make backups if the file already exists).
-2. Enable the corresponding color preference in `gnome-tweaks` and `gnome-control-center`. [e.g Dark for dark color themes.]
-3. Create a symbolic link to the gtk-3.0 folder: `ln -s ~/.config/gtk-4.0/gtk.css ~/.config/gtk-3.0/gtk.css`
-4. If you use flatpak apps, run:
+<br><br><br><br>
 
-```bash
-sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0
-```
-
-5. Restart any open applications or log out and in again.
-  
 <div align="center">
-
-## Available themes
-| Color theme | Info / Screenshot | Submitted by |
-|:------------|:------------------|:-------------|
-| [Dracula](https://github.com/lassekongo83/adw-colors/tree/main/themes/dracula/gtk.css) | ![dracula](/themes/dracula/dracula.png?raw=true) |
-| [Nord](https://github.com/lassekongo83/adw-colors/tree/main/themes/nord/gtk.css) | ![nord](/themes/nord/nord.png?raw=true) 
-| [Peninsula-dark](https://github.com/lassekongo83/adw-colors/tree/main/themes/Peninsula-dark/gtk.css) | ![Peninsula-dark](/themes/Peninsula-dark/peninsula-dark.png?raw=true) |
-[Gruvbox-dark](https://github.com/lassekongo83/adw-colors/blob/main/themes/gruvbox-dark/gtk.css) | ![gruvbox-dark](/themes/gruvbox-dark/gruvbox-dark.png?raw=true) | [WryOpussum](https://github.com/WryOpussum) |
-| [Solarized](https://github.com/lassekongo83/adw-colors/blob/main/themes/solarized/gtk.css) | ![solarized](/themes/solarized/solarized.png?raw=true) | [davidphilipbarr](https://github.com/davidphilipbarr) |
-| [Solarized-dark](https://github.com/lassekongo83/adw-colors/blob/main/themes/solarized-dark/gtk.css) | ![solarized](/themes/solarized-dark/solarized-dark.png?raw=true) | [davidphilipbarr](https://github.com/davidphilipbarr) |
-| [adw-hc-dark](https://github.com/lassekongo83/adw-colors/blob/main/themes/adw-hc-dark/gtk.css) | A slightly higher contrast libadwaita dark theme. [Screenshot](/themes/adw-hc-dark/screenshot.png?raw=true). |
-| [adw-hc-light](https://github.com/lassekongo83/adw-colors/blob/main/themes/adw-hc-light/gtk.css) | A slightly higher contrast libadwaita light theme. [Screenshot](/themes/adw-hc-light/screenshot.png?raw=true). |
-
+    <h1>Available themes</h1><br>
+    <table>
+        <tr>
+            <th>Color theme</th>
+            <th>Info / Screenshot</th>
+            <th>Submitted by</th>
+        </tr>
+        <tr>
+            <td><a href="./themes/dracula/gtk.css">Dracula</a></td>
+            <td><img src="./themes/dracula/dracula.png?raw=true" alt="Dracula"></td>
+            <td><a href="" title="github"></a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/nord/gtk.css">Nord</a></td>
+            <td><img src="./themes/nord/nord.png?raw=true" alt="Nord"></td>
+            <td><a href="" title="github"></a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/Peninsula-dark/gtk.css">Peninsula-dark</a></td>
+            <td><img src="./themes/Peninsula-dark/peninsula-dark.png?raw=true" alt="Peninsula-dark"></td>
+            <td><a href="" title="github"></a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/gruvbox-dark/gtk.css">Gruvbox-dark</a></td>
+            <td><img src="./themes/gruvbox-dark/gruvbox-dark.png?raw=true" alt="Gruvbox-dark"></td>
+            <td><a href="https://github.com/WryOpussum" title="github">WryOpussum</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/alpha-black/gtk.css">Alpha-black</a></td>
+            <td><img src="./themes/alpha-black/preview.png?raw=true" alt="Alpha-black"></td>
+            <td><a href="https://github.com/mobinjavari" title="github">MobinJavari</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/alpha-dark/gtk.css">Alpha-dark</a></td>
+            <td><img src="./themes/alpha-dark/preview.png?raw=true" alt="Alpha-dark"></td>
+            <td><a href="https://github.com/mobinjavari" title="github">MobinJavari</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/alpha-mac/gtk.css">Alpha-mac</a></td>
+            <td><img src="./themes/alpha-mac/preview.png?raw=true" alt="Alpha-mac"></td>
+            <td><a href="https://github.com/mobinjavari" title="github">MobinJavari</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/solarized/gtk.css">Solarized</a></td>
+            <td><img src="./themes/solarized/solarized.png?raw=true" alt="Solarized"></td>
+            <td><a href="https://github.com/davidphilipbarr" title="github">davidphilipbarr</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/solarized-dark/gtk.css">Solarized-dark</a></td>
+            <td><img src="./themes/solarized-dark/solarized-dark.png?raw=true" alt="Solarized-dark"></td>
+            <td><a href="https://github.com/davidphilipbarr" title="github">davidphilipbarr</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/adw-hc-dark/gtk.css">adw-hc-dark</a></td>
+            <td><p>A slightly higher contrast libadwaita dark theme. <a href="./themes/adw-hc-dark/screenshot.png?raw=true">Screenshot</a>.</p></td>
+            <td><a href="" title="github"></a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/adw-hc-light/gtk.css">adw-hc-light</a></td>
+            <td><p>A slightly higher contrast libadwaita dark theme. <a href="./themes/adw-hc-light/screenshot.png?raw=true">Screenshot</a>.</p></td>
+            <td><a href="" title="github"></a></td>
+        </tr>
+    </table>
 </div>
-
