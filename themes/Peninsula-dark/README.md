@@ -19,7 +19,9 @@ If you don't want to run the install script you can install the theme manually.
 3. Create a symbolic link to the gtk-3.0 folder: `ln -s ~/.config/gtk-4.0/gtk.css ~/.config/gtk-3.0/gtk.css`
 
 ### How to uninstall
+Run: `sh uninstall.sh`
 
+#### Manual uninstall
 1. Remove the gtk.css links: `rm ~/.config/gtk-3.0/gtk.css && rm ~/.config/gtk-4.0/gtk.css`
 2. Restore any backups if the install script created any.
 
