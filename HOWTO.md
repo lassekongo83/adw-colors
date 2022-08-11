@@ -43,6 +43,8 @@ card_bg_color            # The background color of lists
 card_fg_color            # The text color on libhandy lists
 popover_bg_color         # The background color of popovers and menus
 popover_fg_color         # The text color on popovers
+dialog_bg_color          # The background color of message dialogs
+dialog_fg_color          # The foreground color of message dialogs
 
 warning_bg_color         # Background for widgets and elements that show a warning
 warning_fg_color         # Foreground for widgets and elements that show a warning
