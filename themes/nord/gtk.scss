@@ -40,6 +40,8 @@
 @define-color headerbar_fg_color @window_fg_color;
 @define-color popover_bg_color #4C566A;
 @define-color popover_fg_color @view_fg_color;
+@define-color dialog_bg_color @popover_bg_color;
+@define-color dialog_fg_color @popover_fg_color;
 @define-color card_bg_color @popover_bg_color;
 @define-color card_fg_color @window_fg_color;
 // These variables are the ones we use
@@ -55,6 +57,8 @@ $headerbar_backdrop_color: gtkcolor(headerbar_backdrop_color);
 $headerbar_fg_color: gtkcolor(headerbar_fg_color);
 $popover_bg_color: gtkcolor(popover_bg_color);
 $popover_fg_color: gtkcolor(popover_fg_color);
+$dialog_bg_color: gtkcolor(dialog_bg_color);
+$dialog_fg_color: gtkcolor(dialog_fg_color);
 $card_bg_color: gtkcolor(card_bg_color);
 $card_fg_color: gtkcolor(card_fg_color);
 

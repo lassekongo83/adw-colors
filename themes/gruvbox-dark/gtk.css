@@ -25,6 +25,8 @@
 @define-color headerbar_fg_color @window_fg_color;
 @define-color popover_bg_color #627321;
 @define-color popover_fg_color @view_fg_color;
+@define-color dialog_bg_color @popover_bg_color;
+@define-color dialog_fg_color @popover_fg_color;
 @define-color card_bg_color rgba(255, 255, 255, 0.08);
 @define-color card_fg_color @window_fg_color;
 

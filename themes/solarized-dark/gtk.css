@@ -14,6 +14,9 @@
 @define-color popover_bg_color #123a44;
 @define-color popover_fg_color #eee8d5;
 
+@define-color dialog_bg_color @popover_bg_color;
+@define-color dialog_fg_color @popover_fg_color;
+
 @define-color view_bg_color #073642;
 @define-color view_fg_color #eee8d5;
 
