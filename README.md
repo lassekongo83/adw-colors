@@ -16,7 +16,9 @@
     </ol>
 </div>
 
-<br><br><br><br>
+Tip: Use different color themes for different Flatpak apps. Add a different gtk.css file to `/home/user/.var/app/[name of flatpak app]/config/gtk-4.0/` (or gtk-3.0).
+
+<br><br>
 
 <div align="center">
     <h1>Available themes</h1><br>
