@@ -83,5 +83,15 @@ Tip: Use different color themes for different Flatpak apps. Add a different gtk.
             <td><p>A slightly higher contrast libadwaita dark theme. <a href="./themes/adw-hc-light/screenshot.png?raw=true">Screenshot</a>.</p></td>
             <td><a href="" title="github"></a></td>
         </tr>
+        <tr>
+            <td><a href="./themes/yaru/gtk.css">yaru</a></td>
+            <td><p>Yaru accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-dark/gtk.css">yaru-dark</a></td>
+            <td><p>Yaru-dark accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
     </table>
 </div>
