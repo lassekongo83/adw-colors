@@ -93,5 +93,95 @@ Tip: Use different color themes for different Flatpak apps. Add a different gtk.
             <td><p>Yaru-dark accent-color theme.</p></td>
             <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
         </tr>
+        <tr>
+            <td><a href="./themes/yaru-bark/gtk.css">yaru-bark</a></td>
+            <td><p>Yaru-bark accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-bark-dark/gtk.css">yaru-bark-dark</a></td>
+            <td><p>Yaru-bark-dark accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-blue/gtk.css">yaru-blue</a></td>
+            <td><p>Yaru-blue accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-blue-dark/gtk.css">yaru-blue-dark</a></td>
+            <td><p>Yaru-blue-dark accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-magenta/gtk.css">yaru-magenta</a></td>
+            <td><p>Yaru-magenta accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-magenta-dark/gtk.css">yaru-magenta-dark</a></td>
+            <td><p>Yaru-magenta-dark accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-olive/gtk.css">yaru-olive</a></td>
+            <td><p>Yaru-olive accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-olive-dark/gtk.css">yaru-olive-dark</a></td>
+            <td><p>Yaru-olive-dark accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-prussiangreen/gtk.css">yaru-prussiangreen</a></td>
+            <td><p>Yaru-prussiangreen accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-prussiangreen-dark/gtk.css">yaru-prussiangreen-dark</a></td>
+            <td><p>Yaru-prussiangreen-dark accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-purple/gtk.css">yaru-purple</a></td>
+            <td><p>Yaru-purple accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-purple-dark/gtk.css">yaru-purple-dark</a></td>
+            <td><p>Yaru-purple-dark accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-red/gtk.css">yaru-red</a></td>
+            <td><p>Yaru-red accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-red-dark/gtk.css">yaru-red-dark</a></td>
+            <td><p>Yaru-red-dark accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-sage/gtk.css">yaru-sage</a></td>
+            <td><p>Yaru-sage accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-sage-dark/gtk.css">yaru-sage-dark</a></td>
+            <td><p>Yaru-sage-dark accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-viridian/gtk.css">yaru-viridian</a></td>
+            <td><p>Yaru-viridian accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
+        <tr>
+            <td><a href="./themes/yaru-sage-dark/gtk.css">yaru-viridian-dark</a></td>
+            <td><p>Yaru-viridian-dark accent-color theme.</p></td>
+            <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
+        </tr>
     </table>
 </div>
