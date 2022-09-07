@@ -30,24 +30,3 @@
 @define-color error_bg_color @red_4;
 @define-color error_fg_color @light_1;
 @define-color error_color @red_4;
-
-// Window
-@define-color window_bg_color #{if($variant == 'light', #fafafa, lighten(#181818, 8%))};
-@define-color window_fg_color #{if($variant=='light', '@dark_3', '@light_2')};
-
-// Views - e.g. text view or tree view
-@define-color view_bg_color #{if($variant == 'light', #ffffff, #1e1e1e)};
-@define-color view_fg_color #{if($variant == 'light', #000000, #ffffff)};
-
-// Header bar, search bar, tab bar
-@define-color headerbar_bg_color #{if($variant == 'light', #ebebeb, #303030)};
-@define-color headerbar_fg_color #{if($variant == 'light', transparentize(black, .2), white)};
-@define-color headerbar_backdrop_color @window_bg_color;
-
-// Cards, boxed lists
-@define-color card_bg_color #{if($variant == 'light', #ffffff, transparentize(white, .92))};
-@define-color card_fg_color #{if($variant == 'light', transparentize(black, .2), white)};
-
-// Popovers
-@define-color popover_bg_color #{if($variant == 'light', #ffffff, #383838)};
-@define-color popover_fg_color #{if($variant == 'light', transparentize(black, .2), white)};
