@@ -62,21 +62,6 @@
 @define-color error_bg_color @red_4;
 @define-color error_fg_color @light_1;
 @define-color error_color @red_4;
-@define-color window_bg_color #fafafa;
-@define-color window_fg_color @dark_3;
-@define-color view_bg_color #ffffff;
-@define-color view_fg_color #000000;
-@define-color headerbar_bg_color #ebebeb;
-@define-color headerbar_fg_color rgba(0, 0, 0, 0.8);
-@define-color headerbar_backdrop_color @window_bg_color;
-@define-color card_bg_color #ffffff;
-@define-color card_fg_color rgba(0, 0, 0, 0.8);
-@define-color popover_bg_color #ffffff;
-@define-color popover_fg_color rgba(0, 0, 0, 0.8);
-.sidebar {
-  background-color: @window_bg_color;
-}
-
 popover.menu check,
 popover.menu radio {
   transition: none;

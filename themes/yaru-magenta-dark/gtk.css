@@ -62,25 +62,6 @@
 @define-color error_bg_color @red_4;
 @define-color error_fg_color @light_1;
 @define-color error_color @red_4;
-@define-color window_bg_color #2c2c2c;
-@define-color window_fg_color @light_2;
-@define-color view_bg_color #1e1e1e;
-@define-color view_fg_color #ffffff;
-@define-color headerbar_bg_color #303030;
-@define-color headerbar_fg_color white;
-@define-color headerbar_backdrop_color @window_bg_color;
-@define-color card_bg_color rgba(255, 255, 255, 0.08);
-@define-color card_fg_color white;
-@define-color popover_bg_color #383838;
-@define-color popover_fg_color white;
-.sidebar {
-  background-color: @window_bg_color;
-}
-
-notebook entry {
-  background-color: mix(@view_bg_color,black,0.02);
-}
-
 popover.menu check,
 popover.menu radio {
   transition: none;

@@ -1,17 +1,3 @@
-// Reducing the amount of the palette's background colors to two
-.sidebar {
-	background-color: $window_bg_color;
-}
-
-// Entries drown if drawn on widgets with $base_color
-// Fixing this at least for notebooks, since entries on tabs is a common pattern
-// Remove this when upstream makes entries have a light border in the dark theme
-@if $variant== "dark" {
-	notebook entry {
-			background-color: gtkmix($view_bg_color, black, 98%);
-	}
-}
-
 // Fix popover wiggling effect (see #2903)
 popover.menu {
 	check,
