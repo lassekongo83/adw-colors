@@ -2,7 +2,7 @@
 
 @define-color window_bg_color #101010;
 @define-color window_fg_color #f8f8f2;
-@define-color view_bg_color #101010;
+@define-color view_bg_color #111111;
 @define-color view_fg_color @window_fg_color;
 @define-color accent_bg_color #1161cb;
 @define-color accent_color @accent_bg_color;
@@ -12,7 +12,7 @@
 @define-color popover_fg_color @view_fg_color;
 @define-color dialog_bg_color @popover_bg_color;
 @define-color dialog_fg_color @popover_fg_color;
-@define-color card_bg_color rgba(255, 255, 255, 0.08);
+@define-color card_bg_color #ffffff14;
 @define-color card_fg_color @window_fg_color;
 
 /* More customizations */
