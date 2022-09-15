@@ -41,7 +41,7 @@ windowcontrols > button > image {
 
 button.titlebutton.close,
 windowcontrols > button.close {
-  background-color: #505050;
+  background-color: #606060;
 }
 
 button.titlebutton.close:hover,
@@ -51,7 +51,7 @@ windowcontrols > button.close:hover {
 
 button.titlebutton.maximize,
 windowcontrols > button.maximize {
-  background-color: #505050;
+  background-color: #606060;
 }
 
 button.titlebutton.maximize:hover,
@@ -61,7 +61,7 @@ windowcontrols > button.maximize:hover {
 
 button.titlebutton.minimize,
 windowcontrols > button.minimize {
-  background-color: #505050;
+  background-color: #606060;
 }
 
 button.titlebutton.minimize:hover,
