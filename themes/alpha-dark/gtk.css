@@ -1,14 +1,14 @@
 /* Global color definitions */
 
-@define-color window_bg_color #101010;
+@define-color window_bg_color #141414;
 @define-color window_fg_color #f8f8f2;
-@define-color view_bg_color #101010;
+@define-color view_bg_color #181818;
 @define-color view_fg_color @window_fg_color;
 @define-color accent_bg_color #1161cb;
 @define-color accent_color @accent_bg_color;
 @define-color headerbar_bg_color @window_bg_color;
 @define-color headerbar_fg_color @window_fg_color;
-@define-color popover_bg_color #202020;
+@define-color popover_bg_color #252525;
 @define-color popover_fg_color @view_fg_color;
 @define-color dialog_bg_color @popover_bg_color;
 @define-color dialog_fg_color @popover_fg_color;
@@ -41,7 +41,7 @@ windowcontrols > button > image {
 
 button.titlebutton.close,
 windowcontrols > button.close {
-  background-color: #505050;
+  background-color: #606060;
 }
 
 button.titlebutton.close:hover,
@@ -51,7 +51,7 @@ windowcontrols > button.close:hover {
 
 button.titlebutton.maximize,
 windowcontrols > button.maximize {
-  background-color: #505050;
+  background-color: #606060;
 }
 
 button.titlebutton.maximize:hover,
@@ -61,7 +61,7 @@ windowcontrols > button.maximize:hover {
 
 button.titlebutton.minimize,
 windowcontrols > button.minimize {
-  background-color: #505050;
+  background-color: #606060;
 }
 
 button.titlebutton.minimize:hover,
