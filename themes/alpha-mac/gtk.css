@@ -4,7 +4,7 @@
 @define-color window_fg_color #f8f8f2;
 @define-color view_bg_color #111111;
 @define-color view_fg_color @window_fg_color;
-@define-color accent_bg_color #1161cb;
+@define-color accent_bg_color #1f6feb;
 @define-color accent_color @accent_bg_color;
 @define-color headerbar_bg_color @window_bg_color;
 @define-color headerbar_fg_color @window_fg_color;
