@@ -37,10 +37,13 @@ accent_bg_color          # Color to indicate that a widget is important, interac
 accent_fg_color          # Color for text over widgets using accent_bg_color
 accent_color             # Mostly used for text labels. Can be the same as accent_bg_color
 headerbar_bg_color       # The headerbar background
-headerbar_backdrop_color # The headerbar backdrop state background
 headerbar_fg_color       # The headerbar foreground text color
+headerbar_backdrop_color # The headerbar backdrop state background
+headerbar_border_color   # Currently not used in adw-gtk3
+headerbar_shade_color    # The bottom border of the headerbar
 card_bg_color            # The background color of lists
 card_fg_color            # The text color on libhandy lists
+card_shade_color         # List borders
 popover_bg_color         # The background color of popovers and menus
 popover_fg_color         # The text color on popovers
 dialog_bg_color          # The background color of message dialogs
@@ -62,6 +65,7 @@ destructive_color        # Destructive text label
 # Custom colors (GTK3 only)
 panel_bg_color           # Background for XFCE4 panel
 panel_fg_color           # Foreground for XFCE4 panel
+incognito_bg_color       # adw-gtk3 only: For epiphany (Gnome web gtk3 version) incognito headerbar
 ```
 
 Plus the colors from the [theme's palette](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk/src/adw-gtk3/gtk-3.0/_palette.scss).
