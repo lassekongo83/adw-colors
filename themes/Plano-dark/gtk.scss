@@ -28,14 +28,14 @@
 }
 
 // Color values are set here
-@define-color window_bg_color #33393b;
+@define-color window_bg_color #1c1d21;
 @define-color window_fg_color #eeeeec;
-@define-color view_bg_color #232729;
+@define-color view_bg_color #121317;
 @define-color view_fg_color #ffffff;
 @define-color accent_bg_color #4a90d9;
 @define-color accent_fg_color #ffffff;
 @define-color accent_color @accent_bg_color;
-@define-color headerbar_bg_color shade(@window_bg_color, 1.08);
+@define-color headerbar_bg_color #26272b;
 @define-color headerbar_backdrop_color @window_bg_color;
 @define-color headerbar_fg_color @window_fg_color;
 @define-color headerbar_shade_color transparent;
@@ -193,5 +193,15 @@ tabbar tab:checked {
 // Buttons
 // WIP. There are a lot of buttons to check.
 button {
-  &:not(.close):not(.minimize):not(.maximize) { border-radius: 0; }
+  &:not(.close):not(.minimize):not(.maximize) {
+    border-radius: 0;
+    &:not(.flat),
+    &:not(.osd) {
+      //box-shadow: inset 0 0 0 1px gtkalpha(currentColor, 0.1);
+      &:hover {
+        box-shadow: inset 0 0 0 1px $accent_bg_color,
+                    0 0 0 2px gtkalpha($accent_bg_color, 0.2);
+      }
+    }
+  }
 }
