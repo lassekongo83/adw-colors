@@ -1,0 +1,197 @@
+// Plano-dark theme for libadwaita
+// and adw-gtk3 - https://github.com/lassekongo83/adw-gtk3
+
+// THIS THEME IS AN UNFINISHED WIP
+
+// How to use: https://github.com/lassekongo83/adw-colors
+
+// If you make any modifications to this file you'll have to run:
+// sassc -M -t expanded gtk.scss gtk.css
+// to generate the css file.
+
+// Gtk color functions
+@function gtkalpha($c,$a) {
+  @return unquote("alpha(#{$c},#{$a})");
+}
+
+@function gtkmix($c1,$c2,$r) {
+  $ratio: 1 -  $r / 100%; // match SCSS mix()
+  @return unquote("mix(#{$c1},#{$c2},#{$ratio})");
+}
+
+@function gtkshade($c,$s) {
+  @return unquote("shade(#{$c},#{$s})");
+}
+
+@function gtkcolor($c) {
+  @return unquote("@#{$c}");
+}
+
+// Color values are set here
+@define-color window_bg_color #33393b;
+@define-color window_fg_color #eeeeec;
+@define-color view_bg_color #232729;
+@define-color view_fg_color #ffffff;
+@define-color accent_bg_color #4a90d9;
+@define-color accent_fg_color #ffffff;
+@define-color accent_color @accent_bg_color;
+@define-color headerbar_bg_color shade(@window_bg_color, 1.08);
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color headerbar_shade_color transparent;
+@define-color popover_bg_color @view_bg_color;
+@define-color popover_fg_color @view_fg_color;
+@define-color dialog_bg_color @popover_bg_color;
+@define-color dialog_fg_color @popover_fg_color;
+@define-color card_bg_color @view_bg_color;
+@define-color card_fg_color @view_fg_color;
+// These variables are the ones we use
+$window_bg_color: gtkcolor(window_bg_color);
+$window_fg_color: gtkcolor(window_fg_color);
+$view_bg_color: gtkcolor(view_bg_color);
+$view_fg_color: gtkcolor(view_fg_color);
+$accent_bg_color: gtkcolor(accent_bg_color);
+$accent_fg_color: gtkcolor(accent_fg_color);
+$accent_color: gtkcolor(accent_color);
+$headerbar_bg_color: gtkcolor(headerbar_bg_color);
+$headerbar_backdrop_color: gtkcolor(headerbar_backdrop_color);
+$headerbar_fg_color: gtkcolor(headerbar_fg_color);
+$headerbar_shade_color: gtkcolor(headerbar_shade_color);
+$popover_bg_color: gtkcolor(popover_bg_color);
+$popover_fg_color: gtkcolor(popover_fg_color);
+$dialog_bg_color: gtkcolor(dialog_bg_color);
+$dialog_fg_color: gtkcolor(dialog_fg_color);
+$card_bg_color: gtkcolor(card_bg_color);
+$card_fg_color: gtkcolor(card_fg_color);
+
+// Other variables for this theme
+$border_color: gtkalpha(currentColor, .15);
+$close_button: #a45f5f;
+
+$headerbar_height: 46px; // anything else will look strange on some libadwaita apps
+$titlebutton_width: 20px;
+$titlebutton_height: 20px;
+
+// Decoration
+window,
+decoration,
+decoration-overlay,
+headerbar, .titlebar {
+  border-radius: 0;
+}
+
+// Titlebuttons
+windowcontrols > button,
+button.titlebutton:not(.appmenu) {
+  min-width: $titlebutton_width;
+  min-height: $titlebutton_height;
+  padding: 0;
+}
+
+button.titlebutton {
+  margin: 4px;
+  border: none;
+}
+
+windowcontrols > button,
+button.titlebutton {
+  &.close, &.maximize, &.minimize {
+    background-color: transparent;
+    transition-property: background-color;
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 1.5px;
+
+    > image {
+      opacity: 0;
+    }
+  }
+
+  &.maximize, &.minimize {
+    &:hover {
+      background-color: $accent_bg_color;
+    }
+  }
+
+  &.close {
+    background-image: url('assets/titlebutton-close.png');
+    background-color: $close_button;
+
+    &:hover {
+      background-color: gtkshade($close_button, 1.1);
+    }
+  }
+
+  &.maximize {
+    background-image: url('assets/titlebutton-maximize.png');
+
+    &:backdrop {
+      &:hover {
+        background-color: gtkshade($headerbar_backdrop_color, 1.2);
+      }
+    }
+  }
+
+  &.minimize {
+    background-image: url('assets/titlebutton-minimize.png');
+
+    &:backdrop {
+      &:hover {
+        background-color: gtkshade($headerbar_backdrop_color, 1.2);
+      }
+    }
+  }
+}
+
+headerbar, .titlebar {
+  .maximized & {
+    button.titlebutton,
+    windowcontrols button {
+      &.maximize {
+        background-image: url('assets/titlebutton-unmaximize.png');
+      }
+    }
+  }
+}
+
+windowcontrols > button {
+  margin: 5px; // Close enough
+  > image {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+}
+
+//windowcontrols {
+//  &.end { margin-right: 4px; }
+//  &.start { margin-left: 4px; }
+//}
+
+// Tabs
+notebook > header tab:checked.reorderable-page,
+tabbar tab:checked {
+  background-color: $view_bg_color;
+  &:backdrop {
+    background-color: $window_bg_color;
+  }
+}
+
+// Sidebar rows
+.sidebar,
+.navigation-sidebar {
+  row.activatable {
+    border-radius: 0;
+    &:selected {
+      box-shadow: inset 0 0 0 1px gtkalpha($accent_bg_color, 0.4);
+      background: gtkalpha($accent_bg_color, 0.1);
+    }
+  }
+}
+
+// Buttons
+// WIP. There are a lot of buttons to check.
+button {
+  &:not(.close):not(.minimize):not(.maximize) { border-radius: 0; }
+}

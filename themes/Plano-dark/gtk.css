@@ -1,0 +1,132 @@
+@define-color window_bg_color #33393b;
+@define-color window_fg_color #eeeeec;
+@define-color view_bg_color #232729;
+@define-color view_fg_color #ffffff;
+@define-color accent_bg_color #4a90d9;
+@define-color accent_fg_color #ffffff;
+@define-color accent_color @accent_bg_color;
+@define-color headerbar_bg_color shade(@window_bg_color, 1.08);
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color headerbar_shade_color transparent;
+@define-color popover_bg_color @view_bg_color;
+@define-color popover_fg_color @view_fg_color;
+@define-color dialog_bg_color @popover_bg_color;
+@define-color dialog_fg_color @popover_fg_color;
+@define-color card_bg_color @view_bg_color;
+@define-color card_fg_color @view_fg_color;
+window,
+decoration,
+decoration-overlay,
+headerbar, .titlebar {
+  border-radius: 0;
+}
+
+windowcontrols > button,
+button.titlebutton:not(.appmenu) {
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0;
+}
+
+button.titlebutton {
+  margin: 4px;
+  border: none;
+}
+
+windowcontrols > button.close, windowcontrols > button.maximize, windowcontrols > button.minimize,
+button.titlebutton.close,
+button.titlebutton.maximize,
+button.titlebutton.minimize {
+  background-color: transparent;
+  transition-property: background-color;
+  color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 1.5px;
+}
+
+windowcontrols > button.close > image, windowcontrols > button.maximize > image, windowcontrols > button.minimize > image,
+button.titlebutton.close > image,
+button.titlebutton.maximize > image,
+button.titlebutton.minimize > image {
+  opacity: 0;
+}
+
+windowcontrols > button.maximize:hover, windowcontrols > button.minimize:hover,
+button.titlebutton.maximize:hover,
+button.titlebutton.minimize:hover {
+  background-color: @accent_bg_color;
+}
+
+windowcontrols > button.close,
+button.titlebutton.close {
+  background-image: url("assets/titlebutton-close.png");
+  background-color: #a45f5f;
+}
+
+windowcontrols > button.close:hover,
+button.titlebutton.close:hover {
+  background-color: shade(#a45f5f,1.1);
+}
+
+windowcontrols > button.maximize,
+button.titlebutton.maximize {
+  background-image: url("assets/titlebutton-maximize.png");
+}
+
+windowcontrols > button.maximize:backdrop:hover,
+button.titlebutton.maximize:backdrop:hover {
+  background-color: shade(@headerbar_backdrop_color,1.2);
+}
+
+windowcontrols > button.minimize,
+button.titlebutton.minimize {
+  background-image: url("assets/titlebutton-minimize.png");
+}
+
+windowcontrols > button.minimize:backdrop:hover,
+button.titlebutton.minimize:backdrop:hover {
+  background-color: shade(@headerbar_backdrop_color,1.2);
+}
+
+.maximized headerbar button.titlebutton.maximize,
+.maximized headerbar windowcontrols button.maximize, .maximized .titlebar button.titlebutton.maximize,
+.maximized .titlebar windowcontrols button.maximize {
+  background-image: url("assets/titlebutton-unmaximize.png");
+}
+
+windowcontrols > button {
+  margin: 5px;
+}
+
+windowcontrols > button > image {
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+notebook > header tab:checked.reorderable-page,
+tabbar tab:checked {
+  background-color: @view_bg_color;
+}
+
+notebook > header tab:checked.reorderable-page:backdrop,
+tabbar tab:checked:backdrop {
+  background-color: @window_bg_color;
+}
+
+.sidebar row.activatable,
+.navigation-sidebar row.activatable {
+  border-radius: 0;
+}
+
+.sidebar row.activatable:selected,
+.navigation-sidebar row.activatable:selected {
+  box-shadow: inset 0 0 0 1px alpha(@accent_bg_color,0.4);
+  background: alpha(@accent_bg_color,0.1);
+}
+
+button:not(.close):not(.minimize):not(.maximize) {
+  border-radius: 0;
+}
