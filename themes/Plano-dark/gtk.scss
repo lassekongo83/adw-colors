@@ -39,10 +39,10 @@
 @define-color headerbar_backdrop_color @window_bg_color;
 @define-color headerbar_fg_color @window_fg_color;
 @define-color headerbar_shade_color transparent;
-@define-color popover_bg_color @view_bg_color;
-@define-color popover_fg_color @view_fg_color;
-@define-color dialog_bg_color @popover_bg_color;
-@define-color dialog_fg_color @popover_fg_color;
+@define-color popover_bg_color @headerbar_bg_color;
+@define-color popover_fg_color @headerbar_fg_color;
+@define-color dialog_bg_color @view_bg_color;
+@define-color dialog_fg_color @view_fg_color;
 @define-color card_bg_color @view_bg_color;
 @define-color card_fg_color @view_fg_color;
 // These variables are the ones we use
@@ -190,18 +190,46 @@ tabbar tab:checked {
   }
 }
 
+// Frames
+.frame, frame {
+  border-radius: 0;
+}
+
 // Buttons
 // WIP. There are a lot of buttons to check.
+// TODO: Make another version for GTK3.
 button {
   &:not(.close):not(.minimize):not(.maximize) {
     border-radius: 0;
     &:not(.flat),
     &:not(.osd) {
-      //box-shadow: inset 0 0 0 1px gtkalpha(currentColor, 0.1);
+      box-shadow: inset 0 0 0 1px gtkalpha(currentColor, 0.1);
+
       &:hover {
         box-shadow: inset 0 0 0 1px $accent_bg_color,
                     0 0 0 2px gtkalpha($accent_bg_color, 0.2);
       }
+
+      &:checked {
+        box-shadow: inset 0 0 0 1px gtkalpha(currentColor, 0.2);
+      }
     }
   }
+}
+
+headerbar button, .titlebar button {
+  &:not(.close):not(.minimize):not(.maximize) {
+    &:not(.flat),
+    &:not(.osd) {
+      &:not(:hover),
+      &:not(:checked) {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+spinbutton {
+  border-radius: 0;
+  box-shadow: none;
 }

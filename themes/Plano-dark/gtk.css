@@ -9,10 +9,10 @@
 @define-color headerbar_backdrop_color @window_bg_color;
 @define-color headerbar_fg_color @window_fg_color;
 @define-color headerbar_shade_color transparent;
-@define-color popover_bg_color @view_bg_color;
-@define-color popover_fg_color @view_fg_color;
-@define-color dialog_bg_color @popover_bg_color;
-@define-color dialog_fg_color @popover_fg_color;
+@define-color popover_bg_color @headerbar_bg_color;
+@define-color popover_fg_color @headerbar_fg_color;
+@define-color dialog_bg_color @view_bg_color;
+@define-color dialog_fg_color @view_fg_color;
 @define-color card_bg_color @view_bg_color;
 @define-color card_fg_color @view_fg_color;
 window,
@@ -127,10 +127,31 @@ tabbar tab:checked:backdrop {
   background: alpha(@accent_bg_color,0.1);
 }
 
+.frame, frame {
+  border-radius: 0;
+}
+
 button:not(.close):not(.minimize):not(.maximize) {
   border-radius: 0;
 }
 
+button:not(.close):not(.minimize):not(.maximize):not(.flat), button:not(.close):not(.minimize):not(.maximize):not(.osd) {
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.1);
+}
+
 button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, button:not(.close):not(.minimize):not(.maximize):not(.osd):hover {
   box-shadow: inset 0 0 0 1px @accent_bg_color, 0 0 0 2px alpha(@accent_bg_color,0.2);
+}
+
+button:not(.close):not(.minimize):not(.maximize):not(.flat):checked, button:not(.close):not(.minimize):not(.maximize):not(.osd):checked {
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.2);
+}
+
+headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:hover), headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:checked), headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:hover), headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:checked), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:hover), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:checked), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:hover), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:checked) {
+  box-shadow: none;
+}
+
+spinbutton {
+  border-radius: 0;
+  box-shadow: none;
 }

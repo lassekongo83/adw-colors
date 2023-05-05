@@ -6,12 +6,12 @@ gtk4_file="${HOME}/.config/gtk-4.0/gtk.css"
 backup_number=$(date +%s)
 
 # Checks for gnome
-if [ ! "$(pidof gnome-shell)" ]; then
-  echo "Error: To run this script you need to use GNOME."
-  exit 1
-else
-  true
-fi
+#if [ ! "$(pidof gnome-shell)" ]; then
+#  echo "Error: To run this script you need to use GNOME."
+#  exit 1
+#else
+#  true
+#fi
 
 # Check if adw-gtk3 is installed
 if [ -d "${HOME}/.local/share/themes/adw-gtk3" ]; then
