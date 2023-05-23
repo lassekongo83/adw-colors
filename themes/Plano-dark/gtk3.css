@@ -117,7 +117,7 @@ button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, button:not(.c
 }
 
 button:not(.close):not(.minimize):not(.maximize):not(.flat):checked, button:not(.close):not(.minimize):not(.maximize):not(.osd):checked {
-  border-color: alpha(currentColor,0.1);
+  border-color: alpha(currentColor,0.2);
 }
 
 headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:hover), headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:checked), headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:hover), headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:checked), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:hover), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:checked), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:hover), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:checked) {
