@@ -15,29 +15,13 @@
 @define-color dialog_fg_color @view_fg_color;
 @define-color card_bg_color @view_bg_color;
 @define-color card_fg_color @view_fg_color;
-window,
-decoration,
-decoration-overlay,
-headerbar, .titlebar {
-  border-radius: 0;
-}
-
-windowcontrols > button,
 button.titlebutton:not(.appmenu) {
   min-width: 20px;
   min-height: 20px;
   padding: 0;
 }
 
-button.titlebutton {
-  margin: 4px;
-  border: none;
-}
-
-windowcontrols > button.close, windowcontrols > button.maximize, windowcontrols > button.minimize,
-button.titlebutton.close,
-button.titlebutton.maximize,
-button.titlebutton.minimize {
+button.close.titlebutton:not(.appmenu), button.maximize.titlebutton:not(.appmenu), button.minimize.titlebutton:not(.appmenu) {
   background-color: transparent;
   transition-property: background-color;
   color: transparent;
@@ -46,64 +30,52 @@ button.titlebutton.minimize {
   border-radius: 1.5px;
 }
 
-windowcontrols > button.close > image, windowcontrols > button.maximize > image, windowcontrols > button.minimize > image,
-button.titlebutton.close > image,
-button.titlebutton.maximize > image,
-button.titlebutton.minimize > image {
+button.close.titlebutton:not(.appmenu) > image, button.maximize.titlebutton:not(.appmenu) > image, button.minimize.titlebutton:not(.appmenu) > image {
   opacity: 0;
 }
 
-windowcontrols > button.maximize:hover, windowcontrols > button.minimize:hover,
-button.titlebutton.maximize:hover,
-button.titlebutton.minimize:hover {
+button.maximize.titlebutton:hover:not(.appmenu), button.minimize.titlebutton:hover:not(.appmenu) {
   background-color: @accent_bg_color;
 }
 
-windowcontrols > button.close,
-button.titlebutton.close {
+button.close.titlebutton:not(.appmenu) {
   background-image: url("assets/titlebutton-close.png");
   background-color: #a45f5f;
 }
 
-windowcontrols > button.close:hover,
-button.titlebutton.close:hover {
+button.close.titlebutton:hover:not(.appmenu) {
   background-color: shade(#a45f5f,1.1);
 }
 
-windowcontrols > button.maximize,
-button.titlebutton.maximize {
+button.maximize.titlebutton:not(.appmenu) {
   background-image: url("assets/titlebutton-maximize.png");
 }
 
-windowcontrols > button.maximize:backdrop:hover,
-button.titlebutton.maximize:backdrop:hover {
+button.maximize.titlebutton:backdrop:hover:not(.appmenu) {
   background-color: shade(@headerbar_backdrop_color,1.2);
 }
 
-windowcontrols > button.minimize,
-button.titlebutton.minimize {
+button.minimize.titlebutton:not(.appmenu) {
   background-image: url("assets/titlebutton-minimize.png");
 }
 
-windowcontrols > button.minimize:backdrop:hover,
-button.titlebutton.minimize:backdrop:hover {
+button.minimize.titlebutton:backdrop:hover:not(.appmenu) {
   background-color: shade(@headerbar_backdrop_color,1.2);
 }
 
-.maximized headerbar button.titlebutton.maximize,
-.maximized headerbar windowcontrols button.maximize, .maximized .titlebar button.titlebutton.maximize,
-.maximized .titlebar windowcontrols button.maximize {
-  background-image: url("assets/titlebutton-unmaximize.png");
-}
-
-windowcontrols > button {
-  margin: 5px;
-}
-
-windowcontrols > button > image {
-  padding: 0;
+decoration,
+decoration-overlay,
+headerbar, .titlebar {
   border-radius: 0;
-  background-color: transparent;
+}
+
+button.titlebutton {
+  margin: 4px;
+  border: none;
+}
+
+.maximized headerbar button.titlebutton.maximize, .maximized .titlebar button.titlebutton.maximize {
+  background-image: url("assets/titlebutton-unmaximize.png");
 }
 
 notebook > header tab:checked.reorderable-page,
@@ -136,22 +108,34 @@ button:not(.close):not(.minimize):not(.maximize) {
 }
 
 button:not(.close):not(.minimize):not(.maximize):not(.flat), button:not(.close):not(.minimize):not(.maximize):not(.osd) {
-  box-shadow: inset 0 0 0 1px alpha(currentColor,0.1);
+  border-color: alpha(currentColor,0.1);
 }
 
 button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, button:not(.close):not(.minimize):not(.maximize):not(.osd):hover {
-  box-shadow: inset 0 0 0 1px @accent_bg_color, 0 0 0 2px alpha(@accent_bg_color,0.2);
+  box-shadow: 0 0 0 2px alpha(@accent_color,0.2);
+  border-color: @accent_color;
 }
 
 button:not(.close):not(.minimize):not(.maximize):not(.flat):checked, button:not(.close):not(.minimize):not(.maximize):not(.osd):checked {
-  box-shadow: inset 0 0 0 1px alpha(currentColor,0.2);
+  border-color: alpha(currentColor,0.1);
 }
 
 headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:hover), headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:checked), headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:hover), headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:checked), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:hover), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:checked), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:hover), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:checked) {
-  box-shadow: none;
+  border-color: transparent;
+}
+
+headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):hover, .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):hover {
+  box-shadow: 0 0 0 2px alpha(@accent_color,0.2);
+  border-color: @accent_color;
 }
 
 spinbutton {
   border-radius: 0;
   box-shadow: none;
+  border-color: transparent;
+}
+
+entry {
+  border-radius: 0;
+  border-color: alpha(currentColor,0.1);
 }

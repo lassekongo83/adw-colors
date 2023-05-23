@@ -56,8 +56,8 @@ else
 fi
 
 # Link the gtk.css file for gtk3 and gtk4
-ln -s "${script_dir}"/gtk.css "${gtk3_file}"
-ln -s "${script_dir}"/gtk.css "${gtk4_file}"
+ln -s "${script_dir}"/gtk3.css "${gtk3_file}"
+ln -s "${script_dir}"/gtk4.css "${gtk4_file}"
 ln -s "${script_dir}"/assets "${HOME}"/.config/gtk-3.0/assets
 ln -s "${script_dir}"/assets "${HOME}"/.config/gtk-4.0/assets
 

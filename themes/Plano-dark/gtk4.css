@@ -1,0 +1,162 @@
+@define-color window_bg_color #1c1d21;
+@define-color window_fg_color #eeeeec;
+@define-color view_bg_color #121317;
+@define-color view_fg_color #ffffff;
+@define-color accent_bg_color #4a90d9;
+@define-color accent_fg_color #ffffff;
+@define-color accent_color @accent_bg_color;
+@define-color headerbar_bg_color #26272b;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color headerbar_shade_color transparent;
+@define-color popover_bg_color @headerbar_bg_color;
+@define-color popover_fg_color @headerbar_fg_color;
+@define-color dialog_bg_color @view_bg_color;
+@define-color dialog_fg_color @view_fg_color;
+@define-color card_bg_color @view_bg_color;
+@define-color card_fg_color @view_fg_color;
+windowcontrols > button {
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0;
+}
+
+windowcontrols > button.close, windowcontrols > button.maximize, windowcontrols > button.minimize {
+  background-color: transparent;
+  transition-property: background-color;
+  color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 1.5px;
+}
+
+windowcontrols > button.close > image, windowcontrols > button.maximize > image, windowcontrols > button.minimize > image {
+  opacity: 0;
+}
+
+windowcontrols > button.maximize:hover, windowcontrols > button.minimize:hover {
+  background-color: @accent_bg_color;
+}
+
+windowcontrols > button.close {
+  background-image: url("assets/titlebutton-close.png");
+  background-color: #a45f5f;
+}
+
+windowcontrols > button.close:hover {
+  background-color: shade(#a45f5f,1.1);
+}
+
+windowcontrols > button.maximize {
+  background-image: url("assets/titlebutton-maximize.png");
+}
+
+windowcontrols > button.maximize:backdrop:hover {
+  background-color: shade(@headerbar_backdrop_color,1.2);
+}
+
+windowcontrols > button.minimize {
+  background-image: url("assets/titlebutton-minimize.png");
+}
+
+windowcontrols > button.minimize:backdrop:hover {
+  background-color: shade(@headerbar_backdrop_color,1.2);
+}
+
+window,
+headerbar, .titlebar {
+  border-radius: 0;
+}
+
+.maximized headerbar windowcontrols button.maximize, .maximized .titlebar windowcontrols button.maximize {
+  background-image: url("assets/titlebutton-unmaximize.png");
+}
+
+windowcontrols > button {
+  margin: 5px;
+}
+
+windowcontrols > button > image {
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+notebook > header tab:checked.reorderable-page,
+tabbar tab:checked {
+  background-color: @view_bg_color;
+}
+
+notebook > header tab:checked.reorderable-page:backdrop,
+tabbar tab:checked:backdrop {
+  background-color: @window_bg_color;
+}
+
+.sidebar row.activatable,
+.navigation-sidebar row.activatable {
+  border-radius: 0;
+}
+
+.sidebar row.activatable:selected,
+.navigation-sidebar row.activatable:selected {
+  box-shadow: inset 0 0 0 1px alpha(@accent_bg_color,0.4);
+  background: alpha(@accent_bg_color,0.1);
+}
+
+.frame, frame {
+  border-radius: 0;
+}
+
+button:not(.close):not(.minimize):not(.maximize) {
+  border-radius: 0;
+}
+
+button:not(.close):not(.minimize):not(.maximize):not(.flat), button:not(.close):not(.minimize):not(.maximize):not(.osd) {
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.1);
+}
+
+button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, button:not(.close):not(.minimize):not(.maximize):not(.osd):hover {
+  box-shadow: inset 0 0 0 1px @accent_color, 0 0 0 2px alpha(@accent_color,0.2);
+}
+
+button:not(.close):not(.minimize):not(.maximize):not(.flat):checked, button:not(.close):not(.minimize):not(.maximize):not(.osd):checked {
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.1);
+}
+
+headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:hover), headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:checked), headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:hover), headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:checked), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:hover), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:checked), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:hover), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:checked) {
+  box-shadow: none;
+}
+
+headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):hover, .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):hover {
+  box-shadow: inset 0 0 0 1px @accent_color, 0 0 0 2px alpha(@accent_color,0.2);
+}
+
+headerbar stackswitcher button {
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.1);
+}
+
+splitbutton {
+  border-radius: 0;
+}
+
+splitbutton:hover {
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.1);
+}
+
+spinbutton {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.linked {
+  border-radius: 0;
+}
+
+entry {
+  border-radius: 0;
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.1);
+}
+
+.nautilus-window headerbar .linked {
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.1);
+}

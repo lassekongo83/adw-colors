@@ -1,0 +1,102 @@
+// Decoration
+decoration,
+decoration-overlay,
+headerbar, .titlebar {
+  border-radius: 0;
+}
+
+// Titlebuttons
+button.titlebutton:not(.appmenu) {
+  @extend %titlebuttons;
+}
+
+button.titlebutton {
+  margin: 4px;
+  border: none;
+}
+
+headerbar, .titlebar {
+  .maximized & {
+    button.titlebutton {
+      &.maximize {
+        background-image: url('assets/titlebutton-unmaximize.png');
+      }
+    }
+  }
+}
+
+// Tabs
+notebook > header tab:checked.reorderable-page,
+tabbar tab:checked {
+  background-color: $view_bg_color;
+  &:backdrop {
+    background-color: $window_bg_color;
+  }
+}
+
+// Sidebar rows
+.sidebar,
+.navigation-sidebar {
+  row.activatable {
+    border-radius: $button_radius;
+    &:selected {
+      box-shadow: inset 0 0 0 1px gtkalpha($accent_bg_color, 0.4);
+      background: gtkalpha($accent_bg_color, 0.1);
+    }
+  }
+}
+
+// Frames
+.frame, frame {
+  border-radius: $button_radius;
+}
+
+// Buttons
+// WIP. There are a lot of buttons to check.
+button {
+  &:not(.close):not(.minimize):not(.maximize) {
+    border-radius: $button_radius;
+    &:not(.flat),
+    &:not(.osd) {
+      border-color: $button_normal_border;
+
+      &:hover {
+        box-shadow: 0 0 0 2px $button_outer_hover_border;
+        border-color: $button_inner_hover_border;
+      }
+
+      &:checked {
+        border-color: $button_checked_border;
+      }
+    }
+  }
+}
+
+headerbar button, .titlebar button {
+  &:not(.close):not(.minimize):not(.maximize) {
+    &:not(.flat),
+    &:not(.osd) {
+      &:not(:hover),
+      &:not(:checked) {
+        border-color: transparent;
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 2px $button_outer_hover_border;
+        border-color: $button_inner_hover_border;
+      }
+    }
+  }
+}
+
+spinbutton {
+  border-radius: $button_radius;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+// Entries
+entry {
+  border-radius: $button_radius;
+  border-color: $button_normal_border;
+}

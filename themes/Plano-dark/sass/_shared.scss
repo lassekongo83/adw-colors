@@ -1,13 +1,5 @@
-// Plano-dark theme for libadwaita
-// and adw-gtk3 - https://github.com/lassekongo83/adw-gtk3
-
-// THIS THEME IS AN UNFINISHED WIP
-
-// How to use: https://github.com/lassekongo83/adw-colors
-
-// If you make any modifications to this file you'll have to run:
-// sassc -M -t expanded gtk.scss gtk.css
-// to generate the css file.
+// This file contains everything that can be shared between gtk4 and gtk3
+// such as color values, mixins, functions, and some css
 
 // Gtk color functions
 @function gtkalpha($c,$a) {
@@ -65,36 +57,24 @@ $card_bg_color: gtkcolor(card_bg_color);
 $card_fg_color: gtkcolor(card_fg_color);
 
 // Other variables for this theme
+$button_radius: 0;
 $border_color: gtkalpha(currentColor, .15);
 $close_button: #a45f5f;
+
+$button_normal_border: gtkalpha(currentColor, 0.1);
+$button_checked_border: gtkalpha(currentColor, 0.1);
+$button_inner_hover_border: $accent_color;
+$button_outer_hover_border: gtkalpha($accent_color, 0.2);
 
 $headerbar_height: 46px; // anything else will look strange on some libadwaita apps
 $titlebutton_width: 20px;
 $titlebutton_height: 20px;
 
-// Decoration
-window,
-decoration,
-decoration-overlay,
-headerbar, .titlebar {
-  border-radius: 0;
-}
-
-// Titlebuttons
-windowcontrols > button,
-button.titlebutton:not(.appmenu) {
+%titlebuttons {
   min-width: $titlebutton_width;
   min-height: $titlebutton_height;
   padding: 0;
-}
 
-button.titlebutton {
-  margin: 4px;
-  border: none;
-}
-
-windowcontrols > button,
-button.titlebutton {
   &.close, &.maximize, &.minimize {
     background-color: transparent;
     transition-property: background-color;
@@ -142,94 +122,4 @@ button.titlebutton {
       }
     }
   }
-}
-
-headerbar, .titlebar {
-  .maximized & {
-    button.titlebutton,
-    windowcontrols button {
-      &.maximize {
-        background-image: url('assets/titlebutton-unmaximize.png');
-      }
-    }
-  }
-}
-
-windowcontrols > button {
-  margin: 5px; // Close enough
-  > image {
-    padding: 0;
-    border-radius: 0;
-    background-color: transparent;
-  }
-}
-
-//windowcontrols {
-//  &.end { margin-right: 4px; }
-//  &.start { margin-left: 4px; }
-//}
-
-// Tabs
-notebook > header tab:checked.reorderable-page,
-tabbar tab:checked {
-  background-color: $view_bg_color;
-  &:backdrop {
-    background-color: $window_bg_color;
-  }
-}
-
-// Sidebar rows
-.sidebar,
-.navigation-sidebar {
-  row.activatable {
-    border-radius: 0;
-    &:selected {
-      box-shadow: inset 0 0 0 1px gtkalpha($accent_bg_color, 0.4);
-      background: gtkalpha($accent_bg_color, 0.1);
-    }
-  }
-}
-
-// Frames
-.frame, frame {
-  border-radius: 0;
-}
-
-// Buttons
-// WIP. There are a lot of buttons to check.
-// TODO: Make another version for GTK3.
-button {
-  &:not(.close):not(.minimize):not(.maximize) {
-    border-radius: 0;
-    &:not(.flat),
-    &:not(.osd) {
-      box-shadow: inset 0 0 0 1px gtkalpha(currentColor, 0.1);
-
-      &:hover {
-        box-shadow: inset 0 0 0 1px $accent_bg_color,
-                    0 0 0 2px gtkalpha($accent_bg_color, 0.2);
-      }
-
-      &:checked {
-        box-shadow: inset 0 0 0 1px gtkalpha(currentColor, 0.2);
-      }
-    }
-  }
-}
-
-headerbar button, .titlebar button {
-  &:not(.close):not(.minimize):not(.maximize) {
-    &:not(.flat),
-    &:not(.osd) {
-      &:not(:hover),
-      &:not(:checked) {
-        box-shadow: none;
-      }
-    }
-  }
-}
-
-spinbutton {
-  border-radius: 0;
-  box-shadow: none;
 }

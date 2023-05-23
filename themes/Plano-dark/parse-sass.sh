@@ -9,4 +9,5 @@ SASSC_OPT="-M -t expanded"
 
 echo Generating the css...
 
-sassc $SASSC_OPT gtk.scss gtk.css
+sassc $SASSC_OPT main-gtk3.scss gtk3.css
+sassc $SASSC_OPT main-gtk4.scss gtk4.css
