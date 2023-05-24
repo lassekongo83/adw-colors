@@ -28,6 +28,8 @@ windowcontrols > button.close, windowcontrols > button.maximize, windowcontrols 
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 1.5px;
+  box-shadow: none;
+  border-color: transparent;
 }
 
 windowcontrols > button.close > image, windowcontrols > button.maximize > image, windowcontrols > button.minimize > image {
@@ -36,6 +38,7 @@ windowcontrols > button.close > image, windowcontrols > button.maximize > image,
 
 windowcontrols > button.maximize:hover, windowcontrols > button.minimize:hover {
   background-color: @accent_bg_color;
+  box-shadow: none;
 }
 
 windowcontrols > button.close {
@@ -45,6 +48,7 @@ windowcontrols > button.close {
 
 windowcontrols > button.close:hover {
   background-color: shade(#a45f5f,1.1);
+  box-shadow: none;
 }
 
 windowcontrols > button.maximize {
@@ -61,6 +65,14 @@ windowcontrols > button.minimize {
 
 windowcontrols > button.minimize:backdrop:hover {
   background-color: shade(@headerbar_backdrop_color,1.2);
+}
+
+check {
+  border-radius: 0;
+}
+
+switch, switch slider {
+  border-radius: 0;
 }
 
 window,
@@ -107,32 +119,37 @@ tabbar tab:checked:backdrop {
   border-radius: 0;
 }
 
-button:not(.close):not(.minimize):not(.maximize) {
+button {
   border-radius: 0;
-}
-
-button:not(.close):not(.minimize):not(.maximize):not(.flat), button:not(.close):not(.minimize):not(.maximize):not(.osd) {
   box-shadow: inset 0 0 0 1px alpha(currentColor,0.1);
 }
 
-button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, button:not(.close):not(.minimize):not(.maximize):not(.osd):hover {
+button:hover {
   box-shadow: inset 0 0 0 1px @accent_color, 0 0 0 2px alpha(@accent_color,0.2);
 }
 
-button:not(.close):not(.minimize):not(.maximize):not(.flat):checked, button:not(.close):not(.minimize):not(.maximize):not(.osd):checked {
+button:checked {
   box-shadow: inset 0 0 0 1px alpha(currentColor,0.2);
 }
 
-headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:hover), headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:checked), headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:hover), headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:checked), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:hover), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:checked), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:hover), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:checked) {
+button.osd, button.flat {
   box-shadow: none;
 }
 
-headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):hover, .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):hover {
+headerbar button, .titlebar button {
+  box-shadow: none;
+}
+
+headerbar button:hover, .titlebar button:hover {
   box-shadow: inset 0 0 0 1px @accent_color, 0 0 0 2px alpha(@accent_color,0.2);
 }
 
-headerbar stackswitcher button {
+headerbar stackswitcher button, .titlebar stackswitcher button {
   box-shadow: inset 0 0 0 1px alpha(currentColor,0.1);
+}
+
+headerbar stackswitcher button:checked, .titlebar stackswitcher button:checked {
+  box-shadow: inset 0 0 0 1px alpha(currentColor,0.2);
 }
 
 splitbutton {
@@ -145,6 +162,9 @@ splitbutton:hover {
 
 spinbutton {
   border-radius: 0;
+}
+
+spinbutton button {
   box-shadow: none;
 }
 

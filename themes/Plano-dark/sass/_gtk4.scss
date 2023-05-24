@@ -62,43 +62,37 @@ tabbar tab:checked {
 // Buttons
 // WIP. There are a lot of buttons to check.
 button {
-  &:not(.close):not(.minimize):not(.maximize) {
-    border-radius: $button_radius;
-    &:not(.flat),
-    &:not(.osd) {
-      box-shadow: inset 0 0 0 1px $button_normal_border;
+  border-radius: $button_radius;
+  box-shadow: inset 0 0 0 1px $button_normal_border;
 
-      &:hover {
-        box-shadow: inset 0 0 0 1px $button_inner_hover_border,
-                    0 0 0 2px $button_outer_hover_border;
-      }
+  &:hover {
+    box-shadow: inset 0 0 0 1px $button_inner_hover_border,
+                      0 0 0 2px $button_outer_hover_border;
+  }
 
-      &:checked {
-        box-shadow: inset 0 0 0 1px $button_checked_border;
-      }
-    }
+  &:checked {
+    box-shadow: inset 0 0 0 1px $button_checked_border;
+  }
+
+  &.osd, &.flat {
+    box-shadow: none;
   }
 }
 
-headerbar button, .titlebar button {
-  &:not(.close):not(.minimize):not(.maximize) {
-    &:not(.flat),
-    &:not(.osd) {
-      &:not(:hover),
-      &:not(:checked) {
-        box-shadow: none;
-      }
-
-      &:hover {
-        box-shadow: inset 0 0 0 1px $button_inner_hover_border,
-                    0 0 0 2px $button_outer_hover_border;
-      }
+headerbar, .titlebar {
+  button {
+    box-shadow: none;
+    &:hover {
+      box-shadow: inset 0 0 0 1px $button_inner_hover_border,
+                        0 0 0 2px $button_outer_hover_border;
     }
   }
-}
-
-headerbar stackswitcher { // FIXME: Only working in GTK inspector for some reason
-  button { box-shadow: inset 0 0 0 1px $button_normal_border; }
+  stackswitcher button {
+    box-shadow: inset 0 0 0 1px $button_normal_border;
+    &:checked {
+      box-shadow: inset 0 0 0 1px $button_checked_border;
+    }
+  }
 }
 
 splitbutton {
@@ -110,7 +104,7 @@ splitbutton {
 
 spinbutton {
   border-radius: $button_radius;
-  box-shadow: none;
+  button { box-shadow: none; }
 }
 
 .linked {

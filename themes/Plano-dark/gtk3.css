@@ -28,6 +28,8 @@ button.close.titlebutton:not(.appmenu), button.maximize.titlebutton:not(.appmenu
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 1.5px;
+  box-shadow: none;
+  border-color: transparent;
 }
 
 button.close.titlebutton:not(.appmenu) > image, button.maximize.titlebutton:not(.appmenu) > image, button.minimize.titlebutton:not(.appmenu) > image {
@@ -36,6 +38,7 @@ button.close.titlebutton:not(.appmenu) > image, button.maximize.titlebutton:not(
 
 button.maximize.titlebutton:hover:not(.appmenu), button.minimize.titlebutton:hover:not(.appmenu) {
   background-color: @accent_bg_color;
+  box-shadow: none;
 }
 
 button.close.titlebutton:not(.appmenu) {
@@ -45,6 +48,7 @@ button.close.titlebutton:not(.appmenu) {
 
 button.close.titlebutton:hover:not(.appmenu) {
   background-color: shade(#a45f5f,1.1);
+  box-shadow: none;
 }
 
 button.maximize.titlebutton:not(.appmenu) {
@@ -61,6 +65,14 @@ button.minimize.titlebutton:not(.appmenu) {
 
 button.minimize.titlebutton:backdrop:hover:not(.appmenu) {
   background-color: shade(@headerbar_backdrop_color,1.2);
+}
+
+check {
+  border-radius: 0;
+}
+
+switch, switch slider {
+  border-radius: 0;
 }
 
 decoration,
@@ -103,30 +115,61 @@ tabbar tab:checked:backdrop {
   border-radius: 0;
 }
 
-button:not(.close):not(.minimize):not(.maximize) {
+button {
   border-radius: 0;
-}
-
-button:not(.close):not(.minimize):not(.maximize):not(.flat), button:not(.close):not(.minimize):not(.maximize):not(.osd) {
   border-color: alpha(currentColor,0.1);
 }
 
-button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, button:not(.close):not(.minimize):not(.maximize):not(.osd):hover {
+button:hover {
   box-shadow: 0 0 0 2px alpha(@accent_color,0.2);
   border-color: @accent_color;
 }
 
-button:not(.close):not(.minimize):not(.maximize):not(.flat):checked, button:not(.close):not(.minimize):not(.maximize):not(.osd):checked {
+button:checked {
   border-color: alpha(currentColor,0.2);
 }
 
-headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:hover), headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:checked), headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:hover), headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:checked), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:hover), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):not(:checked), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:hover), .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):not(:checked) {
+button.osd, button.flat {
   border-color: transparent;
 }
 
-headerbar button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, headerbar button:not(.close):not(.minimize):not(.maximize):not(.osd):hover, .titlebar button:not(.close):not(.minimize):not(.maximize):not(.flat):hover, .titlebar button:not(.close):not(.minimize):not(.maximize):not(.osd):hover {
+treeview.view header button:hover {
+  box-shadow: none;
+  border-color: alpha(currentColor,0.1);
+}
+
+treeview.view header button:checked, treeview.view header button:active {
+  border-color: alpha(currentColor,0.2);
+}
+
+headerbar button, .titlebar button {
+  border-color: transparent;
+}
+
+headerbar button:hover, .titlebar button:hover {
   box-shadow: 0 0 0 2px alpha(@accent_color,0.2);
   border-color: @accent_color;
+}
+
+headerbar button:checked, .titlebar button:checked {
+  border-color: alpha(currentColor,0.2);
+}
+
+headerbar .stack-switcher button, .titlebar .stack-switcher button {
+  border-color: alpha(currentColor,0.1);
+}
+
+headerbar .stack-switcher button:hover, .titlebar .stack-switcher button:hover {
+  box-shadow: 0 0 0 2px alpha(@accent_color,0.2);
+  border-color: @accent_color;
+}
+
+headerbar .stack-switcher button:checked, .titlebar .stack-switcher button:checked {
+  border-color: alpha(currentColor,0.2);
+}
+
+headerbar .linked button:not(:checked):hover + button, .titlebar .linked button:not(:checked):hover + button {
+  border-left-color: @accent_color;
 }
 
 spinbutton {

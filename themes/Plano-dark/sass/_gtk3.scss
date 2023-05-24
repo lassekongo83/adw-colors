@@ -54,37 +54,63 @@ tabbar tab:checked {
 // Buttons
 // WIP. There are a lot of buttons to check.
 button {
-  &:not(.close):not(.minimize):not(.maximize) {
-    border-radius: $button_radius;
-    &:not(.flat),
-    &:not(.osd) {
+  border-radius: $button_radius;
+  border-color: $button_normal_border;
+
+  &:hover {
+    box-shadow: 0 0 0 2px $button_outer_hover_border;
+    border-color: $button_inner_hover_border;
+  }
+
+  &:checked {
+    border-color: $button_checked_border;
+  }
+
+  &.osd, &.flat {
+    border-color: transparent;
+  }
+}
+
+treeview.view {
+  header button {
+    &:hover {
+      box-shadow: none;
       border-color: $button_normal_border;
-
-      &:hover {
-        box-shadow: 0 0 0 2px $button_outer_hover_border;
-        border-color: $button_inner_hover_border;
-      }
-
-      &:checked {
-        border-color: $button_checked_border;
-      }
+    }
+    &:checked, &:active {
+      border-color: $button_checked_border;
     }
   }
 }
 
-headerbar button, .titlebar button {
-  &:not(.close):not(.minimize):not(.maximize) {
-    &:not(.flat),
-    &:not(.osd) {
-      &:not(:hover),
-      &:not(:checked) {
-        border-color: transparent;
-      }
+headerbar, .titlebar {
+  button {
+    border-color: transparent;
 
-      &:hover {
-        box-shadow: 0 0 0 2px $button_outer_hover_border;
-        border-color: $button_inner_hover_border;
-      }
+    &:hover {
+      box-shadow: 0 0 0 2px $button_outer_hover_border;
+      border-color: $button_inner_hover_border;
+    }
+    &:checked {
+      border-color: $button_checked_border;
+    }
+  }
+
+  .stack-switcher button {
+    border-color: $button_normal_border;
+
+    &:hover {
+      box-shadow: 0 0 0 2px $button_outer_hover_border;
+      border-color: $button_inner_hover_border;
+    }
+    &:checked {
+      border-color: $button_checked_border;
+    }
+  }
+
+  .linked button {
+    &:not(:checked):hover + button {
+      border-left-color: $button_inner_hover_border;
     }
   }
 }

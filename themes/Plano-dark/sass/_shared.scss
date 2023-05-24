@@ -82,6 +82,8 @@ $titlebutton_height: 20px;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 1.5px;
+    box-shadow: none;
+    border-color: transparent;
 
     > image {
       opacity: 0;
@@ -91,6 +93,7 @@ $titlebutton_height: 20px;
   &.maximize, &.minimize {
     &:hover {
       background-color: $accent_bg_color;
+      box-shadow: none;
     }
   }
 
@@ -100,6 +103,7 @@ $titlebutton_height: 20px;
 
     &:hover {
       background-color: gtkshade($close_button, 1.1);
+      box-shadow: none;
     }
   }
 
@@ -122,4 +126,14 @@ $titlebutton_height: 20px;
       }
     }
   }
+}
+
+// Checks and radio buttons
+check {
+  border-radius: $button_radius;
+}
+
+// Switches
+switch {
+  &, slider { border-radius: 0; }
 }
