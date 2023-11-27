@@ -84,7 +84,7 @@
             <td><a href="https://github.com/davidphilipbarr" title="github">davidphilipbarr</a></td>
         </tr>
         <tr align="center">
-            <td><a href="./themes/solarized-dark/gtk.css">solarized-sark</a></td>
+            <td><a href="./themes/solarized-dark/gtk.css">solarized-dark</a></td>
             <td><img src="./themes/solarized-dark/solarized-dark.png?raw=true" alt="solarized-dark"></td>
             <td><a href="https://github.com/davidphilipbarr" title="github">davidphilipbarr</a></td>
         </tr>
