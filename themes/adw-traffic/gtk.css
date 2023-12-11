@@ -1,0 +1,62 @@
+/*just add traffic light window buttons to your default gnome theme.*/
+
+button.titlebutton,
+windowcontrols > button {
+  border-radius: 100%;
+  padding: 0px;
+  color: rgba(0, 0, 0, 0);
+  min-width: 16px;
+  min-height: 16px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  
+}
+button.titlebutton:backdrop { 
+  opacity: 0.8;
+  color:rgba(0, 0, 0, 0);
+}
+
+
+
+windowcontrols > button > image {
+  padding: 0px;
+ }
+button.titlebutton.close, button.titlebutton.close:hover:backdrop,
+windowcontrols > button.close, 
+windowcontrols > button.close:hover:backdrop {
+  margin: 0px 0px 0px 8px; 
+  background-color: #ff5f57;
+}
+button.titlebutton.close:hover,
+windowcontrols > button.close:hover {
+  color: rgba(0, 0, 0, 0.4);
+  background-color: shade(#ff5f57,0.9);
+  }
+
+button.titlebutton.maximize,
+windowcontrols > button.maximize, button.titlebutton.maximize:hover:backdrop,
+windowcontrols > button.maximize:hover:backdrop {
+  margin: 0px 0px 0px 5px; 
+  background-color: #22cb40;
+}
+button.titlebutton.maximize:hover,
+windowcontrols > button.maximize:hover {
+color: rgba(0, 0, 0, 0.4);
+  background-color: shade(#22cb40,0.9);
+  }
+button.titlebutton.minimize, button.titlebutton.minimize:hover:backdrop,
+windowcontrols > button.minimize,
+windowcontrols > button.minimize:hover:backdrop {
+ margin: 0px 0px 0px 5px;   
+ background-color: #fdbb2f;
+}
+button.titlebutton.minimize:hover,
+windowcontrols > button.minimize:hover {
+  color: rgba(0, 0, 0, 0.4);
+  background-color: shade(#fdbb2f,0.9);
+  }
+  button.titlebutton.close:backdrop, button.titlebutton.maximize:backdrop, button.titlebutton.minimize:backdrop,
+windowcontrols > button.close:backdrop,
+windowcontrols > button.maximize:backdrop,
+windowcontrols > button.minimize:backdrop {
+  background-color: rgba(125, 125, 125, 0.4);}
+
