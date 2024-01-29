@@ -97,7 +97,7 @@
         </tr>
         <tr align="center">
             <td><a href="./themes/adw-hc-light/gtk.css">adw-hc-light</a></td>
-            <td><p>A slightly higher contrast libadwaita dark theme. <a href="./themes/adw-hc-light/screenshot.png?raw=true">Screenshot</a>.</p></td>
+            <td><p>A slightly higher contrast libadwaita light theme. <a href="./themes/adw-hc-light/screenshot.png?raw=true">Screenshot</a>.</p></td>
             <td><a href="https://github.com/lassekongo83" title="github">lassekongo83</a></td>
         </tr>
         <tr><td colspan="3"></td></tr>
