@@ -71,18 +71,13 @@ levelbar > trough > block.high, levelbar > trough > block:not(.empty) {
   background-color: @success_color;
 }
 
-
 button.suggested-action {
   color: @success_fg_color;
 }
-
-
 button.suggested-action:not(.flat),
 button.suggested-action:checked:not(.flat) {
   background-color: @success_bg_color;
 }
-
-
 button.flat.suggested-action {
   color: @success_color;
 }
@@ -90,11 +85,9 @@ button.flat.suggested-action {
 splitbutton.suggested-action > button, splitbutton.suggested-action > menubutton > button {
   color: @success_fg_color;
 }
-
 splitbutton.suggested-action > button, splitbutton.suggested-action > button:checked, splitbutton.suggested-action > menubutton > button, splitbutton.suggested-action > menubutton > button:checked {
   background-color: @success_bg_color;
 }
-
 
 button,
 link {

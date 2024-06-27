@@ -21,12 +21,10 @@ button.titlebutton:not(:backdrop) {
   color: @window_fg_color;
   box-shadow: inset 0 0 0 1px alpha(currentColor,0.15);
 }
-
 windowcontrols > button > image:backdrop,
 button.titlebutton:backdrop {
   background-color: transparent;
 }
-
 windowcontrols > button > image:backdrop:hover,
 button.titlebutton:backdrop:hover {
   box-shadow: inset 0 0 0 1px alpha(currentColor,0.15);
@@ -35,20 +33,16 @@ button.titlebutton:backdrop:hover {
 switch {
   background-color: alpha(currentColor,0.3);
 }
-
 switch:hover:not(:checked) {
   background-color: alpha(currentColor,0.4);
 }
-
 switch:checked {
   color: @window_fg_color;
   background-color: @accent_bg_color;
 }
-
 switch:checked:hover {
   background-image: image(alpha(currentColor,0.1));
 }
-
 switch:checked:hover:active {
   background-image: image(rgba(0, 0, 0, 0.2));
 }
@@ -63,15 +57,12 @@ scrollbar slider {
   color: @window_fg_color;
   background-color: alpha(currentColor,0.6);
 }
-
 scrollbar slider:hover {
   background-color: alpha(currentColor,0.8);
 }
-
 scrollbar slider:active {
   background-color: @accent_bg_color;
 }
-
 scrollbar.overlay-indicator {
   opacity: 1;
 }
@@ -81,7 +72,6 @@ tabbar tab:checked {
   background-color: @view_bg_color;
   box-shadow: inset 0 -3px @accent_bg_color;
 }
-
 notebook > header tab:checked.reorderable-page:backdrop,
 tabbar tab:checked:backdrop {
   background-color: @window_bg_color;
