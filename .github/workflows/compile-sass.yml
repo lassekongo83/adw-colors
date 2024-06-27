@@ -1,35 +1,28 @@
 name: Compile SASS
 
 on:
-  push:
-    paths:
-      - '**.scss'
+ push:
+  paths:
+    - '**/gtk.scss'
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+ build:
+  runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v4
+  steps:
+  - uses: actions/checkout@v4
 
-    - name: Install Dart Sass
-      run: npm install -g sass
+  - name: Install Dart Sass
+    run: npm install -g sass
 
-    - name: Compile SASS
-      run: |
-        # Identify all changed files since the last commit
-        CHANGED_FILES=$(git diff --name-only HEAD~1..HEAD | grep '\.scss$')
-        
-        # Loop through each changed SCSS file and compile it
-        for FILE in $CHANGED_FILES; do
-          echo "Compiling $FILE..."
-          sass --style=expanded --no-source-map "$FILE" "${FILE%.*}.css"
-        done
+  - name: Compile SASS
+    run: |
+      find . -name "gtk.scss" -exec sh -c 'sass --style=expanded --no-source-map $1 $(dirname $1)/gtk.css' _ {} \;
 
-    - name: Add, commit, and push
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "<>"
-        git add -A
-        git commit -m "Compile updated scss to css"
-        git push
+  - name: Add, commit, and push
+    run: |
+      git config --global user.name "GitHub Actions"
+      git config --global user.email "<>"
+      git add -A
+      git commit -m "Compile scss to css"
+      git push
