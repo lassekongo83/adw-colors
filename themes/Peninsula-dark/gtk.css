@@ -14,6 +14,10 @@
 @define-color dialog_fg_color @popover_fg_color;
 @define-color card_bg_color @popover_bg_color;
 @define-color card_fg_color @window_fg_color;
+@define-color sidebar_bg_color @headerbar_bg_color;
+@define-color sidebar_fg_color @window_fg_color;
+@define-color sidebar_backdrop_color @window_bg_color;
+@define-color sidebar_shade_color rgba(0,0,0,0.75);
 decoration {
   box-shadow: 0 3px 12px 1px rgba(0, 0, 0, 0.7), 0 0 0 1px shade(@headerbar_bg_color,1.3);
 }
