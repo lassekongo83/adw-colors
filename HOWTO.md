@@ -40,8 +40,8 @@ If you don't use GNOME you'll have to make sure that `~/.config/gtk-3.0/gtk.css`
 
 ### Supported named colors
 
-Libadwaita named colors - https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html
-Libadwaita css variables - https://gitlab.gnome.org/GNOME/libadwaita/-/blob/main/src/stylesheet/_colors.scss
+* Libadwaita named colors - https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html
+* Libadwaita css variables - https://gitlab.gnome.org/GNOME/libadwaita/-/blob/main/src/stylesheet/_colors.scss
 
 Adw-gtk3 currently only supports these named colors:
 
