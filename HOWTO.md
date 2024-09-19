@@ -2,20 +2,36 @@
 
 Libadwaita and adw-gtk3 can be customized with GTK named colors.
 
-Here's an example on how to change the accent colors in libadwaita and the adw-gtk3 theme.
+Here's an example on how to change the accent colors in adw-gtk3 and libadwaita.
 
-1. Create or modify `~/.config/gtk-4.0/gtk.css` *(Make backups if `~/.config/gtk-4.0/gtk.css` and `~/.config/gtk-3.0/gtk.css` exists).*
+### For GTK3 apps
+
+1. Create or modify `~/.config/gtk-3.0/gtk.css` *(Make a backup of the file if it exists).*
 2. Add:
 ```css
 /* Replace #E95420 with any css color value */
 @define-color accent_bg_color #E95420;
 @define-color accent_color @accent_bg_color;
 ```
-3. Create a symbolic link between the css config files: `ln -s ~/.config/gtk-4.0/gtk.css ~/.config/gtk-3.0/gtk.css`
-4. Save the file and restart any open applications to see the changes. (Or relog).
-5. Flatpak apps will need a permission setting:
+3. Save the file and restart any open applications to see the changes. (Or relog).
+4. Flatpak apps will need a permission setting:
 ```bash
-sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0
+sudo flatpak override --filesystem=xdg-config/gtk-3.0
+```
+
+### For GTK4 apps (as of GTK 4.16+)
+
+1. Create or modify `~/.config/gtk-4.0(gtk.css` *(Make a backup of the file if it exists).*
+2. Add:
+```css
+:root {
+  --accent-bg-color: #E95420; /* Note: The accent color may be overridden if you've changed the accent color in gnome-settings. */
+}
+```
+3. Save the file and restart any open applications to see the changes. (Or relog).
+4. Flatpak apps will need a permission setting:
+```bash
+sudo flatpak override --filesystem=xdg-config/gtk-4.0
 ```
 
 If you don't use GNOME you'll have to make sure that `~/.config/gtk-3.0/gtk.css` and `~/.config/gtk-4.0/gtk.css` aren't being automatically created or overwritten by your DE/WM.
@@ -25,6 +41,7 @@ If you don't use GNOME you'll have to make sure that `~/.config/gtk-3.0/gtk.css`
 ### Supported named colors
 
 Libadwaita named colors - https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html
+Libadwaita css variables - https://gitlab.gnome.org/GNOME/libadwaita/-/blob/main/src/stylesheet/_colors.scss
 
 Adw-gtk3 currently only supports these named colors:
 
