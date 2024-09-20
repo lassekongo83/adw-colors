@@ -12,13 +12,12 @@
     <details open>
         <summary><h2>How To Install</h2></summary><br>
     <ol align="left">
-        <li>Copy one of the files below to <code>~/.config/gtk-4.0/gtk.css</code> (Make backups if the file already exists) .</li>
+        <li>Copy the gtk4 & gtk3 file below to <code>~/.config/gtk-4.0/gtk.css</code> & <code>~/.config/gtk-3.0/gtk.css</code> (Make backups if the files already exists) .</li>
         <li>Enable the corresponding color preference in <code>gnome-tweaks</code> (adw-gtk3 or adw-gtk3-dark) and <code>gnome-control-center</code>, [e.g Dark for dark color themes]</li>
-        <li>Create a symbolic link to the gtk-3.0 folder: <code>ln -s ~/.config/gtk-4.0/gtk.css ~/.config/gtk-3.0/gtk.css</code> .</li>
         <li>If you use flatpak apps, run:</li><br>
         <pre><code>sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0</code></pre>
         <li>Restart any open applications or log out and in again.</li>
-        <br><p><sub>!  Tip: Use different color themes for different Flatpak apps. Add a different gtk.css file to `/home/user/.var/app/[name of flatpak app]/config/gtk-4.0/` (or gtk-3.0).</sub></p><br><br>
+        <br><p><sub>! Tip: Use different color themes for different Flatpak apps. Add a different gtk.css file to `/home/user/.var/app/[name of flatpak app]/config/gtk-4.0/` (or gtk-3.0).</sub></p><br><br>
     </ol>
     </details>
 </div>
