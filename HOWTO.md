@@ -21,7 +21,7 @@ sudo flatpak override --filesystem=xdg-config/gtk-3.0
 
 ### For GTK4 apps (as of GTK 4.16+)
 
-1. Create or modify `~/.config/gtk-4.0(gtk.css` *(Make a backup of the file if it exists).*
+1. Create or modify `~/.config/gtk-4.0/gtk.css` *(Make a backup of the file if it exists).*
 2. Add:
 ```css
 :root {
