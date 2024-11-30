@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>Adw GTK Color's</h1>
+    <h1>adw-colors</h1>
     <p> Style 
         <a href="https://gnome.pages.gitlab.gnome.org/libadwaita/">libadwaita</a> and 
         <a href="https://github.com/lassekongo83/adw-gtk3">adw-gtk3</a> 
@@ -19,6 +19,14 @@
         <li>Restart any open applications or log out and in again.</li>
         <br><p><sub>! Tip: Use different color themes for different Flatpak apps. Add a different gtk.css file to `/home/user/.var/app/[name of flatpak app]/config/gtk-4.0/` (or gtk-3.0).</sub></p><br><br>
     </ol>
+    </details>
+</div>
+
+<div align="left">
+    <details open>
+        <summary><h2>Accent color change</h2></summary><br>
+        <p>Accent-color-change is a small cli program that allows you to change your accent color globally on GNOME 47+. It will use the included gnome accent colors and also set them to gtk3 and non-libadwaita gtk4 applications.</p>
+        <p>For more details: https://github.com/lassekongo83/adw-colors/tree/main/accent-color-change</p>
     </details>
 </div>
 
