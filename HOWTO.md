@@ -25,7 +25,7 @@ sudo flatpak override --filesystem=xdg-config/gtk-3.0
 2. Add:
 ```css
 :root {
-  --accent-bg-color: #E95420; /* Note: The accent color may be overridden if you've changed the accent color in gnome-settings. */
+  --accent-bg-color: #E95420;
 }
 ```
 3. Save the file and restart any open applications to see the changes. (Or relog).
@@ -40,8 +40,8 @@ If you don't use GNOME you'll have to make sure that `~/.config/gtk-3.0/gtk.css`
 
 ### Supported named colors
 
-* Libadwaita named colors - https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html
 * Libadwaita css variables - https://gitlab.gnome.org/GNOME/libadwaita/-/blob/main/src/stylesheet/_colors.scss
+* Libadwaita named colors (deprecated) - https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1.2/named-colors.html
 
 Adw-gtk3 currently only supports these named colors:
 
@@ -86,7 +86,6 @@ destructive_color        # Destructive text label
 # Custom colors (GTK3 only)
 panel_bg_color           # Background for XFCE4 panel
 panel_fg_color           # Foreground for XFCE4 panel
-incognito_bg_color       # adw-gtk3 only: For epiphany (Gnome web gtk3 version) incognito headerbar
 ```
 
 Plus the colors from the [theme's palette](https://github.com/lassekongo83/adw-gtk3/blob/main/gtk/src/adw-gtk3/gtk-3.0/_palette.scss).
