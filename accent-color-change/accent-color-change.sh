@@ -28,21 +28,17 @@ PURPLE="\e[35m"
 SLATE="\e[38;5;245m"  # Using 256-color mode for slate
 RESET="\e[0m"
 
-# Check for GTK4
-if ! command -v pkg-config >/dev/null || ! pkg-config --modversion gtk4 >/dev/null; then
-  echo "Error: GTK4 is not installed or not found in PATH."
-  exit 1
-fi
+# Get GNOME Shell version
+gnome_shell_version=$(gnome-shell --version | grep -oP 'GNOME Shell \K\d+(\.\d+)+')
 
-# Check GTK4 version
-gtk_version=$(pkg-config --modversion gtk4)
-required_version="4.16.0"
+# Set required minimum version
+required_version="47.0"
 
 # Compare versions
-if [ "$(printf '%s\n' "$required_version" "$gtk_version" | sort -V | head -n1)" = "$required_version" ]; then
-  echo "Your GTK4 version is $gtk_version. Proceeding..."
+if [[ "$gnome_shell_version" >= "$required_version" ]]; then
+  echo "Your GNOME Shell version is $gnome_shell_version. Proceeding..."
 else
-  echo "Error: Your GTK4 version ($gtk_version) needs to be 4.16.0 or newer."
+  echo "Error: Your GNOME Shell version ($gnome_shell_version) needs to be 47.0 or newer."
   exit 1
 fi
 
