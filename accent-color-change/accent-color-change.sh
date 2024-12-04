@@ -28,14 +28,15 @@ PURPLE="\e[35m"
 SLATE="\e[38;5;245m"  # Using 256-color mode for slate
 RESET="\e[0m"
 
-# Get GNOME Shell version
-gnome_shell_version=$(gnome-shell --version | grep -oP 'GNOME Shell \K\d+(\.\d+)+')
+# Check GNOME Shell version
+gnome_shell_output=$(gnome-shell --version)
+gnome_shell_version=$(echo "$gnome_shell_output" | sed -n 's/.*\(GNOME Shell \)\([0-9.]*\).*/\2/p')
 
 # Set required minimum version
 required_version="47.0"
 
 # Compare versions
-if [[ "$gnome_shell_version" >= "$required_version" ]]; then
+if [ "$(printf '%s\n' "$required_version" "$gnome_shell_version" | sort -V | head -n1)" = "$required_version" ]; then
   echo "Your GNOME Shell version is $gnome_shell_version. Proceeding..."
 else
   echo "Error: Your GNOME Shell version ($gnome_shell_version) needs to be 47.0 or newer."
