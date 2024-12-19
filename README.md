@@ -209,6 +209,11 @@
             <td><p>Yaru-viridian-dark accent-color theme.</p></td>
             <td><a href="https://github.com/yellowgh0st" title="github">yellowgh0st</a></td>
         </tr>
+        <tr align="center">
+            <td><a href="./themes/catppuccin/">catppuccin</a></td>
+            <td><img src="./themes/catppuccin/preview.webp?raw=true" alt="nord"></td>
+            <td><a href="https://github.com/claymorwan" title="github">claymorwan</a></td>
+        </tr>
         <tr><td colspan="3"></td></tr>
         <tr><td colspan="3"></td></tr>
     </table>
