@@ -41,6 +41,11 @@
         </tr>
         <tr><td colspan="3"></td></tr>
         <tr><td colspan="3"></td></tr>
+       <tr align="center">
+            <td><a href="https://github.com/claymorwan/adw-catppuccin">catppuccin</a></td>
+            <td><img src="https://raw.githubusercontent.com/claymorwan/adw-catppuccin/refs/heads/main/preview.webp?raw=true" alt="catppuccin"></td>
+            <td><a href="https://github.com/claymorwan" title="github">claymorwan</a></td>
+        </tr>
         <tr align="center">
             <td><a href="./themes/dracula/gtk.css">dracula</a></td>
             <td><img src="./themes/dracula/dracula.png?raw=true" alt="dracula"></td>
