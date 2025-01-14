@@ -12,7 +12,7 @@
     <details open>
         <summary><h2>How To Install</h2></summary><br>
     <ol align="left">
-        <li>Copy the gtk4 & gtk3 file below to <code>~/.config/gtk-4.0/gtk.css</code> & <code>~/.config/gtk-3.0/gtk.css</code> (Make backups if the files already exists) .</li>
+        <li>Copy or symlink any gtk4.css or gtk3.css files in the themes folder to <code>~/.config/gtk-4.0/gtk.css</code> & <code>~/.config/gtk-3.0/gtk.css</code> (Or follow the instructions for the theme. Make backups if the files already exists) .</li>
         <li>Enable the corresponding color preference in <code>gnome-tweaks</code> (adw-gtk3 or adw-gtk3-dark) and <code>gnome-control-center</code>, [e.g Dark for dark color themes]</li>
         <li>If you use flatpak apps, run:</li><br>
         <pre><code>sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0</code></pre>
