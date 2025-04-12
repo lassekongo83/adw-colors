@@ -33,7 +33,6 @@ windowcontrols > button {
   padding: 0;
   margin: 0 3px;
 }
-
 windowcontrols > button > image {
   color: transparent;
   padding: 0;
@@ -50,7 +49,6 @@ button.titlebutton {
 .titlebar .right {
   margin-right: 8px;
 }
-
 .titlebar .left {
   margin-left: 8px;
 }
@@ -58,7 +56,6 @@ button.titlebutton {
 windowcontrols.end {
   margin-right: 8px;
 }
-
 windowcontrols.start {
   margin-left: 8px;
 }
@@ -66,23 +63,18 @@ windowcontrols.start {
 button.titlebutton.close, button.titlebutton.close:hover:backdrop {
   background-color: #ff605c;
 }
-
 button.titlebutton.close:hover {
   background-color: shade(#ff605c,0.9);
 }
-
 button.titlebutton.maximize, button.titlebutton.maximize:hover:backdrop {
   background-color: #00ca4e;
 }
-
 button.titlebutton.maximize:hover {
   background-color: shade(#00ca4e,0.9);
 }
-
 button.titlebutton.minimize, button.titlebutton.minimize:hover:backdrop {
   background-color: #ffbd44;
 }
-
 button.titlebutton.minimize:hover {
   background-color: shade(#ffbd44,0.9);
 }
@@ -90,23 +82,18 @@ button.titlebutton.minimize:hover {
 windowcontrols > button.close > image, windowcontrols > button.close > image:hover:backdrop {
   background-color: #ff605c;
 }
-
 windowcontrols > button.close > image:hover {
   background-color: shade(#ff605c,0.9);
 }
-
 windowcontrols > button.maximize > image, windowcontrols > button.maximize > image:hover:backdrop {
   background-color: #00ca4e;
 }
-
 windowcontrols > button.maximize > image:hover {
   background-color: shade(#00ca4e,0.9);
 }
-
 windowcontrols > button.minimize > image, windowcontrols > button.minimize > image:hover:backdrop {
   background-color: #ffbd44;
 }
-
 windowcontrols > button.minimize > image:hover {
   background-color: shade(#ffbd44,0.9);
 }
@@ -156,7 +143,6 @@ tabbar tab {
 .nautilus-window .sidebar {
   background-color: mix(@window_bg_color,@view_bg_color,0.5);
 }
-
 .nautilus-window .sidebar:backdrop {
   background-color: @window_bg_color;
 }
