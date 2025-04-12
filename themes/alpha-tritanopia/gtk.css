@@ -26,7 +26,7 @@ button.titlebutton:backdrop {
   opacity: 0.5;
 }
 
-windowcontrols > button { /* GTK4 */
+windowcontrols > button > image { /* GTK4 */
   color: transparent;
   min-width: 2px;
   min-height: 2px;
@@ -35,39 +35,35 @@ windowcontrols > button { /* GTK4 */
   margin: 0 5px;
 }
 
-windowcontrols > button > image {
-  padding: 0;
-}
-
 button.titlebutton.close,
-windowcontrols > button.close {
+windowcontrols > button.close > image {
   background-color: #474b52;
   border: 1px solid #35393e;
 }
 
 button.titlebutton.close:hover,
-windowcontrols > button.close:hover {
+windowcontrols > button.close:hover > image {
   opacity: 0.6;
 }
 
 button.titlebutton.maximize,
-windowcontrols > button.maximize {
+windowcontrols > button.maximize > image {
   background-color: #474b52;
   border: 1px solid #35393e;
 }
 
 button.titlebutton.maximize:hover,
-windowcontrols > button.maximize:hover {
+windowcontrols > button.maximize:hover > image {
   opacity: 0.6;
 }
 
 button.titlebutton.minimize,
-windowcontrols > button.minimize {
+windowcontrols > button.minimize > image {
   background-color: #474b52;
   border: 1px solid #35393e;
 }
 
 button.titlebutton.minimize:hover,
-windowcontrols > button.minimize:hover {
+windowcontrols > button.minimize:hover > image {
   opacity: 0.6;
 }

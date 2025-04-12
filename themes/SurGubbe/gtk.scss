@@ -79,8 +79,7 @@ $border_color: gtkalpha(currentColor, .15);
 $titlebutton_size: 16px;
 
 // Titlebuttons
-button.titlebutton,
-windowcontrols > button {
+button.titlebutton {
   color: transparent;
   min-width: $titlebutton_size;
   min-height: $titlebutton_size;
@@ -92,11 +91,17 @@ button.titlebutton:backdrop {
 }
 
 windowcontrols > button {
-  border-radius: 100%;
   padding: 0;
   margin: 0 3px;
 
-  > image { padding: 0; }
+  > image {
+    color: transparent;
+    padding: 0;
+    border-radius: 100%;
+    min-width: $titlebutton_size;
+    min-height: $titlebutton_size;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+  }
 }
 
 button.titlebutton {
@@ -113,8 +118,7 @@ windowcontrols {
   &.start { margin-left: 8px }
 }
 
-button.titlebutton,
-windowcontrols > button {
+button.titlebutton {
 
   $hover_shade: 0.9;
 
@@ -149,12 +153,54 @@ windowcontrols > button {
   }
 }
 
-button.titlebutton,
 windowcontrols > button {
+
+  $hover_shade: 0.9;
+
+  &.close > image {
+    &, &:hover:backdrop {
+      background-color: $titlebutton_close;
+    }
+
+    &:hover {
+      background-color: gtkshade($titlebutton_close, $hover_shade);
+    }
+  }
+
+  &.maximize > image {
+    &, &:hover:backdrop {
+      background-color: $titlebutton_maximize;
+    }
+
+    &:hover {
+      background-color: gtkshade($titlebutton_maximize, $hover_shade);
+    }
+  }
+
+  &.minimize > image {
+    &, &:hover:backdrop {
+      background-color: $titlebutton_minimize;
+    }
+
+    &:hover {
+      background-color: gtkshade($titlebutton_minimize, $hover_shade);
+    }
+  }
+}
+
+button.titlebutton {
   &.close:backdrop,
   &.maximize:backdrop,
   &.minimize:backdrop {
     background-color: $darkest_shade;
+  }
+}
+
+windowcontrols > button {
+  &.close:backdrop,
+  &.maximize:backdrop,
+  &.minimize:backdrop {
+    > image { background-color: $darkest_shade; }
   }
 }
 

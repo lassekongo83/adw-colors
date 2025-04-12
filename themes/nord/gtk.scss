@@ -204,7 +204,7 @@ decoration {
 
 // Titlebuttons
 button.titlebutton,
-windowcontrols > button {
+windowcontrols > button > image {
   color: transparent;
   min-width: $titlebutton_size;
   min-height: $titlebutton_size;
@@ -215,15 +215,17 @@ button.titlebutton:backdrop {
 }
 
 windowcontrols > button {
-  border-radius: 100%;
+  margin: 0 2px;
   padding: 0;
-  margin: 0 5px;
-
-  > image { padding: 0; }
 }
 
-button.titlebutton,
-windowcontrols > button {
+windowcontrols > button > image {
+  border-radius: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+button.titlebutton {
   &.close {
     background-color: $titlebutton_close;
 
@@ -254,6 +256,48 @@ windowcontrols > button {
       &:hover {
         background-color: $titlebutton_backdrop_hover;
       }
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 3px rgba(0,0,0,0.3);
+    }
+  }
+}
+
+windowcontrols > button {
+  &.close > image {
+    &, &:hover:backdrop {
+      background-color: $titlebutton_close;
+    }
+
+    &:hover {
+      background-color: $titlebutton_close_hover;
+    }
+  }
+
+  &.maximize > image {
+    &, &:hover:backdrop {
+      background-color: $titlebutton_maximize;
+    }
+
+    &:hover {
+      background-color: $titlebutton_maximize_hover;
+    }
+  }
+
+  &.minimize > image {
+    &, &:hover:backdrop {
+      background-color: $titlebutton_minimize;
+    }
+
+    &:hover {
+      background-color: $titlebutton_minimize_hover;
+    }
+  }
+
+  &.close > image, &.maximize > image, &.minimize > image {
+    &:backdrop {
+      background-color: $titlebutton_backdrop;
     }
 
     &:active {

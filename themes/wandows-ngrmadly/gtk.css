@@ -38,25 +38,29 @@ leaflet > box ~ box headerbar {
 headerbar {
   min-height: 38px;
 }
+
 headerbar button:not(.close):not(.maximize):not(.minimize) {
   margin-top: 4px;
   margin-bottom: 4px;
   padding: 2px 4px;
 }
+
 headerbar button.image-button {
   min-width: 22px;
   padding-left: 2px;
   padding-right: 2px;
 }
+
 headerbar button.toggle {
   padding: 0;
 }
+
 headerbar entry {
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
-windowcontrols > button,
+windowcontrols > button > image,
 button.titlebutton:not(.appmenu) {
   min-width: 38px;
   min-height: 38px;
@@ -75,6 +79,7 @@ button.titlebutton:not(.appmenu) {
 .titlebar .right {
   margin-right: -3px;
 }
+
 .titlebar .left {
   margin-left: -3px;
 }
@@ -82,94 +87,153 @@ button.titlebutton:not(.appmenu) {
 windowcontrols.end {
   margin-right: -4px;
 }
+
 windowcontrols.start {
   margin-left: -4px;
 }
 
-windowcontrols > button.close, windowcontrols > button.maximize, windowcontrols > button.minimize,
-button.titlebutton.close,
-button.titlebutton.maximize,
-button.titlebutton.minimize {
+button.titlebutton.close, button.titlebutton.maximize, button.titlebutton.minimize {
   background-color: transparent;
   transition-property: background-color;
   color: transparent;
   background-position: center;
   background-repeat: no-repeat;
 }
-windowcontrols > button.close:backdrop:hover, windowcontrols > button.maximize:backdrop:hover, windowcontrols > button.minimize:backdrop:hover,
-button.titlebutton.close:backdrop:hover,
-button.titlebutton.maximize:backdrop:hover,
-button.titlebutton.minimize:backdrop:hover {
+
+button.titlebutton.close:backdrop:hover, button.titlebutton.maximize:backdrop:hover, button.titlebutton.minimize:backdrop:hover {
   background-color: shade(@headerbar_backdrop_color,0.9);
 }
-windowcontrols > button.close:backdrop:not(:hover), windowcontrols > button.maximize:backdrop:not(:hover), windowcontrols > button.minimize:backdrop:not(:hover),
-button.titlebutton.close:backdrop:not(:hover),
-button.titlebutton.maximize:backdrop:not(:hover),
-button.titlebutton.minimize:backdrop:not(:hover) {
+
+button.titlebutton.close:backdrop:not(:hover), button.titlebutton.maximize:backdrop:not(:hover), button.titlebutton.minimize:backdrop:not(:hover) {
   opacity: 0.5;
 }
-windowcontrols > button.maximize:hover, windowcontrols > button.minimize:hover,
-button.titlebutton.maximize:hover,
-button.titlebutton.minimize:hover {
+
+button.titlebutton.maximize:hover, button.titlebutton.minimize:hover {
   background-color: @accent_bg_color;
 }
-windowcontrols > button.close,
+
 button.titlebutton.close {
   background-image: url("assets/titlebutton-close.png");
 }
-windowcontrols > button.close:hover,
+
 button.titlebutton.close:hover {
   background-color: #d35f5f;
   background-image: url("assets/titlebutton-close-hover.png");
 }
-windowcontrols > button.close:backdrop:hover,
+
 button.titlebutton.close:backdrop:hover {
   background-image: url("assets/titlebutton-close.png");
 }
-windowcontrols > button.maximize,
+
 button.titlebutton.maximize {
   background-image: url("assets/titlebutton-maximize.png");
 }
-windowcontrols > button.maximize:hover,
+
 button.titlebutton.maximize:hover {
   background-image: url("assets/titlebutton-maximize-hover.png");
 }
-windowcontrols > button.maximize:backdrop:hover,
+
 button.titlebutton.maximize:backdrop:hover {
   background-image: url("assets/titlebutton-maximize.png");
 }
-windowcontrols > button.minimize,
+
 button.titlebutton.minimize {
   background-image: url("assets/titlebutton-minimize.png");
 }
-windowcontrols > button.minimize:hover,
+
 button.titlebutton.minimize:hover {
   background-image: url("assets/titlebutton-minimize-hover.png");
 }
-windowcontrols > button.minimize:backdrop:hover,
+
 button.titlebutton.minimize:backdrop:hover {
   background-image: url("assets/titlebutton-minimize.png");
 }
 
-.maximized headerbar button.titlebutton.maximize,
-.maximized headerbar windowcontrols button.maximize, .maximized .titlebar button.titlebutton.maximize,
-.maximized .titlebar windowcontrols button.maximize {
+windowcontrols > button.close > image, windowcontrols > button.maximize > image, windowcontrols > button.minimize > image {
+  background-color: transparent;
+  transition-property: background-color;
+  color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+windowcontrols > button.close:backdrop:hover > image, windowcontrols > button.maximize:backdrop:hover > image, windowcontrols > button.minimize:backdrop:hover > image {
+  background-color: shade(@headerbar_backdrop_color,0.9);
+}
+
+windowcontrols > button.close:backdrop:not(:hover) > image, windowcontrols > button.maximize:backdrop:not(:hover) > image, windowcontrols > button.minimize:backdrop:not(:hover) > image {
+  opacity: 0.5;
+}
+
+windowcontrols > button.maximize:hover > image, windowcontrols > button.minimize:hover > image {
+  background-color: @accent_bg_color;
+}
+
+windowcontrols > button.close > image {
+  background-image: url("assets/titlebutton-close.png");
+}
+
+windowcontrols > button.close > image:hover {
+  background-color: #d35f5f;
+  background-image: url("assets/titlebutton-close-hover.png");
+}
+
+windowcontrols > button.close > image:backdrop:hover {
+  background-image: url("assets/titlebutton-close.png");
+}
+
+windowcontrols > button.maximize > image {
+  background-image: url("assets/titlebutton-maximize.png");
+}
+
+windowcontrols > button.maximize > image:hover {
+  background-image: url("assets/titlebutton-maximize-hover.png");
+}
+
+windowcontrols > button.maximize > image:backdrop:hover {
+  background-image: url("assets/titlebutton-maximize.png");
+}
+
+windowcontrols > button.minimize > image {
+  background-image: url("assets/titlebutton-minimize.png");
+}
+
+windowcontrols > button.minimize > image:hover {
+  background-image: url("assets/titlebutton-minimize-hover.png");
+}
+
+windowcontrols > button.minimize > image:backdrop:hover {
+  background-image: url("assets/titlebutton-minimize.png");
+}
+
+.maximized headerbar button.titlebutton.maximize, .maximized .titlebar button.titlebutton.maximize {
   background-image: url("assets/titlebutton-unmaximize.png");
 }
-.maximized headerbar button.titlebutton.maximize:hover,
-.maximized headerbar windowcontrols button.maximize:hover, .maximized .titlebar button.titlebutton.maximize:hover,
-.maximized .titlebar windowcontrols button.maximize:hover {
+
+.maximized headerbar button.titlebutton.maximize:hover, .maximized .titlebar button.titlebutton.maximize:hover {
   background-image: url("assets/titlebutton-unmaximize-hover.png");
 }
-.maximized headerbar button.titlebutton.maximize:backdrop:hover,
-.maximized headerbar windowcontrols button.maximize:backdrop:hover, .maximized .titlebar button.titlebutton.maximize:backdrop:hover,
-.maximized .titlebar windowcontrols button.maximize:backdrop:hover {
+
+.maximized headerbar button.titlebutton.maximize:backdrop:hover, .maximized .titlebar button.titlebutton.maximize:backdrop:hover {
+  background-image: url("assets/titlebutton-unmaximize.png");
+}
+
+.maximized headerbar windowcontrols button.maximize > image, .maximized .titlebar windowcontrols button.maximize > image {
+  background-image: url("assets/titlebutton-unmaximize.png");
+}
+
+.maximized headerbar windowcontrols button.maximize > image:hover, .maximized .titlebar windowcontrols button.maximize > image:hover {
+  background-image: url("assets/titlebutton-unmaximize-hover.png");
+}
+
+.maximized headerbar windowcontrols button.maximize > image:backdrop:hover, .maximized .titlebar windowcontrols button.maximize > image:backdrop:hover {
   background-image: url("assets/titlebutton-unmaximize.png");
 }
 
 windowcontrols > button {
   padding: 0;
 }
+
 windowcontrols > button > image {
   padding: 0;
   border-radius: 0;
@@ -180,6 +244,7 @@ notebook > header tab:checked.reorderable-page,
 tabbar tab:checked {
   background-color: @view_bg_color;
 }
+
 notebook > header tab:checked.reorderable-page:backdrop,
 tabbar tab:checked:backdrop {
   background-color: @window_bg_color;
@@ -195,9 +260,11 @@ tabbar tab:checked:backdrop {
 .nautilus-window .nautilus-path-bar {
   background: none;
 }
+
 .nautilus-window headerbar .linked button.toggle.popup {
   border: none;
 }
+
 .nautilus-window headerbar .linked button.toggle.popup:not(:hover):not(:active):not(:checked) {
   background: none;
 }

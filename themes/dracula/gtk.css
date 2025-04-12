@@ -106,42 +106,42 @@ button.titlebutton:backdrop {
 
 windowcontrols > button { /* GTK4 */
   color: transparent;
-  min-width: 18px;
-  min-height: 18px;
-  border-radius: 100%;
   padding: 0;
   margin: 0 5px;
 }
 windowcontrols > button > image {
   padding: 0;
+  min-width: 18px;
+  min-height: 18px;
+  border-radius: 100%;
 }
 
 button.titlebutton.close,
-windowcontrols > button.close {
+windowcontrols > button.close > image {
   background-color: #ff5555;
 }
 
 button.titlebutton.close:hover,
-windowcontrols > button.close:hover {
+windowcontrols > button.close:hover > image {
   background-color: #ffa2a2;
 }
 
 button.titlebutton.maximize,
-windowcontrols > button.maximize {
+windowcontrols > button.maximize > image {
   background-color: #50fa7b;
 }
 
 button.titlebutton.maximize:hover,
-windowcontrols > button.maximize:hover {
+windowcontrols > button.maximize:hover > image {
   background-color: #9afcb3;
 }
 
 button.titlebutton.minimize,
-windowcontrols > button.minimize {
+windowcontrols > button.minimize > image {
   background-color: #ffb86c;
 }
 
 button.titlebutton.minimize:hover,
-windowcontrols > button.minimize:hover {
+windowcontrols > button.minimize:hover > image {
   background-color: #ffddb9;
 }

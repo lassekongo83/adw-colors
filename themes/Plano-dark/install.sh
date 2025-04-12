@@ -62,6 +62,6 @@ ln -s "${script_dir}"/assets "${HOME}"/.config/gtk-3.0/assets
 ln -s "${script_dir}"/assets "${HOME}"/.config/gtk-4.0/assets
 
 # Change to the required gtk3 theme and color preference
-gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' && gsettings set org.gnome.desktop.interface color-scheme 'dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 echo "adw-colors: For the changes to take effect you'll have to close and re-open any GTK applications. Sometimes a relog is required."

@@ -126,7 +126,7 @@ headerbar {
 }
 
 // Titlebuttons
-windowcontrols > button,
+windowcontrols > button > image,
 button.titlebutton:not(.appmenu) {
   min-width: $titlebutton_width;
   min-height: $titlebutton_height;
@@ -154,7 +154,6 @@ windowcontrols {
   &.start { margin-left: -4px; }
 }
 
-windowcontrols > button,
 button.titlebutton {
   &.close, &.maximize, &.minimize {
     background-color: transparent;
@@ -223,11 +222,95 @@ button.titlebutton {
   }
 }
 
+windowcontrols > button {
+  &.close, &.maximize, &.minimize {
+    > image { 
+      background-color: transparent;
+      transition-property: background-color;
+      color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:backdrop {
+      &:hover > image {
+        background-color: gtkshade($headerbar_backdrop_color, 0.9);
+      }
+      &:not(:hover) > image {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &.maximize, &.minimize {
+    &:hover > image {
+      background-color: $accent_bg_color;
+    }
+  }
+
+  &.close > image {
+    background-image: url('assets/titlebutton-close.png');
+
+    &:hover {
+      background-color: $close_button;
+      background-image: url('assets/titlebutton-close-hover.png');
+    }
+
+    &:backdrop {
+      &:hover {
+        background-image: url('assets/titlebutton-close.png');
+      }
+    }
+  }
+
+  &.maximize > image {
+    background-image: url('assets/titlebutton-maximize.png');
+
+    &:hover {
+      background-image: url('assets/titlebutton-maximize-hover.png');
+    }
+
+    &:backdrop {
+      &:hover {
+        background-image: url('assets/titlebutton-maximize.png');
+      }
+    }
+  }
+
+  &.minimize > image {
+    background-image: url('assets/titlebutton-minimize.png');
+
+    &:hover {
+      background-image: url('assets/titlebutton-minimize-hover.png');
+    }
+
+    &:backdrop {
+      &:hover {
+        background-image: url('assets/titlebutton-minimize.png');
+      }
+    }
+  }
+}
+
 headerbar, .titlebar {
   .maximized & {
-    button.titlebutton,
-    windowcontrols button {
+    button.titlebutton {
       &.maximize {
+        background-image: url('assets/titlebutton-unmaximize.png');
+
+        &:hover {
+          background-image: url('assets/titlebutton-unmaximize-hover.png');
+        }
+
+        &:backdrop {
+          &:hover {
+           background-image: url('assets/titlebutton-unmaximize.png');
+          }
+        }
+      }
+    }
+    windowcontrols button {
+      &.maximize > image {
         background-image: url('assets/titlebutton-unmaximize.png');
 
         &:hover {

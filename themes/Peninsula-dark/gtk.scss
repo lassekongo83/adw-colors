@@ -137,6 +137,7 @@ $titlebutton_maximize: #75c2b3;
 $titlebutton_minimize: #d7c781;
 $titlebutton_backdrop: #707f8c;
 $titlebutton_size: 18px;
+$hover_shade: 1.3;
 
 // GTK3 decoration
 decoration {
@@ -200,7 +201,7 @@ decoration {
 
 // Titlebuttons
 button.titlebutton,
-windowcontrols > button {
+windowcontrols > button > image {
   color: transparent;
   min-width: $titlebutton_size;
   min-height: $titlebutton_size;
@@ -211,17 +212,17 @@ button.titlebutton:backdrop {
 }
 
 windowcontrols > button {
-  border-radius: 100%;
+  margin: 0 2px;
   padding: 0;
-  margin: 0 5px;
-
-  > image { padding: 0; }
 }
 
-button.titlebutton,
-windowcontrols > button {
+windowcontrols > button > image {
+  border-radius: 100%;
+  padding: 0;
+  margin: 0;
+}
 
-  $hover_shade: 1.3;
+button.titlebutton {
 
   &.close {
     &, &:hover:backdrop {
@@ -254,6 +255,48 @@ windowcontrols > button {
   }
 
   &.close, &.maximize, &.minimize {
+    &:backdrop {
+      background-color: $titlebutton_backdrop;
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 3px rgba(0,0,0,0.3);
+    }
+  }
+}
+
+windowcontrols > button {
+  &.close > image {
+    &, &:hover:backdrop {
+      background-color: $titlebutton_close;
+    }
+
+    &:hover {
+      background-color: gtkshade($titlebutton_close, $hover_shade);
+    }
+  }
+
+  &.maximize > image {
+    &, &:hover:backdrop {
+      background-color: $titlebutton_maximize;
+    }
+
+    &:hover {
+      background-color: gtkshade($titlebutton_maximize, $hover_shade);
+    }
+  }
+
+  &.minimize > image {
+    &, &:hover:backdrop {
+      background-color: $titlebutton_minimize;
+    }
+
+    &:hover {
+      background-color: gtkshade($titlebutton_minimize, $hover_shade);
+    }
+  }
+
+  &.close > image, &.maximize > image, &.minimize > image {
     &:backdrop {
       background-color: $titlebutton_backdrop;
     }

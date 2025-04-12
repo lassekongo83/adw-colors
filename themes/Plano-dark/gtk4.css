@@ -19,13 +19,63 @@
 @define-color sidebar_fg_color @window_fg_color;
 @define-color sidebar_backdrop_color @window_bg_color;
 @define-color sidebar_shade_color rgba(0,0,0,0.25);
+check {
+  border-radius: 0;
+}
+
+switch, switch slider {
+  border-radius: 0;
+}
+
+:root {
+  --accent-bg-color: @accent_bg_color;
+  --accent-fg-color: @accent_fg_color;
+  --window-bg-color: @window_bg_color;
+  --window-fg-color: @window_fg_color;
+  --view-bg-color: @view_bg_color;
+  --view-fg-color: @view_fg_color;
+  --headerbar-bg-color: @headerbar_bg_color;
+  --headerbar-fg-color: @headerbar_fg_color;
+  --headerbar-border-color: @headerbar_border_color;
+  --headerbar-backdrop-color: @headerbar_backdrop_color;
+  --headerbar-shade-color: @headerbar_shade_color;
+  --sidebar-bg-color: @sidebar_bg_color;
+  --sidebar-fg-color: @sidebar_fg_color;
+  --sidebar-backdrop-color: @sidebar_backdrop_color;
+  --sidebar-border-color: @sidebar_border_color;
+  --sidebar-shade-color: @sidebar_shade_color;
+  --card-bg-color: @card_bg_color;
+  --card-fg-color: @card_fg_color;
+  --card-shade-color: @card_shade_color;
+  --dialog-bg-color: @dialog_bg_color;
+  --dialog-fg-color: @dialog_fg_color;
+  --popover-bg-color: @popover_bg_color;
+  --popover-fg-color: @popover_fg_color;
+  --popover-shade-color: @popover_shade_color;
+}
+
+window,
+headerbar, .titlebar {
+  border-radius: 0;
+}
+
 windowcontrols > button {
-  min-width: 20px;
-  min-height: 20px;
+  margin: 0 5px;
   padding: 0;
 }
 
-windowcontrols > button.close, windowcontrols > button.maximize, windowcontrols > button.minimize {
+windowcontrols > button > image {
+  min-width: 20px;
+  min-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+windowcontrols > button.maximize:hover > image, windowcontrols > button.minimize:hover > image {
+  background-color: @accent_bg_color;
+}
+
+windowcontrols > button.close > image, windowcontrols > button.maximize > image, windowcontrols > button.minimize > image {
   background-color: transparent;
   transition-property: background-color;
   color: transparent;
@@ -36,66 +86,34 @@ windowcontrols > button.close, windowcontrols > button.maximize, windowcontrols 
   border-color: transparent;
 }
 
-windowcontrols > button.close > image, windowcontrols > button.maximize > image, windowcontrols > button.minimize > image {
-  opacity: 0;
-}
-
-windowcontrols > button.maximize:hover, windowcontrols > button.minimize:hover {
-  background-color: @accent_bg_color;
-  box-shadow: none;
-}
-
-windowcontrols > button.close {
+windowcontrols > button.close > image {
   background-image: url("assets/titlebutton-close.png");
   background-color: #a45f5f;
 }
 
-windowcontrols > button.close:hover {
+windowcontrols > button.close:hover > image {
   background-color: shade(#a45f5f,1.1);
   box-shadow: none;
 }
 
-windowcontrols > button.maximize {
+windowcontrols > button.maximize > image {
   background-image: url("assets/titlebutton-maximize.png");
 }
 
-windowcontrols > button.maximize:backdrop:hover {
+windowcontrols > button.maximize:backdrop:hover > image {
   background-color: shade(@headerbar_backdrop_color,1.2);
 }
 
-windowcontrols > button.minimize {
+windowcontrols > button.minimize > image {
   background-image: url("assets/titlebutton-minimize.png");
 }
 
-windowcontrols > button.minimize:backdrop:hover {
+windowcontrols > button.minimize:backdrop:hover > image {
   background-color: shade(@headerbar_backdrop_color,1.2);
 }
 
-check {
-  border-radius: 0;
-}
-
-switch, switch slider {
-  border-radius: 0;
-}
-
-window,
-headerbar, .titlebar {
-  border-radius: 0;
-}
-
-.maximized headerbar windowcontrols button.maximize, .maximized .titlebar windowcontrols button.maximize {
+.maximized headerbar windowcontrols button.maximize > image, .maximized .titlebar windowcontrols button.maximize > image {
   background-image: url("assets/titlebutton-unmaximize.png");
-}
-
-windowcontrols > button {
-  margin: 5px;
-}
-
-windowcontrols > button > image {
-  padding: 0;
-  border-radius: 0;
-  background-color: transparent;
 }
 
 notebook > header tab:checked.reorderable-page,
@@ -146,6 +164,11 @@ headerbar button, .titlebar button {
 
 headerbar button:hover, .titlebar button:hover {
   box-shadow: inset 0 0 0 1px @accent_color, 0 0 0 2px alpha(@accent_color,0.2);
+}
+
+headerbar windowcontrols > button, headerbar windowcontrols > button:hover, headerbar windowcontrols > button:checked, headerbar windowcontrols > button:active, .titlebar windowcontrols > button, .titlebar windowcontrols > button:hover, .titlebar windowcontrols > button:checked, .titlebar windowcontrols > button:active {
+  box-shadow: none;
+  border: none;
 }
 
 headerbar stackswitcher button, .titlebar stackswitcher button {
