@@ -1,4 +1,6 @@
 #!/bin/sh
+# This program is licensed under GPLv3
+# https://www.gnu.org/licenses/gpl-3.0.html
 
 script_dir=$(dirname -- "$(realpath -- "$0")")
 gtk3_file="$HOME/.config/gtk-3.0/gtk.css"
