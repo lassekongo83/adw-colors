@@ -7,7 +7,7 @@ gtk3_file="$HOME/.config/gtk-3.0/gtk.css"
 gtk4_file="$HOME/.config/gtk-4.0/gtk.css"
 backup_number=$(date +%s)
 
-WARNING_TEXT="This program will overwrite (but create backups) of the config files ~/.config/gtk-3.0/gtk.css and ~/.config/gtk-4.0/gtk.css if they exist. Are you sure you want to proceed?"
+WARNING_TEXT="This program will overwrite and create backups of the configuration files ~/.config/gtk-3.0/gtk.css and ~/.config/gtk-4.0/gtk.css if they exist. Are you sure you want to proceed?"
 
 echo "$WARNING_TEXT"
 read -p "Proceed? (y/n) " -n 1 -r
@@ -93,7 +93,6 @@ if [ "$choice" -ge 1 ] && [ "$choice" -le "${#colors[@]}" ]; then
   # Write the CSS rules to the gtk.css files
   {
     echo ":root {"
-    echo "  --accent-color: var(--accent-bg-color);"
     echo "  --accent-bg-color: var(--accent-$selected_color);"
     echo "}"
   } > "$gtk4_file"
@@ -111,7 +110,6 @@ if [ "$choice" -ge 1 ] && [ "$choice" -le "${#colors[@]}" ]; then
     echo "@define-color accent_purple #9141ac;"
     echo "@define-color accent_slate #6f8396;"
     echo "@define-color accent_bg_color @accent_$selected_color;"
-    echo "@define-color accent_color @accent_bg_color;"
   } > "$gtk3_file"
 
   echo "Updated $gtk3_file with new accent color settings."
