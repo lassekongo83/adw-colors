@@ -1,0 +1,56 @@
+@use '../settings' as *;
+
+@if $toolkit == 'gtk4' {
+  popover.menu {
+    modelbutton {
+      border-radius: $menu_radius;
+    }
+
+    list, listview {
+      > row {
+        border-radius: $menu_radius;
+      }
+    }
+  }
+
+  menubar {
+    > item {
+      border-radius: $button_radius;
+
+      popover.menu popover.menu > contents {
+        border-radius: $popover_radius;
+      }
+    }
+  }
+} @else {
+  // GTK3
+  menubar,
+  .menubar {
+    > menuitem {
+      border-radius: $button_radius;
+      menu {
+        &:dir(rtl), &:dir(ltr) { // specificity bump
+          border-radius: $menu_radius;
+          menuitem { border-radius: $button_radius; }
+        }
+      }
+    }
+
+    .csd.popup decoration {
+      border-radius: $menu_radius;
+    }
+  }
+
+  menu,
+  .menu,
+  %menu,
+  .context-menu {
+    .csd & {
+      border-radius: $menu_radius;
+    }
+    menuitem,
+    %menuitem {
+      border-radius: $button_radius;
+    }
+  }
+}

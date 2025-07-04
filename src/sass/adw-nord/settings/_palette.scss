@@ -1,0 +1,25 @@
+// This file contains the main colors for the theme
+
+@use '../../abstracts/settings' as *;
+
+// Nord palette
+// light theme / dark theme
+$red:          if($variant == 'light', #bf616a, #bf616a);
+$orange:       if($variant == 'light', #d08770, #d08770);
+$yellow:       if($variant == 'light', #ebcb8b, #ebcb8b);
+$green:        if($variant == 'light', #a3be8c, #a3be8c);
+$blue:         if($variant == 'light', #5e81ac, #81a1c1);
+$cyan:         if($variant == 'light', #8fbcbb, #8fbcbb); // also known as aqua or teal
+$purple:       if($variant == 'light', #b48ead, #b48ead); // also known as magneta
+$pink:         if($variant == 'light', #b16286, #d3869b);
+$slate:        if($variant == 'light', #7c6f64, #928374); // also know as grey or carbon
+
+$bg_primary:   if($variant == 'light', #eceff4, #3b4252); // window bg
+$fg_primary:   if($variant == 'light', #3b4252, #e5e9f0); // window text
+
+$bg_secondary: if($variant == 'light', #f8f9fb, #2e3440); // textviews and view bg
+$fg_secondary: if($variant == 'light', #2e3440, #eceff4); // view text
+
+$bg_alt:       if($variant == 'light', #e5e9f0, #434c5e); // Headerbar and sidebars
+$bg_alt2:      if($variant == 'light', #f8f9fb, #4c566a); // Popovers and menus
+$fg_alt:       if($variant == 'light', #2e3440, #eceff4);

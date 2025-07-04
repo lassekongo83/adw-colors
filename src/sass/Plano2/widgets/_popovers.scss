@@ -1,0 +1,22 @@
+@use '../settings' as *;
+
+@if $toolkit == 'gtk4' {
+  popover {
+    > contents {
+      border-radius: $popover_radius;
+    }
+
+    .solid-csd & {
+      > arrow,
+      > contents {
+        border-radius: 0;
+      }
+    }
+  }
+} @else {
+  popover.background {
+    .csd &, & {
+      border-radius: $popover_radius;
+    }
+  }
+}

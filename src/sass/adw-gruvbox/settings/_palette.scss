@@ -1,0 +1,25 @@
+// This file contains the main colors for the theme
+
+@use '../../abstracts/settings' as *;
+
+// Gruvbox palette
+// light theme / dark theme
+$red:          if($variant == 'light', #c14a4a, #ea6962);
+$orange:       if($variant == 'light', #c35e0a, #e78a4e);
+$yellow:       if($variant == 'light', #b47109, #d8a657);
+$green:        if($variant == 'light', #6c782e, #a9b665);
+$blue:         if($variant == 'light', #45707a, #7daea3);
+$cyan:         if($variant == 'light', #4c7a5d, #89b482); // also known as aqua or teal
+$purple:       if($variant == 'light', #ab62b1, #d386cd); // also known as magneta
+$pink:         if($variant == 'light', #b16286, #d3869b);
+$slate:        if($variant == 'light', #7c6f64, #928374); // also know as grey or carbon
+
+$bg_primary:   if($variant == 'light', #fbf1c7, #282828); // window bg
+$fg_primary:   if($variant == 'light', #3c3836, #ebdbb2); // window text
+
+$bg_secondary: if($variant == 'light', #f9f5d7, #1d2021); // textviews and view bg
+$fg_secondary: if($variant == 'light', #282828, #fbf1c7); // view text
+
+$bg_alt:       if($variant == 'light', #ebdbb2, #3c3836); // Headerbar and sidebars
+$bg_alt2:      if($variant == 'light', #f9f5d7, #504945); // Popovers and menus
+$fg_alt:       if($variant == 'light', #282828, #ebdbb2);

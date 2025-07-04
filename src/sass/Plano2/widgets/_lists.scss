@@ -1,0 +1,117 @@
+@use '../settings' as *;
+
+.sidebar list,
+placessidebar {
+  row { border-radius: $button_radius; }
+}
+
+@if $toolkit == 'gtk4' {
+  listview,
+  list {
+    &,
+    row.entry,
+    row.button {
+      border-radius: $card_radius;
+    }
+  }
+
+  .navigation-sidebar {
+    row { border-radius: $button_radius; }
+  }
+
+  list.boxed-list {
+    > row {
+      // Rounded top
+      &:first-child {
+        &, &.expander row.header {
+          border-top-left-radius: $card_radius;
+          border-top-right-radius: $card_radius;
+        }
+      }
+
+      // Rounded bottom
+      &:last-child {
+        &,
+        &.expander:not(:checked),
+        &.expander:not(:checked) row.header,
+        &.expander:checked list.nested,
+        &.expander:checked list.nested > row:last-child {
+          border-bottom-left-radius: $card_radius;
+          border-bottom-right-radius: $card_radius;
+          border-bottom-width: 0;
+        }
+      }
+    }
+  }
+
+  list.boxed-list-separate {
+    > row {
+      &.expander {
+        row.header {
+          border-top-left-radius: $card_radius;
+          border-top-right-radius: $card_radius;
+        }
+
+        &:not(:checked) row.header,
+        &.expander:checked list.nested,
+        &.expander:checked list.nested > row:last-child {
+          border-bottom-left-radius: $card_radius;
+          border-bottom-right-radius: $card_radius;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+} @else {
+  list {
+    row { -gtk-outline-radius: $button_radius; }
+  }
+
+  // Fix wrong border-radius on hdy spinbutton entries
+  list.content .horizontal spinbutton entry {
+    border-top-left-radius: $button_radius;
+    border-bottom-left-radius: $button_radius;
+  }
+
+  // Non "content" lists
+  list.view.frame {
+    border-radius: $card_radius;
+  }
+
+  // Libhandy
+  list.content {
+    &, list {
+      border-radius: $card_radius;
+    }
+
+    > row {
+      &:not(:last-child) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+      }
+
+      &:first-child {
+        border-top-left-radius: $card_radius;
+        border-top-right-radius: $card_radius;
+        -gtk-outline-radius: $card_radius $card_radius 0 0;
+      }
+
+      &:last-child {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: $card_radius;
+        border-bottom-right-radius: $card_radius;
+        -gtk-outline-radius: 0 0 $card_radius $card_radius;
+      }
+
+      &:only-child {
+        border-radius: $card_radius;
+        -gtk-outline-radius: $card_radius;
+      }
+    }
+  }
+}

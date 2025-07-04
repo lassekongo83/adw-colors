@@ -1,0 +1,17 @@
+@use '../../abstracts/settings' as *;
+
+// You have my consent to touch these...
+// Roundness
+$window_radius: 0px;        // Radius on windows
+$dialog_radius: 0px;        // Radius on message dialogs
+$button_radius: 2px;
+$titlebutton_radius: 2px; // Radius on min/max/close buttons
+$card_radius: 4px;
+$menu_radius: 6px;
+$popover_radius: 6px;
+
+// Sizes
+$titlebutton_size: 32px; // Size (height/width) of the min/max/close buttons
+
+// Misc
+$asset_suffix: if($variant=='dark', '-dark', '');

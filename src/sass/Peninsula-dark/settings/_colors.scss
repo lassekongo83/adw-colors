@@ -1,0 +1,49 @@
+@use 'palette' as *;
+@use 'variables' as *;
+@use '../../abstracts/functions' as *;
+@use '../../abstracts/settings' as *;
+
+// Here we create sass variables for any colors that were added to _defaults.scss
+// in case you need to use any of these colors anywhere else in the theme
+$window_bg_color:                  if($toolkit == 'gtk4', var(--window-bg-color), gtkcolor(window_bg_color));
+$window_fg_color:                  if($toolkit == 'gtk4', var(--window-fg-color), gtkcolor(window_fg_color));
+$view_bg_color:                    if($toolkit == 'gtk4', var(--view-bg-color), gtkcolor(view_bg_color));
+$view_fg_color:                    if($toolkit == 'gtk4', var(--view-fg-color), gtkcolor(view_fg_color));
+$accent_bg_color:                  if($toolkit == 'gtk4', var(--accent-bg-color), gtkcolor(accent_bg_color));
+$accent_fg_color:                  if($toolkit == 'gtk4', var(--accent-fg-color), gtkcolor(accent_fg_color));
+$headerbar_bg_color:               if($toolkit == 'gtk4', var(--headerbar-bg-color), gtkcolor(headerbar_bg_color));
+$headerbar_fg_color:               if($toolkit == 'gtk4', var(--headerbar-fg-color), gtkcolor(headerbar_fg_color));
+$headerbar_backdrop_color:         if($toolkit == 'gtk4', var(--headerbar-backdrop-color), gtkcolor(headerbar_backdrop_color));
+$popover_bg_color:                 if($toolkit == 'gtk4', var(--popover-bg-color), gtkcolor(popover_bg_color));
+$popover_fg_color:                 if($toolkit == 'gtk4', var(--popover-fg-color), gtkcolor(popover_fg_color));
+$dialog_bg_color:                  if($toolkit == 'gtk4', var(--dialog-bg-color), gtkcolor(dialog_bg_color));
+$dialog_fg_color:                  if($toolkit == 'gtk4', var(--dialog-fg-color), gtkcolor(dialog_fg_color));
+$card_bg_color:                    if($toolkit == 'gtk4', var(--card-bg-color), gtkcolor(card_bg_color));
+$card_fg_color:                    if($toolkit == 'gtk4', var(--card-fg-color), gtkcolor(card_fg_color));
+$sidebar_bg_color:                 if($toolkit == 'gtk4', var(--sidebar-bg-color), gtkcolor(sidebar_bg_color));
+$sidebar_fg_color:                 if($toolkit == 'gtk4', var(--sidebar-fg-color), gtkcolor(sidebar_fg_color));
+$sidebar_backdrop_color:           if($toolkit == 'gtk4', var(--sidebar-backdrop-color), gtkcolor(sidebar_backdrop_color));
+$sidebar_shade_color:              if($toolkit == 'gtk4', var(--sidebar-shade-color), gtkcolor(sidebar_shade_color));
+$sidebar_border_color:             if($toolkit == 'gtk4', var(--sidebar-border-color), gtkcolor(sidebar_border_color));
+$secondary_sidebar_bg_color:       if($toolkit == 'gtk4', var(--secondary-sidebar-bg-color), gtkcolor(secondary_sidebar_bg_color));
+$secondary_sidebar_fg_color:       if($toolkit == 'gtk4', var(--secondary-sidebar-fg-color), gtkcolor(secondary_sidebar_fg_color));
+$secondary_sidebar_backdrop_color: if($toolkit == 'gtk4', var(--secondary-sidebar-backdrop-color), gtkcolor(secondary_sidebar_backdrop_color));
+$secondary_sidebar_shade_color:    if($toolkit == 'gtk4', var(--secondary-sidebar-shade-color), gtkcolor(secondary_sidebar_shade_color));
+$secondary_sidebar_border_color:   if($toolkit == 'gtk4', var(--secondary-sidebar-border-color), gtkcolor(secondary_sidebar_border_color));
+$destructive_bg_color:             if($toolkit == 'gtk4', var(--destructive-bg-color), gtkcolor(destructive_bg_color));
+$success_bg_color:                 if($toolkit == 'gtk4', var(--success-bg-color), gtkcolor(success_bg_color));
+$warning_bg_color:                 if($toolkit == 'gtk4', var(--warning-bg-color), gtkcolor(warning_bg_color));
+$error_bg_color:                   if($toolkit == 'gtk4', var(--error-bg-color), gtkcolor(error_bg_color));
+
+// titlebuttons
+$tb_fg_color:     transparent; // Set to transparent to remove close/min/max icons, otherwise set to the primary headerbar text color
+$tb_close:        $muted_red;
+$tb_close_hover:  gtkmix(white, $muted_red, 30%);
+$tb_close_active: gtkmix(white, $muted_red, 50%);
+$tb_max:          $muted_green;
+$tb_max_hover:    gtkmix(white, $muted_green, 30%);
+$tb_max_active:   gtkmix(white, $muted_green, 50%);
+$tb_min:          $muted_yellow;
+$tb_min_hover:    gtkmix(white, $muted_yellow, 30%);
+$tb_min_active:   gtkmix(white, $muted_yellow, 50%);
+$tb_backdrop:     gtkalpha($headerbar_fg_color, .15);

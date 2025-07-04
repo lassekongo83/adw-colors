@@ -1,0 +1,61 @@
+@use '../settings' as *;
+@forward 'linked';
+
+$circular_radius: 9999px;
+
+%button,
+button {
+  @if $toolkit == 'gtk3' {
+    -gtk-outline-radius: $button_radius;
+    .linked > & { @extend %linked; }
+    .linked.vertical > & { @extend %linked_vertical; }
+  }
+
+  @at-root %button_basic, & {
+    border-radius: $button_radius;
+  }
+
+  @at-root %circular_button,
+  &.circular {
+    border-radius: $circular_radius;
+  }
+
+  @if $toolkit == 'gtk4' {
+    @at-root %pill_button,
+    &.pill {
+      border-radius: $circular_radius;
+    }
+    &.color {
+      > colorswatch:only-child {
+        border-radius: $button_radius;
+
+        > overlay {
+          border-radius: $button_radius;
+        }
+      }
+    }
+  }
+}
+
+@if $toolkit == 'gtk4' {
+  splitbutton {
+    border-radius: $button_radius;
+  }
+
+  menubutton {
+    &.suggested-action,
+    &.opaque {
+      border-radius: $button_radius;
+
+      &.circular, &.pill {
+        border-radius: $circular_radius;
+      }
+    }
+  }
+} @else {
+  // GTK3
+  modelbutton.flat,
+  .menuitem.button.flat {
+    border-radius: $button_radius;
+  }
+}

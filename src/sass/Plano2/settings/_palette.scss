@@ -1,0 +1,25 @@
+// This file contains the main colors for the theme
+
+@use '../../abstracts/settings' as *;
+
+// Plano palette
+// light theme / dark theme
+$red:          if($variant == 'light', #d35f5f, #d87272);
+$orange:       if($variant == 'light', #e28a52, #e59866);
+$yellow:       if($variant == 'light', #e6c453, #e9cb67);
+$green:        if($variant == 'light', #66b45b, #78bd6e);
+$cyan:         if($variant == 'light', #5fb9b3, #72c1bc); // also known as aqua or teal
+$blue:         if($variant == 'light', #5f7cd3, #728bd8);
+$purple:       if($variant == 'light', #835fd3, #9272d8); // also known as magneta or violet
+$pink:         if($variant == 'light', #d35fa7, #d872b1); // also known as magneta
+$slate:        if($variant == 'light', #5f6775, #727985); // also know as grey or carbon
+
+$bg_primary:   if($variant == 'light', #ebeced, #2a2f30); // window bg
+$fg_primary:   if($variant == 'light', #3c4346, #e1e2e3); // window text
+
+$bg_secondary: if($variant == 'light', #f5f6f6, #212526); // textviews and view bg
+$fg_secondary: if($variant == 'light', #212526, #f5f6f6); // view text
+
+$bg_alt:       if($variant == 'light', #e1e2e3, #33393b); // Headerbar and sidebars
+$bg_alt2:      if($variant == 'light', #f5f6f6, #3c4346); // Popovers and menus
+$fg_alt:       if($variant == 'light', #3c4346, #e1e2e3);

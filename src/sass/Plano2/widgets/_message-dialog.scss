@@ -1,0 +1,24 @@
+@use '../settings' as *;
+
+@if $toolkit == 'gtk3' {
+  messagedialog {
+    &.csd {
+      border-width: 0;
+
+      &.background {
+        border-bottom-left-radius: $dialog_radius;
+        border-bottom-right-radius: $dialog_radius;
+      }
+    }
+
+    .titlebar {
+      border-top-left-radius: $dialog_radius;
+      border-top-right-radius: $dialog_radius;
+      min-height: 20px;
+    }
+
+    > decoration {
+      border-radius: $dialog_radius;
+    }
+  }
+}

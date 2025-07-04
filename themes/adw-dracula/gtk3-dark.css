@@ -1,0 +1,63 @@
+@define-color window_bg_color #282a36;
+@define-color window_fg_color #f8f8f2;
+@define-color view_bg_color #20212b;
+@define-color view_fg_color #f8f8f2;
+@define-color accent_bg_color #bd93f9;
+@define-color accent_fg_color white;
+@define-color headerbar_bg_color #44475a;
+@define-color headerbar_fg_color #f8f8f2;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color popover_bg_color #4c5065;
+@define-color popover_fg_color @view_fg_color;
+@define-color dialog_bg_color #4c5065;
+@define-color dialog_fg_color @view_fg_color;
+@define-color card_bg_color #4c5065;
+@define-color card_fg_color @view_fg_color;
+@define-color sidebar_bg_color #44475a;
+@define-color sidebar_fg_color #f8f8f2;
+@define-color sidebar_backdrop_color @window_bg_color;
+@define-color sidebar_shade_color rgba(0,0,0,0.25);
+@define-color sidebar_border_color rgba(0, 0, 0, 0.36);
+@define-color secondary_sidebar_bg_color #282a36;
+@define-color secondary_sidebar_fg_color @view_fg_color;
+@define-color secondary_sidebar_backdrop_color @view_bg_color;
+@define-color secondary_sidebar_shade_color rgba(0, 0, 0, 0.25);
+@define-color secondary_sidebar_border_color rgba(0, 0, 0, 0.36);
+@define-color destructive_bg_color #ff5555;
+@define-color success_bg_color #50fa7a;
+@define-color warning_bg_color #f1fa8c;
+@define-color error_bg_color #ff5555;
+decoration {
+  box-shadow: 0 3px 12px 1px rgba(0, 0, 0, 0.7), 0 0 0 1px mix(white,@window_bg_color,0.82);
+}
+decoration:backdrop {
+  box-shadow: 0 3px 12px 1px transparent, 0 2px 6px 2px rgba(0, 0, 0, 0.4), 0 0 0 1px mix(white,@window_bg_color,0.95);
+}
+.tiled decoration, .tiled-top decoration, .tiled-bottom decoration, .tiled-right decoration, .tiled-left decoration {
+  box-shadow: 0 0 0 1px mix(white,@window_bg_color,0.95), 0 0 0 20px transparent;
+}
+messagedialog.csd decoration, .csd.popup decoration, .maximized .csd.popup decoration {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), 0 0 0 1px alpha(mix(white,@window_bg_color,0.82),0.9);
+}
+tooltip.csd decoration {
+  box-shadow: none;
+}
+.maximized decoration, .fullscreen decoration {
+  border-radius: 0;
+  box-shadow: none;
+}
+.ssd decoration {
+  box-shadow: 0 0 0 1px mix(white,@window_bg_color,0.82);
+}
+.ssd decoration:backdrop {
+  box-shadow: 0 0 0 1px mix(white,@window_bg_color,0.95);
+}
+.ssd.maximized decoration, .ssd.maximized decoration:backdrop {
+  box-shadow: none;
+}
+.solid-csd decoration {
+  box-shadow: inset 0 0 0 5px alpha(currentColor,0.5), inset 0 0 0 4px @headerbar_bg_color, inset 0 0 0 1px alpha(currentColor,0.5);
+}
+.solid-csd decoration:backdrop {
+  box-shadow: inset 0 0 0 3px @window_bg_color;
+}

@@ -1,0 +1,53 @@
+@use '../settings' as *;
+
+%titlebuttons {
+  min-width: $titlebutton_width;
+  min-height: $titlebutton_height;
+  border-radius: $titlebutton_radius;
+  color: $tb_fg_color;
+}
+
+@mixin titlebutton-styles($color, $hover-color, $active-color, $hover-size: 8px) {
+  box-shadow: inset 0 0 0 6px $color;
+  &:hover { box-shadow: inset 0 0 0 $hover-size $hover-color; }
+  &:active { background-color: $active-color; box-shadow: none; }
+}
+
+@if $toolkit == 'gtk3' {
+  button.titlebutton {
+    margin: 0 4px;
+    border-width: 0;
+    @extend %titlebuttons;
+    &.close { @include titlebutton-styles($tb_close, $tb_close_hover, $tb_close_active); }
+    &.maximize { @include titlebutton-styles($tb_max, $tb_max_hover, $tb_max_active, 4px); } // Make maximize box-shadow thinner suggesting that the window can be enlarged
+    &.minimize { @include titlebutton-styles($tb_min, $tb_min_hover, $tb_min_active); }
+  }
+  .maximized button.titlebutton.maximize { @include titlebutton-styles($tb_max, $tb_max_hover, $tb_max_active, 8px); }
+
+  button.titlebutton:backdrop {
+    opacity: 0.5;
+    &.close { @include titlebutton-styles($tb_backdrop, $tb_close_hover, $tb_close_active); }
+    &.maximize { @include titlebutton-styles($tb_backdrop, $tb_max_hover, $tb_max_active, 4px); }
+    &.minimize { @include titlebutton-styles($tb_backdrop, $tb_min_hover, $tb_min_active); }
+  }
+  .maximized button.titlebutton:backdrop.maximize { @include titlebutton-styles($tb_backdrop, $tb_max_hover, $tb_max_active, 8px); }
+} @else {
+  windowcontrols > button {
+    min-width: $titlebutton_width;
+    min-height: $titlebutton_height;
+    > image {
+      padding: 0;
+      @extend %titlebuttons;
+    }
+    &.close > image { @include titlebutton-styles($tb_close, $tb_close_hover, $tb_close_active); }
+    &.maximize > image { @include titlebutton-styles($tb_max, $tb_max_hover, $tb_max_active, 4px); }
+    &.minimize > image { @include titlebutton-styles($tb_min, $tb_min_hover, $tb_min_active); }
+  }
+  .maximized windowcontrols > button.maximize > image { @include titlebutton-styles($tb_max, $tb_max_hover, $tb_max_active, 8px); }
+  windowcontrols > button:backdrop {
+    &.close > image { @include titlebutton-styles($tb_backdrop, $tb_close_hover, $tb_close_active); }
+    &.maximize > image { @include titlebutton-styles($tb_backdrop, $tb_max_hover, $tb_max_active, 4px); }
+    &.minimize > image { @include titlebutton-styles($tb_backdrop, $tb_min_hover, $tb_min_active); }
+  }
+  .maximized windowcontrols > button:backdrop.maximize > image { @include titlebutton-styles($tb_backdrop, $tb_max_hover, $tb_max_active, 8px); }
+}

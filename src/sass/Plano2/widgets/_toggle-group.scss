@@ -1,0 +1,10 @@
+@use '../settings' as *;
+
+@if $toolkit == 'gtk4' {
+  toggle-group {
+    border-radius: $button_radius;
+    > toggle {
+      border-radius: $button_radius;
+    }
+  }
+}

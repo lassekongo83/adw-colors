@@ -1,0 +1,7 @@
+@use '../abstracts/settings' with (
+  $variant: 'light',
+  $toolkit: 'gtk3'
+);
+
+@use 'defaults';
+@use 'widgets';

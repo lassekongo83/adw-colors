@@ -1,0 +1,356 @@
+@define-color window_bg_color #2a2f30;
+@define-color window_fg_color #e1e2e3;
+@define-color view_bg_color #212526;
+@define-color view_fg_color #f5f6f6;
+@define-color accent_bg_color #728bd8;
+@define-color accent_fg_color white;
+@define-color headerbar_bg_color #33393b;
+@define-color headerbar_fg_color #e1e2e3;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color popover_bg_color #3c4346;
+@define-color popover_fg_color @view_fg_color;
+@define-color dialog_bg_color #3c4346;
+@define-color dialog_fg_color @view_fg_color;
+@define-color card_bg_color #3c4346;
+@define-color card_fg_color @view_fg_color;
+@define-color sidebar_bg_color #33393b;
+@define-color sidebar_fg_color #e1e2e3;
+@define-color sidebar_backdrop_color @window_bg_color;
+@define-color sidebar_shade_color rgba(0,0,0,0.25);
+@define-color sidebar_border_color rgba(0, 0, 0, 0.36);
+@define-color secondary_sidebar_bg_color #3c4346;
+@define-color secondary_sidebar_fg_color @view_fg_color;
+@define-color secondary_sidebar_backdrop_color @view_bg_color;
+@define-color secondary_sidebar_shade_color rgba(0, 0, 0, 0.25);
+@define-color secondary_sidebar_border_color rgba(0, 0, 0, 0.36);
+@define-color destructive_bg_color #d87272;
+@define-color success_bg_color #78bd6e;
+@define-color warning_bg_color #e9cb67;
+@define-color error_bg_color #d87272;
+headerbar, .titlebar {
+  border-radius: 0px 0px 0 0;
+}
+.tiled headerbar:backdrop, .tiled headerbar, .tiled-top headerbar:backdrop, .tiled-top headerbar, .tiled-right headerbar:backdrop, .tiled-right headerbar, .tiled-bottom headerbar:backdrop, .tiled-bottom headerbar, .tiled-left headerbar:backdrop, .tiled-left headerbar, .maximized headerbar:backdrop, .maximized headerbar, .fullscreen headerbar:backdrop, .fullscreen headerbar, .tiled .titlebar:backdrop, .tiled .titlebar, .tiled-top .titlebar:backdrop, .tiled-top .titlebar, .tiled-right .titlebar:backdrop, .tiled-right .titlebar, .tiled-bottom .titlebar:backdrop, .tiled-bottom .titlebar, .tiled-left .titlebar:backdrop, .tiled-left .titlebar, .maximized .titlebar:backdrop, .maximized .titlebar, .fullscreen .titlebar:backdrop, .fullscreen .titlebar {
+  border-radius: 0;
+}
+headerbar.default-decoration, .titlebar.default-decoration {
+  min-height: 36px;
+  padding: 0 6px 0 6px;
+}
+headerbar.default-decoration button.titlebutton, .titlebar.default-decoration button.titlebutton {
+  border-radius: 0;
+}
+
+button.titlebutton:not(.appmenu), headerbar.default-decoration button.titlebutton, .titlebar.default-decoration button.titlebutton {
+  min-width: 32px;
+  min-height: 32px;
+  background-color: transparent;
+  color: transparent;
+  border-radius: 2px;
+  transition-property: background-color;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+button.titlebutton:not(.appmenu) {
+  margin: 0 -1px;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+button.titlebutton:not(.appmenu) > image {
+  opacity: 0;
+}
+button.titlebutton:not(.appmenu).maximize:backdrop, button.titlebutton:not(.appmenu).minimize:backdrop, button.titlebutton:not(.appmenu).close:backdrop {
+  opacity: 0.5;
+}
+button.titlebutton:not(.appmenu).maximize:hover, button.titlebutton:not(.appmenu).minimize:hover {
+  background-color: mix(@headerbar_fg_color,@headerbar_bg_color,0.9);
+}
+button.titlebutton:not(.appmenu).close:hover {
+  background-color: #d87272;
+}
+button.titlebutton:not(.appmenu).close {
+  background-image: -gtk-scaled(url("assets/titlebutton-close-dark.png"), url("assets/titlebutton-close-dark@2.png"));
+}
+button.titlebutton:not(.appmenu).close:hover {
+  background-color: #d87272;
+}
+button.titlebutton:not(.appmenu).maximize {
+  background-image: -gtk-scaled(url("assets/titlebutton-maximize-dark.png"), url("assets/titlebutton-maximize-dark@2.png"));
+}
+button.titlebutton:not(.appmenu).minimize {
+  background-image: -gtk-scaled(url("assets/titlebutton-minimize-dark.png"), url("assets/titlebutton-minimize-dark@2.png"));
+}
+
+.maximized button.titlebutton.maximize {
+  background-image: -gtk-scaled(url("assets/titlebutton-unmaximize-dark.png"), url("assets/titlebutton-unmaximize-dark@2.png"));
+}
+
+.linked:not(.vertical) > combobox > box > button.combo,
+.linked:not(.vertical) > entry, .linked:not(.vertical) > spinbutton:not(.vertical),
+.linked > button {
+  border-radius: 0;
+  -gtk-outline-radius: 0;
+}
+
+combobox.linked button:nth-child(2):dir(rtl), .linked:not(.vertical) > combobox:first-child > box > button.combo,
+.linked:not(.vertical) > entry:first-child, .linked:not(.vertical) > spinbutton:first-child:not(.vertical),
+.linked > button:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  -gtk-outline-top-left-radius: 2px;
+  -gtk-outline-bottom-left-radius: 2px;
+}
+
+combobox.linked button:nth-child(2):dir(ltr), .linked:not(.vertical) > combobox:last-child > box > button.combo,
+.linked:not(.vertical) > entry:last-child, .linked:not(.vertical) > spinbutton:last-child:not(.vertical),
+.linked > button:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  -gtk-outline-top-right-radius: 2px;
+  -gtk-outline-bottom-right-radius: 2px;
+}
+
+.linked:not(.vertical) > combobox:only-child > box > button.combo,
+.linked:not(.vertical) > entry:only-child, .linked:not(.vertical) > spinbutton:only-child:not(.vertical),
+.linked > button:only-child {
+  border-radius: 2px;
+  -gtk-outline-radius: 2px;
+}
+
+.linked.vertical > combobox > box > button.combo,
+.linked.vertical > entry, .linked.vertical > spinbutton:not(.vertical),
+.linked.vertical > button {
+  border-radius: 0;
+  -gtk-outline-radius: 0;
+}
+
+.linked.vertical > combobox:first-child > box > button.combo,
+.linked.vertical > entry:first-child, .linked.vertical > spinbutton:first-child:not(.vertical),
+.linked.vertical > button:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  -gtk-outline-top-left-radius: 2px;
+  -gtk-outline-top-right-radius: 2px;
+}
+
+.linked.vertical > combobox:last-child > box > button.combo,
+.linked.vertical > entry:last-child, .linked.vertical > spinbutton:last-child:not(.vertical),
+.linked.vertical > button:last-child {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  -gtk-outline-bottom-left-radius: 2px;
+  -gtk-outline-bottom-right-radius: 2px;
+}
+
+.linked.vertical > combobox:only-child > box > button.combo,
+.linked.vertical > entry:only-child, .linked.vertical > spinbutton:only-child:not(.vertical),
+.linked.vertical > button:only-child {
+  border-radius: 2px;
+  -gtk-outline-radius: 2px;
+}
+
+button {
+  -gtk-outline-radius: 2px;
+}
+button {
+  border-radius: 2px;
+}
+
+button.circular {
+  border-radius: 9999px;
+}
+
+modelbutton.flat,
+.menuitem.button.flat {
+  border-radius: 2px;
+}
+
+spinbutton:not(.vertical),
+entry {
+  border-radius: 2px;
+}
+
+treeview entry.flat, treeview entry {
+  border-radius: 0;
+}
+
+spinbutton:not(.vertical) entry {
+  border-radius: 0;
+}
+spinbutton:not(.vertical) button {
+  border-radius: 0;
+}
+spinbutton:not(.vertical) button:dir(ltr):last-child {
+  border-radius: 0 2px 2px 0;
+}
+spinbutton:not(.vertical) button:dir(rtl):first-child {
+  border-radius: 2px 0 0 2px;
+}
+spinbutton.vertical entry {
+  border-radius: 0;
+}
+spinbutton.vertical button.up {
+  border-radius: 2px 2px 0 0;
+}
+spinbutton.vertical button.down {
+  border-radius: 0 0 2px 2px;
+}
+
+.sidebar list row,
+placessidebar row {
+  border-radius: 2px;
+}
+
+list row {
+  -gtk-outline-radius: 2px;
+}
+
+list.content .horizontal spinbutton entry {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+list.view.frame {
+  border-radius: 4px;
+}
+
+list.content, list.content list {
+  border-radius: 4px;
+}
+list.content > row:not(:last-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+list.content > row:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+list.content > row:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  -gtk-outline-radius: 4px 4px 0 0;
+}
+list.content > row:last-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -gtk-outline-radius: 0 0 4px 4px;
+}
+list.content > row:only-child {
+  border-radius: 4px;
+  -gtk-outline-radius: 4px;
+}
+
+menubar > menuitem,
+.menubar > menuitem {
+  border-radius: 2px;
+}
+menubar > menuitem menu:dir(rtl), menubar > menuitem menu:dir(ltr),
+.menubar > menuitem menu:dir(rtl),
+.menubar > menuitem menu:dir(ltr) {
+  border-radius: 6px;
+}
+menubar > menuitem menu:dir(rtl) menuitem, menubar > menuitem menu:dir(ltr) menuitem,
+.menubar > menuitem menu:dir(rtl) menuitem,
+.menubar > menuitem menu:dir(ltr) menuitem {
+  border-radius: 2px;
+}
+menubar .csd.popup decoration,
+.menubar .csd.popup decoration {
+  border-radius: 6px;
+}
+
+.csd menu,
+.csd .menu,
+.csd .context-menu {
+  border-radius: 6px;
+}
+menu menuitem,
+.menu menuitem,
+.context-menu menuitem {
+  border-radius: 2px;
+}
+
+.csd popover.background, popover.background {
+  border-radius: 6px;
+}
+
+messagedialog.csd {
+  border-width: 0;
+}
+messagedialog.csd.background {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+messagedialog .titlebar {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  min-height: 20px;
+}
+messagedialog > decoration {
+  border-radius: 0px;
+}
+
+floating-sheet > sheet {
+  border-radius: 0px;
+}
+
+.view:selected:focus, .view:selected {
+  border-radius: 2px;
+}
+
+notebook > header tab.reorderable-page {
+  -gtk-outline-radius: 4px;
+  border-radius: 2px;
+}
+
+rubberband {
+  border-radius: 0;
+}
+
+decoration, window.csd {
+  border-radius: 0px 0px 0 0;
+}
+
+window.background {
+  border-radius: 0;
+}
+
+.tiled decoration, .tiled decoration headerbar, .tiled decoration .titlebar, .tiled-top decoration, .tiled-top decoration headerbar, .tiled-top decoration .titlebar, .tiled-bottom decoration, .tiled-bottom decoration headerbar, .tiled-bottom decoration .titlebar, .tiled-right decoration, .tiled-right decoration headerbar, .tiled-right decoration .titlebar, .tiled-left decoration, .tiled-left decoration headerbar, .tiled-left decoration .titlebar, .maximized decoration, .maximized decoration headerbar, .maximized decoration .titlebar, .fullscreen decoration, .fullscreen decoration headerbar, .fullscreen decoration .titlebar {
+  border-radius: 0;
+}
+tooltip.csd decoration {
+  border-radius: 5px;
+  box-shadow: none;
+}
+.solid-csd decoration {
+  border-radius: 0;
+}
+
+window.maximized headerbar, window.maximized .titlebar,
+window.fullscreen headerbar,
+window.fullscreen .titlebar,
+window.tiled headerbar,
+window.tiled .titlebar,
+window.tiled-top headerbar,
+window.tiled-top .titlebar,
+window.tiled-bottom headerbar,
+window.tiled-bottom .titlebar,
+window.tiled-right headerbar,
+window.tiled-right .titlebar,
+window.tiled-left headerbar,
+window.tiled-left .titlebar {
+  border-radius: 0;
+}
+
+.unified decoration-overlay,
+.unified decoration,
+window.unified {
+  border-radius: 0px;
+}
+
+.titlebar.windowhandle {
+  border-radius: 0;
+}

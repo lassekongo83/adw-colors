@@ -1,0 +1,26 @@
+@use '../settings' as *;
+
+@if $toolkit == 'gtk4' {
+  tabbar {
+    tabbox {
+      > tabboxchild {
+        border-radius: $button_radius;
+      }
+    }
+
+    tab {
+      border-radius: $button_radius;
+    }
+  }
+} @else {
+  notebook {
+    > header {
+      tab {
+        &.reorderable-page {
+          -gtk-outline-radius: calc($button_radius + 2px);
+          border-radius: $button_radius
+        }
+      }
+    }
+  }
+}

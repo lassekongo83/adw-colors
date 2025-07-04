@@ -1,0 +1,54 @@
+@use '../settings' as *;
+
+// Windows
+@if $toolkit == 'gtk3' {
+  decoration {
+    $wm_border: gtkmix(white, $window_bg_color, 18%);
+    $wm_border_backdrop: gtkmix(white, $window_bg_color, 5%);
+
+    box-shadow: 0 3px 12px 1px rgba(0,0,0, 0.7),
+                0 0 0 1px $wm_border;
+
+    &:backdrop {
+      box-shadow: 0 3px 12px 1px transparent,
+                  0 2px 6px 2px rgba(0,0,0, 0.4),
+                  0 0 0 1px $wm_border_backdrop;
+    }
+
+    .tiled &,
+    .tiled-top &,
+    .tiled-bottom &,
+    .tiled-right &,
+    .tiled-left & {
+      box-shadow: 0 0 0 1px $wm_border_backdrop,
+                  0 0 0 20px transparent;
+    }
+
+    messagedialog.csd &,
+    .csd.popup &,
+    .maximized .csd.popup & {
+      box-shadow: 0 1px 2px rgba(0,0,0, 0.8),
+                  0 0 0 1px gtkalpha($wm_border, 0.9);
+    }
+
+    tooltip.csd & { box-shadow: none; }
+
+    .maximized &,
+    .fullscreen & {
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .ssd & { box-shadow: 0 0 0 1px $wm_border; }
+    .ssd &:backdrop { box-shadow: 0 0 0 1px $wm_border_backdrop; }
+    .ssd.maximized &,
+    .ssd.maximized &:backdrop { box-shadow: none; }
+
+    .solid-csd & {
+      box-shadow: inset 0 0 0 5px gtkalpha(currentColor, 0.5),
+                  inset 0 0 0 4px $headerbar_bg_color,
+                  inset 0 0 0 1px gtkalpha(currentColor, 0.5);
+    }
+    .solid-csd &:backdrop { box-shadow: inset 0 0 0 3px $window_bg_color; }
+  }
+}

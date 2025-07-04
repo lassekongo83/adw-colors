@@ -1,0 +1,42 @@
+name: Build & Commit Themes
+
+on:
+  push:
+    paths:
+      - 'src/sass/**/*.scss'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # 1. Check out the repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true  # so we can push back
+
+      # 2. Install Dart Sass via npm
+      - name: Install Sass
+        run: npm install -g sass
+
+      # 3. Compile all SCSS into themes/ mirroring folder structure
+      - name: Compile SCSS → CSS
+        run: |
+          mkdir -p themes
+          sass --no-source-map src/sass:themes
+
+      # 4. Commit & push only if CSS changed
+      - name: Commit compiled CSS
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add themes/
+          # if there’s nothing new, exit quietly
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: update compiled themes"
+          git push

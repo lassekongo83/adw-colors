@@ -1,0 +1,167 @@
+@define-color window_bg_color #292a30;
+@define-color window_fg_color #dfdfe0;
+@define-color view_bg_color #2f3036;
+@define-color view_fg_color #dfdfe0;
+@define-color accent_bg_color #ff806c;
+@define-color accent_fg_color white;
+@define-color headerbar_bg_color #3a3b40;
+@define-color headerbar_fg_color #dfdfe0;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color popover_bg_color #3a3b40;
+@define-color popover_fg_color @view_fg_color;
+@define-color dialog_bg_color #3a3b40;
+@define-color dialog_fg_color @view_fg_color;
+@define-color card_bg_color #3a3b40;
+@define-color card_fg_color @view_fg_color;
+@define-color sidebar_bg_color #3a3b40;
+@define-color sidebar_fg_color #dfdfe0;
+@define-color sidebar_backdrop_color @window_bg_color;
+@define-color sidebar_shade_color rgba(0,0,0,0.25);
+@define-color sidebar_border_color rgba(0, 0, 0, 0.36);
+@define-color secondary_sidebar_bg_color #292a30;
+@define-color secondary_sidebar_fg_color @view_fg_color;
+@define-color secondary_sidebar_backdrop_color @view_bg_color;
+@define-color secondary_sidebar_shade_color rgba(0, 0, 0, 0.25);
+@define-color secondary_sidebar_border_color rgba(0, 0, 0, 0.36);
+@define-color destructive_bg_color #ff5555;
+@define-color success_bg_color #3a944a;
+@define-color warning_bg_color #c88800;
+@define-color error_bg_color #ff5555;
+:root {
+  --accent-blue: #007bff;
+  --accent-teal: #1180b2;
+  --accent-green: #3a944a;
+  --accent-yellow: #c88800;
+  --accent-orange: #ff806c;
+  --accent-red: #ff5555;
+  --accent-pink: #ad3da4;
+  --accent-purple: #9141ac;
+  --accent-slate: #6f8396;
+  --accent-bg-color: @accent_bg_color;
+  --accent-fg-color: @accent_fg_color;
+  --window-bg-color: @window_bg_color;
+  --window-fg-color: @window_fg_color;
+  --view-bg-color: @view_bg_color;
+  --view-fg-color: @view_fg_color;
+  --headerbar-bg-color: @headerbar_bg_color;
+  --headerbar-fg-color: @headerbar_fg_color;
+  --headerbar-backdrop-color: @headerbar_backdrop_color;
+  --sidebar-bg-color: @sidebar_bg_color;
+  --sidebar-fg-color: @sidebar_fg_color;
+  --sidebar-backdrop-color: @sidebar_backdrop_color;
+  --sidebar-shade-color: @sidebar_shade_color;
+  --sidebar-border-color: @sidebar_border_color;
+  --secondary-sidebar-bg-color: @secondary_sidebar_bg_color;
+  --secondary-sidebar-fg-color: @secondary_sidebar_fg_color;
+  --secondary-sidebar-backdrop-color: @secondary_sidebar_backdrop_color;
+  --secondary-sidebar-shade-color: @secondary_sidebar_shade_color;
+  --secondary-sidebar-border-color: @secondary_sidebar_border_color;
+  --card-bg-color: @card_bg_color;
+  --card-fg-color: @card_fg_color;
+  --dialog-bg-color: @dialog_bg_color;
+  --dialog-fg-color: @dialog_fg_color;
+  --popover-bg-color: @popover_bg_color;
+  --popover-fg-color: @popover_fg_color;
+  --destructive-bg-color: @destructive_bg_color;
+  --success-bg-color: @success_bg_color;
+  --warning-bg-color: @warning_bg_color;
+  --error-bg-color: @error_bg_color;
+}
+
+windowcontrols > button > image {
+  min-width: 18px;
+  min-height: 18px;
+  border-radius: 24px;
+  color: transparent;
+}
+
+windowcontrols > button {
+  min-width: 18px;
+  min-height: 18px;
+}
+windowcontrols > button > image {
+  padding: 0;
+}
+windowcontrols > button.close > image {
+  box-shadow: inset 0 0 0 6px #e86150;
+}
+windowcontrols > button.close > image:hover {
+  box-shadow: inset 0 0 0 8px color-mix(in srgb, white 30%, #e86150);
+}
+windowcontrols > button.close > image:active {
+  background-color: color-mix(in srgb, white 50%, #e86150);
+  box-shadow: none;
+}
+windowcontrols > button.maximize > image {
+  box-shadow: inset 0 0 0 6px #75c2b3;
+}
+windowcontrols > button.maximize > image:hover {
+  box-shadow: inset 0 0 0 4px color-mix(in srgb, white 30%, #75c2b3);
+}
+windowcontrols > button.maximize > image:active {
+  background-color: color-mix(in srgb, white 50%, #75c2b3);
+  box-shadow: none;
+}
+windowcontrols > button.minimize > image {
+  box-shadow: inset 0 0 0 6px #d7c781;
+}
+windowcontrols > button.minimize > image:hover {
+  box-shadow: inset 0 0 0 8px color-mix(in srgb, white 30%, #d7c781);
+}
+windowcontrols > button.minimize > image:active {
+  background-color: color-mix(in srgb, white 50%, #d7c781);
+  box-shadow: none;
+}
+
+.maximized windowcontrols > button.maximize > image {
+  box-shadow: inset 0 0 0 6px #75c2b3;
+}
+.maximized windowcontrols > button.maximize > image:hover {
+  box-shadow: inset 0 0 0 8px color-mix(in srgb, white 30%, #75c2b3);
+}
+.maximized windowcontrols > button.maximize > image:active {
+  background-color: color-mix(in srgb, white 50%, #75c2b3);
+  box-shadow: none;
+}
+
+windowcontrols > button:backdrop.close > image {
+  box-shadow: inset 0 0 0 6px color-mix(in srgb, var(--headerbar-fg-color) 15%, transparent);
+}
+windowcontrols > button:backdrop.close > image:hover {
+  box-shadow: inset 0 0 0 8px color-mix(in srgb, white 30%, #e86150);
+}
+windowcontrols > button:backdrop.close > image:active {
+  background-color: color-mix(in srgb, white 50%, #e86150);
+  box-shadow: none;
+}
+windowcontrols > button:backdrop.maximize > image {
+  box-shadow: inset 0 0 0 6px color-mix(in srgb, var(--headerbar-fg-color) 15%, transparent);
+}
+windowcontrols > button:backdrop.maximize > image:hover {
+  box-shadow: inset 0 0 0 4px color-mix(in srgb, white 30%, #75c2b3);
+}
+windowcontrols > button:backdrop.maximize > image:active {
+  background-color: color-mix(in srgb, white 50%, #75c2b3);
+  box-shadow: none;
+}
+windowcontrols > button:backdrop.minimize > image {
+  box-shadow: inset 0 0 0 6px color-mix(in srgb, var(--headerbar-fg-color) 15%, transparent);
+}
+windowcontrols > button:backdrop.minimize > image:hover {
+  box-shadow: inset 0 0 0 8px color-mix(in srgb, white 30%, #d7c781);
+}
+windowcontrols > button:backdrop.minimize > image:active {
+  background-color: color-mix(in srgb, white 50%, #d7c781);
+  box-shadow: none;
+}
+
+.maximized windowcontrols > button:backdrop.maximize > image {
+  box-shadow: inset 0 0 0 6px color-mix(in srgb, var(--headerbar-fg-color) 15%, transparent);
+}
+.maximized windowcontrols > button:backdrop.maximize > image:hover {
+  box-shadow: inset 0 0 0 8px color-mix(in srgb, white 30%, #75c2b3);
+}
+.maximized windowcontrols > button:backdrop.maximize > image:active {
+  background-color: color-mix(in srgb, white 50%, #75c2b3);
+  box-shadow: none;
+}

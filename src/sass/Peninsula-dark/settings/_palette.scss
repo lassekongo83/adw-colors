@@ -1,0 +1,27 @@
+// This file contains the main colors for the theme
+
+@use '../../abstracts/settings' as *;
+
+$red:          #ff5555;
+$orange:       #ff806c;
+$yellow:       #c88800;
+$green:        #3a944a;
+$blue:         #007bff;
+$cyan:         #1180b2; // also known as aqua or teal
+$purple:       #9141ac;
+$pink:         #ad3da4;
+$slate:        #6f8396; // also know as grey or carbon
+
+$bg_primary:   #292a30; // window bg
+$fg_primary:   #dfdfe0; // window text
+
+$bg_secondary: #2f3036; // textviews and view bg
+$fg_secondary: #dfdfe0; // view text
+
+$bg_alt:       #3a3b40; // Headerbar and sidebars
+$bg_alt2:      #3a3b40; // Popovers and menus
+$fg_alt:       #dfdfe0;
+
+$muted_red:    #e86150;
+$muted_green:  #75c2b3;
+$muted_yellow: #d7c781;

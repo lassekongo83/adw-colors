@@ -1,0 +1,38 @@
+@use '../settings' as *;
+@forward 'linked';
+
+rubberband {
+  border-radius: 0;
+}
+
+@if $toolkit == 'gtk4' {
+  frame {
+    border-radius: $card_radius;
+  }
+
+  .card {
+    @at-root %card, & {
+      border-radius: $card_radius;
+    }
+  }
+} @else {
+  // GTK3
+  combobox {
+    &.linked {
+      button:nth-child(2) {
+        &:dir(ltr) { @extend %linked_right; }
+        &:dir(rtl) { @extend %linked_left; }
+      }
+    }
+  }
+
+  .linked:not(.vertical) > combobox > box > button.combo { @extend %linked_middle; }
+  .linked:not(.vertical) > combobox:first-child > box > button.combo { @extend %linked_left; }
+  .linked:not(.vertical) > combobox:last-child > box > button.combo { @extend %linked_right; }
+  .linked:not(.vertical) > combobox:only-child > box > button.combo { @extend %linked_only_child; }
+
+  .linked.vertical > combobox > box > button.combo { @extend %linked_vertical_middle; }
+  .linked.vertical > combobox:first-child > box > button.combo { @extend %linked_vertical_top; }
+  .linked.vertical > combobox:last-child > box > button.combo { @extend %linked_vertical_bottom; }
+  .linked.vertical > combobox:only-child > box > button.combo { @extend %linked_vertical_only_child; }
+}

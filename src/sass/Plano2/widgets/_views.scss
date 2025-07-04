@@ -1,0 +1,17 @@
+@use '../settings' as *;
+
+.view,
+%view {
+  &:selected {
+    &:focus, & {
+      border-radius: $button_radius;
+    }
+  }
+}
+
+@if $toolkit == 'gtk4' {
+  flowbox > flowboxchild,
+  gridview > child {
+    border-radius: $button_radius;
+  }
+}

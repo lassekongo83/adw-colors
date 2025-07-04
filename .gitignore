@@ -1,1 +1,3 @@
-gitpush.sh
+# Ignore Backup Copies from Text Editor
+*~
+.goutputstream-*

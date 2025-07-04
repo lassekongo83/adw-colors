@@ -1,0 +1,8 @@
+@use '../abstracts/settings' with (
+  $variant: 'light',
+  $toolkit: 'gtk4'
+);
+
+@use 'defaults';
+@use 'widgets/titlebuttons';
+@use 'widgets/window';

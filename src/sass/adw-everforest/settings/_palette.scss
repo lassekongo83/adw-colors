@@ -1,0 +1,25 @@
+// This file contains the main colors for the theme
+
+@use '../../abstracts/settings' as *;
+
+// Everforest hard palette
+// light theme / dark theme
+$red:          if($variant == 'light', #f85552, #e67e80);
+$orange:       if($variant == 'light', #f57d26, #e69875);
+$yellow:       if($variant == 'light', #dfa000, #dbbc7f);
+$green:        if($variant == 'light', #8da101, #a7c080);
+$blue:         if($variant == 'light', #3a94c5, #7fbbb3);
+$cyan:         if($variant == 'light', #35a77c, #83c092); // also known as aqua or teal
+$purple:       if($variant == 'light', #df69ba, #d699b6); // also known as magneta
+$pink:         if($variant == 'light', #b16286, #d3869b);
+$slate:        if($variant == 'light', #384b55, #708089); // also know as grey or carbon
+
+$bg_primary:   if($variant == 'light', #f8f5e4, #272e33); // window bg
+$fg_primary:   if($variant == 'light', #5c6a72, #d3c6aa); // window text
+
+$bg_secondary: if($variant == 'light', #fffbef, #1e2326); // textviews and view bg
+$fg_secondary: if($variant == 'light', #394247, #f4f1eb); // view text
+
+$bg_alt:       if($variant == 'light', #f2efdf, #2e383c); // Headerbar and sidebars
+$bg_alt2:      if($variant == 'light', #fffbef, #374145); // Popovers and menus
+$fg_alt:       if($variant == 'light', #2d353b, #d3c6aa);

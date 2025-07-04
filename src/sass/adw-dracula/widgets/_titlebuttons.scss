@@ -1,0 +1,72 @@
+@use '../settings' as *;
+
+// Only used when the 'traffic light' option is selected from the installation script
+
+%tb {
+  min-width: $titlebutton_width;
+  min-height: $titlebutton_height;
+  border-radius: $titlebutton_radius;
+  color: $tb_fg_color;
+}
+
+@mixin tb($color, $hover-color, $active-color) {
+  @if $toolkit == 'gtk3' {
+    background-color: $color;
+    &:hover { background-color: $hover-color; }
+    &:active { background-color: $active-color; }
+  } @else {
+    > image { background-color: $color; }
+    &:hover > image { background-color: $hover-color; }
+    &:active > image { background-color: $active-color; }
+  }
+}
+
+@if $toolkit == 'gtk3' {
+  .titlebar {
+    .right { margin-right: $titlebutton_end; }
+    .left { margin-left: $titlebutton_end; }
+  }
+
+  button.titlebutton {
+    margin: 0 4px;
+    border-width: 0;
+    @extend %tb;
+    &.close { @include tb($tb_close, $tb_close_hover, $tb_close_active); }
+    &.maximize { @include tb($tb_max, $tb_max_hover, $tb_max_active); }
+    &.minimize { @include tb($tb_min, $tb_min_hover, $tb_min_active); }
+  }
+  .maximized button.titlebutton.maximize { @include tb($tb_max, $tb_max_hover, $tb_max_active); }
+
+  button.titlebutton:backdrop {
+    opacity: 0.5;
+    &.close { @include tb($tb_backdrop, $tb_close_hover, $tb_close_active); }
+    &.maximize { @include tb($tb_backdrop, $tb_max_hover, $tb_max_active); }
+    &.minimize { @include tb($tb_backdrop, $tb_min_hover, $tb_min_active); }
+  }
+  .maximized button.titlebutton:backdrop.maximize { @include tb($tb_backdrop, $tb_max_hover, $tb_max_active); }
+} @else {
+  windowcontrols {
+    &.end { margin-right: $titlebutton_end; }
+    &.start { margin-left: $titlebutton_end; }
+  }
+
+  windowcontrols > button {
+    min-width: $titlebutton_width;
+    min-height: $titlebutton_height;
+    > image {
+      padding: 0;
+      @extend %tb;
+    }
+    &.close { @include tb($tb_close, $tb_close_hover, $tb_close_active); }
+    &.maximize { @include tb($tb_max, $tb_max_hover, $tb_max_active); }
+    &.minimize { @include tb($tb_min, $tb_min_hover, $tb_min_active); }
+  }
+  .maximized windowcontrols > button.maximize { @include tb($tb_max, $tb_max_hover, $tb_max_active); }
+
+  windowcontrols > button:backdrop {
+    &.close { @include tb($tb_backdrop, $tb_close_hover, $tb_close_active); }
+    &.maximize { @include tb($tb_backdrop, $tb_max_hover, $tb_max_active); }
+    &.minimize { @include tb($tb_backdrop, $tb_min_hover, $tb_min_active); }
+  }
+  .maximized windowcontrols > button:backdrop.maximize { @include tb($tb_backdrop, $tb_max_hover, $tb_max_active); }
+}

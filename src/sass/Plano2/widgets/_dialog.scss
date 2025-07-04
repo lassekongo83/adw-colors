@@ -1,0 +1,5 @@
+@use '../settings' as *;
+
+floating-sheet > sheet {
+  border-radius: $window_radius;
+}

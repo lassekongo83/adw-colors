@@ -1,0 +1,161 @@
+@define-color window_bg_color #292a30;
+@define-color window_fg_color #dfdfe0;
+@define-color view_bg_color #2f3036;
+@define-color view_fg_color #dfdfe0;
+@define-color accent_bg_color #ff806c;
+@define-color accent_fg_color white;
+@define-color headerbar_bg_color #3a3b40;
+@define-color headerbar_fg_color #dfdfe0;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color popover_bg_color #3a3b40;
+@define-color popover_fg_color @view_fg_color;
+@define-color dialog_bg_color #3a3b40;
+@define-color dialog_fg_color @view_fg_color;
+@define-color card_bg_color #3a3b40;
+@define-color card_fg_color @view_fg_color;
+@define-color sidebar_bg_color #3a3b40;
+@define-color sidebar_fg_color #dfdfe0;
+@define-color sidebar_backdrop_color @window_bg_color;
+@define-color sidebar_shade_color rgba(0,0,0,0.25);
+@define-color sidebar_border_color rgba(0, 0, 0, 0.36);
+@define-color secondary_sidebar_bg_color #292a30;
+@define-color secondary_sidebar_fg_color @view_fg_color;
+@define-color secondary_sidebar_backdrop_color @view_bg_color;
+@define-color secondary_sidebar_shade_color rgba(0, 0, 0, 0.25);
+@define-color secondary_sidebar_border_color rgba(0, 0, 0, 0.36);
+@define-color destructive_bg_color #ff5555;
+@define-color success_bg_color #3a944a;
+@define-color warning_bg_color #c88800;
+@define-color error_bg_color #ff5555;
+decoration {
+  box-shadow: 0 3px 12px 1px rgba(0, 0, 0, 0.7), 0 0 0 1px mix(white,@window_bg_color,0.82);
+}
+decoration:backdrop {
+  box-shadow: 0 3px 12px 1px transparent, 0 2px 6px 2px rgba(0, 0, 0, 0.4), 0 0 0 1px mix(white,@window_bg_color,0.95);
+}
+.tiled decoration, .tiled-top decoration, .tiled-bottom decoration, .tiled-right decoration, .tiled-left decoration {
+  box-shadow: 0 0 0 1px mix(white,@window_bg_color,0.95), 0 0 0 20px transparent;
+}
+messagedialog.csd decoration, .csd.popup decoration, .maximized .csd.popup decoration {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), 0 0 0 1px alpha(mix(white,@window_bg_color,0.82),0.9);
+}
+tooltip.csd decoration {
+  box-shadow: none;
+}
+.maximized decoration, .fullscreen decoration {
+  border-radius: 0;
+  box-shadow: none;
+}
+.ssd decoration {
+  box-shadow: 0 0 0 1px mix(white,@window_bg_color,0.82);
+}
+.ssd decoration:backdrop {
+  box-shadow: 0 0 0 1px mix(white,@window_bg_color,0.95);
+}
+.ssd.maximized decoration, .ssd.maximized decoration:backdrop {
+  box-shadow: none;
+}
+.solid-csd decoration {
+  box-shadow: inset 0 0 0 5px alpha(currentColor,0.5), inset 0 0 0 4px @headerbar_bg_color, inset 0 0 0 1px alpha(currentColor,0.5);
+}
+.solid-csd decoration:backdrop {
+  box-shadow: inset 0 0 0 3px @window_bg_color;
+}
+
+button.titlebutton {
+  min-width: 18px;
+  min-height: 18px;
+  border-radius: 24px;
+  color: transparent;
+}
+
+button.titlebutton {
+  margin: 0 4px;
+  border-width: 0;
+}
+button.titlebutton.close {
+  box-shadow: inset 0 0 0 6px #e86150;
+}
+button.titlebutton.close:hover {
+  box-shadow: inset 0 0 0 8px mix(white,#e86150,0.7);
+}
+button.titlebutton.close:active {
+  background-color: mix(white,#e86150,0.5);
+  box-shadow: none;
+}
+button.titlebutton.maximize {
+  box-shadow: inset 0 0 0 6px #75c2b3;
+}
+button.titlebutton.maximize:hover {
+  box-shadow: inset 0 0 0 4px mix(white,#75c2b3,0.7);
+}
+button.titlebutton.maximize:active {
+  background-color: mix(white,#75c2b3,0.5);
+  box-shadow: none;
+}
+button.titlebutton.minimize {
+  box-shadow: inset 0 0 0 6px #d7c781;
+}
+button.titlebutton.minimize:hover {
+  box-shadow: inset 0 0 0 8px mix(white,#d7c781,0.7);
+}
+button.titlebutton.minimize:active {
+  background-color: mix(white,#d7c781,0.5);
+  box-shadow: none;
+}
+
+.maximized button.titlebutton.maximize {
+  box-shadow: inset 0 0 0 6px #75c2b3;
+}
+.maximized button.titlebutton.maximize:hover {
+  box-shadow: inset 0 0 0 8px mix(white,#75c2b3,0.7);
+}
+.maximized button.titlebutton.maximize:active {
+  background-color: mix(white,#75c2b3,0.5);
+  box-shadow: none;
+}
+
+button.titlebutton:backdrop {
+  opacity: 0.5;
+}
+button.titlebutton:backdrop.close {
+  box-shadow: inset 0 0 0 6px alpha(@headerbar_fg_color,0.15);
+}
+button.titlebutton:backdrop.close:hover {
+  box-shadow: inset 0 0 0 8px mix(white,#e86150,0.7);
+}
+button.titlebutton:backdrop.close:active {
+  background-color: mix(white,#e86150,0.5);
+  box-shadow: none;
+}
+button.titlebutton:backdrop.maximize {
+  box-shadow: inset 0 0 0 6px alpha(@headerbar_fg_color,0.15);
+}
+button.titlebutton:backdrop.maximize:hover {
+  box-shadow: inset 0 0 0 4px mix(white,#75c2b3,0.7);
+}
+button.titlebutton:backdrop.maximize:active {
+  background-color: mix(white,#75c2b3,0.5);
+  box-shadow: none;
+}
+button.titlebutton:backdrop.minimize {
+  box-shadow: inset 0 0 0 6px alpha(@headerbar_fg_color,0.15);
+}
+button.titlebutton:backdrop.minimize:hover {
+  box-shadow: inset 0 0 0 8px mix(white,#d7c781,0.7);
+}
+button.titlebutton:backdrop.minimize:active {
+  background-color: mix(white,#d7c781,0.5);
+  box-shadow: none;
+}
+
+.maximized button.titlebutton:backdrop.maximize {
+  box-shadow: inset 0 0 0 6px alpha(@headerbar_fg_color,0.15);
+}
+.maximized button.titlebutton:backdrop.maximize:hover {
+  box-shadow: inset 0 0 0 8px mix(white,#75c2b3,0.7);
+}
+.maximized button.titlebutton:backdrop.maximize:active {
+  background-color: mix(white,#75c2b3,0.5);
+  box-shadow: none;
+}
