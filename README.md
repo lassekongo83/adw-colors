@@ -16,8 +16,8 @@
 
 <div align="center">
   <h4>Example screenshot</h4>
-  <a href="./themes/adw-everforest#adw-everforest">adw-everforest</a>
-  <img src="./themes/adw-everforest/screenshot.png?raw=true" alt="adw-everforest"></td>
+  <a href="./themes/Plano2#plano2">Plano2</a>
+  <img src="./themes/Plano2/screenshot.png?raw=true" alt="Plano2"></td>
 
 <br>
 <br>
