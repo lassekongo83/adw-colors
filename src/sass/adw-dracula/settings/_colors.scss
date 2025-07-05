@@ -36,13 +36,13 @@ $warning_bg_color:                 if($toolkit == 'gtk4', var(--warning-bg-color
 $error_bg_color:                   if($toolkit == 'gtk4', var(--error-bg-color), gtkcolor(error_bg_color));
 
 $tb_fg_color:     transparent;
-$tb_close:        gtkmix($headerbar_bg_color, $red, 30%);
-$tb_close_hover:  gtkmix(white, $red, 30%);
-$tb_close_active: gtkmix(white, $red, 50%);
-$tb_max:          gtkmix($headerbar_bg_color, $green, 30%);
-$tb_max_hover:    gtkmix(white, $green, 30%);
-$tb_max_active:   gtkmix(white, $green, 50%);
-$tb_min:          gtkmix($headerbar_bg_color, $yellow, 30%);
-$tb_min_hover:    gtkmix(white, $yellow, 30%);
-$tb_min_active:   gtkmix(white, $yellow, 50%);
+$tb_close:        $red;
+$tb_close_hover:  if($variant == 'light', gtkmix(black, $red, 30%), gtkmix(white, $red, 50%));
+$tb_close_active: if($variant == 'light', gtkmix(black, $red, 50%), gtkmix(white, $red, 70%));
+$tb_max:          $green;
+$tb_max_hover:    if($variant == 'light', gtkmix(black, $green, 30%), gtkmix(white, $green, 50%));
+$tb_max_active:   if($variant == 'light', gtkmix(black, $green, 50%), gtkmix(white, $green, 70%));
+$tb_min:          $yellow;
+$tb_min_hover:    if($variant == 'light', gtkmix(black, $yellow, 30%), gtkmix(white, $yellow, 50%));
+$tb_min_active:   if($variant == 'light', gtkmix(black, $yellow, 50%), gtkmix(white, $yellow, 70%));
 $tb_backdrop:     gtkmix($headerbar_bg_color, $headerbar_fg_color, 80%);

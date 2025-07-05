@@ -18,11 +18,6 @@
 @define-color sidebar_backdrop_color @window_bg_color;
 @define-color sidebar_shade_color rgba(0,0,0,0.25);
 @define-color sidebar_border_color rgba(0, 0, 0, 0.36);
-@define-color secondary_sidebar_bg_color #282828;
-@define-color secondary_sidebar_fg_color @view_fg_color;
-@define-color secondary_sidebar_backdrop_color @view_bg_color;
-@define-color secondary_sidebar_shade_color rgba(0, 0, 0, 0.25);
-@define-color secondary_sidebar_border_color rgba(0, 0, 0, 0.36);
 @define-color destructive_bg_color #ea6962;
 @define-color success_bg_color #a9b665;
 @define-color warning_bg_color #d8a657;
@@ -46,41 +41,41 @@ button.titlebutton {
   border-width: 0;
 }
 button.titlebutton.close {
-  background-color: mix(@headerbar_bg_color,#ea6962,0.7);
+  background-color: #ea6962;
 }
 button.titlebutton.close:hover {
-  background-color: mix(white,#ea6962,0.7);
-}
-button.titlebutton.close:active {
   background-color: mix(white,#ea6962,0.5);
 }
+button.titlebutton.close:active {
+  background-color: mix(white,#ea6962,0.3);
+}
 button.titlebutton.maximize {
-  background-color: mix(@headerbar_bg_color,#a9b665,0.7);
+  background-color: #a9b665;
 }
 button.titlebutton.maximize:hover {
-  background-color: mix(white,#a9b665,0.7);
-}
-button.titlebutton.maximize:active {
   background-color: mix(white,#a9b665,0.5);
 }
+button.titlebutton.maximize:active {
+  background-color: mix(white,#a9b665,0.3);
+}
 button.titlebutton.minimize {
-  background-color: mix(@headerbar_bg_color,#d8a657,0.7);
+  background-color: #d8a657;
 }
 button.titlebutton.minimize:hover {
-  background-color: mix(white,#d8a657,0.7);
+  background-color: mix(white,#d8a657,0.5);
 }
 button.titlebutton.minimize:active {
-  background-color: mix(white,#d8a657,0.5);
+  background-color: mix(white,#d8a657,0.3);
 }
 
 .maximized button.titlebutton.maximize {
-  background-color: mix(@headerbar_bg_color,#a9b665,0.7);
+  background-color: #a9b665;
 }
 .maximized button.titlebutton.maximize:hover {
-  background-color: mix(white,#a9b665,0.7);
+  background-color: mix(white,#a9b665,0.5);
 }
 .maximized button.titlebutton.maximize:active {
-  background-color: mix(white,#a9b665,0.5);
+  background-color: mix(white,#a9b665,0.3);
 }
 
 button.titlebutton:backdrop {
@@ -90,38 +85,38 @@ button.titlebutton:backdrop.close {
   background-color: mix(@headerbar_bg_color,@headerbar_fg_color,0.2);
 }
 button.titlebutton:backdrop.close:hover {
-  background-color: mix(white,#ea6962,0.7);
+  background-color: mix(white,#ea6962,0.5);
 }
 button.titlebutton:backdrop.close:active {
-  background-color: mix(white,#ea6962,0.5);
+  background-color: mix(white,#ea6962,0.3);
 }
 button.titlebutton:backdrop.maximize {
   background-color: mix(@headerbar_bg_color,@headerbar_fg_color,0.2);
 }
 button.titlebutton:backdrop.maximize:hover {
-  background-color: mix(white,#a9b665,0.7);
+  background-color: mix(white,#a9b665,0.5);
 }
 button.titlebutton:backdrop.maximize:active {
-  background-color: mix(white,#a9b665,0.5);
+  background-color: mix(white,#a9b665,0.3);
 }
 button.titlebutton:backdrop.minimize {
   background-color: mix(@headerbar_bg_color,@headerbar_fg_color,0.2);
 }
 button.titlebutton:backdrop.minimize:hover {
-  background-color: mix(white,#d8a657,0.7);
+  background-color: mix(white,#d8a657,0.5);
 }
 button.titlebutton:backdrop.minimize:active {
-  background-color: mix(white,#d8a657,0.5);
+  background-color: mix(white,#d8a657,0.3);
 }
 
 .maximized button.titlebutton:backdrop.maximize {
   background-color: mix(@headerbar_bg_color,@headerbar_fg_color,0.2);
 }
 .maximized button.titlebutton:backdrop.maximize:hover {
-  background-color: mix(white,#a9b665,0.7);
+  background-color: mix(white,#a9b665,0.5);
 }
 .maximized button.titlebutton:backdrop.maximize:active {
-  background-color: mix(white,#a9b665,0.5);
+  background-color: mix(white,#a9b665,0.3);
 }
 
 decoration {

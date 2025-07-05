@@ -90,77 +90,77 @@ windowcontrols > button > image {
   padding: 0;
 }
 windowcontrols > button.close > image {
-  background-color: color-mix(in srgb, var(--headerbar-bg-color) 30%, #bf616a);
+  background-color: #bf616a;
 }
 windowcontrols > button.close:hover > image {
-  background-color: color-mix(in srgb, white 30%, #bf616a);
-}
-windowcontrols > button.close:active > image {
   background-color: color-mix(in srgb, white 50%, #bf616a);
 }
+windowcontrols > button.close:active > image {
+  background-color: color-mix(in srgb, white 70%, #bf616a);
+}
 windowcontrols > button.maximize > image {
-  background-color: color-mix(in srgb, var(--headerbar-bg-color) 30%, #a3be8c);
+  background-color: #a3be8c;
 }
 windowcontrols > button.maximize:hover > image {
-  background-color: color-mix(in srgb, white 30%, #a3be8c);
-}
-windowcontrols > button.maximize:active > image {
   background-color: color-mix(in srgb, white 50%, #a3be8c);
 }
+windowcontrols > button.maximize:active > image {
+  background-color: color-mix(in srgb, white 70%, #a3be8c);
+}
 windowcontrols > button.minimize > image {
-  background-color: color-mix(in srgb, var(--headerbar-bg-color) 30%, #ebcb8b);
+  background-color: #ebcb8b;
 }
 windowcontrols > button.minimize:hover > image {
-  background-color: color-mix(in srgb, white 30%, #ebcb8b);
+  background-color: color-mix(in srgb, white 50%, #ebcb8b);
 }
 windowcontrols > button.minimize:active > image {
-  background-color: color-mix(in srgb, white 50%, #ebcb8b);
+  background-color: color-mix(in srgb, white 70%, #ebcb8b);
 }
 
 .maximized windowcontrols > button.maximize > image {
-  background-color: color-mix(in srgb, var(--headerbar-bg-color) 30%, #a3be8c);
+  background-color: #a3be8c;
 }
 .maximized windowcontrols > button.maximize:hover > image {
-  background-color: color-mix(in srgb, white 30%, #a3be8c);
+  background-color: color-mix(in srgb, white 50%, #a3be8c);
 }
 .maximized windowcontrols > button.maximize:active > image {
-  background-color: color-mix(in srgb, white 50%, #a3be8c);
+  background-color: color-mix(in srgb, white 70%, #a3be8c);
 }
 
 windowcontrols > button:backdrop.close > image {
   background-color: color-mix(in srgb, var(--headerbar-bg-color) 80%, var(--headerbar-fg-color));
 }
 windowcontrols > button:backdrop.close:hover > image {
-  background-color: color-mix(in srgb, white 30%, #bf616a);
+  background-color: color-mix(in srgb, white 50%, #bf616a);
 }
 windowcontrols > button:backdrop.close:active > image {
-  background-color: color-mix(in srgb, white 50%, #bf616a);
+  background-color: color-mix(in srgb, white 70%, #bf616a);
 }
 windowcontrols > button:backdrop.maximize > image {
   background-color: color-mix(in srgb, var(--headerbar-bg-color) 80%, var(--headerbar-fg-color));
 }
 windowcontrols > button:backdrop.maximize:hover > image {
-  background-color: color-mix(in srgb, white 30%, #a3be8c);
+  background-color: color-mix(in srgb, white 50%, #a3be8c);
 }
 windowcontrols > button:backdrop.maximize:active > image {
-  background-color: color-mix(in srgb, white 50%, #a3be8c);
+  background-color: color-mix(in srgb, white 70%, #a3be8c);
 }
 windowcontrols > button:backdrop.minimize > image {
   background-color: color-mix(in srgb, var(--headerbar-bg-color) 80%, var(--headerbar-fg-color));
 }
 windowcontrols > button:backdrop.minimize:hover > image {
-  background-color: color-mix(in srgb, white 30%, #ebcb8b);
+  background-color: color-mix(in srgb, white 50%, #ebcb8b);
 }
 windowcontrols > button:backdrop.minimize:active > image {
-  background-color: color-mix(in srgb, white 50%, #ebcb8b);
+  background-color: color-mix(in srgb, white 70%, #ebcb8b);
 }
 
 .maximized windowcontrols > button:backdrop.maximize > image {
   background-color: color-mix(in srgb, var(--headerbar-bg-color) 80%, var(--headerbar-fg-color));
 }
 .maximized windowcontrols > button:backdrop.maximize:hover > image {
-  background-color: color-mix(in srgb, white 30%, #a3be8c);
+  background-color: color-mix(in srgb, white 50%, #a3be8c);
 }
 .maximized windowcontrols > button:backdrop.maximize:active > image {
-  background-color: color-mix(in srgb, white 50%, #a3be8c);
+  background-color: color-mix(in srgb, white 70%, #a3be8c);
 }
