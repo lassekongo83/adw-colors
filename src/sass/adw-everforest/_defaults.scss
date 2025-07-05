@@ -26,7 +26,7 @@
 @define-color sidebar_border_color #{if($variant == 'light', rgba(0,0,0,0.07), rgba(0,0,0,0.36))};
 @if $toolkit == 'gtk4' {
   // secondary sidebars are only used by gtk4
-  @define-color secondary_sidebar_bg_color #{$bg_alt2}; // secondary sidebars are only used by libadwaita
+  @define-color secondary_sidebar_bg_color #{$bg_alt2};
   @define-color secondary_sidebar_fg_color @view_fg_color;
   @define-color secondary_sidebar_backdrop_color @view_bg_color;
   @define-color secondary_sidebar_shade_color #{if($variant == 'light', rgba(0,0,0,0.07), rgba(0,0,0,0.25))};
