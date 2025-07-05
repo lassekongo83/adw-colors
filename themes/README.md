@@ -4,7 +4,7 @@
   <table>
     <tr align="center">
       <td>
-        <a href="adw-dracula" title="adw-dracula">
+        <a href="./adw-dracula#adw-dracula" title="adw-dracula">
           <img src="adw-dracula/thumbnail.png?raw=true" alt="adw-dracula"><br>
           <span>adw-dracula</span>
         </a>
