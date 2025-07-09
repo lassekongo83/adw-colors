@@ -20,6 +20,6 @@ $window_fg:    if($variant == 'light', #073642, #eee8d5); // window text
 $view_bg:      if($variant == 'light', #fdf6e3, #002b36); // textviews and view bg
 $view_fg:      if($variant == 'light', #002b36, #fdf6e3); // view text
 
-$header_bg:    if($variant == 'light', #fdf6e3, #0b5365); // Headerbar and sidebars
+$header_bg:    if($variant == 'light', #e8e0c7, #094554); // Headerbar and sidebars
 $header_fg:    if($variant == 'light', #002b36, #fdf6e3);
 $menu_bg:      if($variant == 'light', #fdf6e3, #0b5365); // Popovers and menus
