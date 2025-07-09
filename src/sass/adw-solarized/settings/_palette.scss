@@ -14,12 +14,12 @@ $purple:       if($variant == 'light', #6c71c4, #6c71c4); // also known as magne
 $pink:         if($variant == 'light', #d33682, #d33682); // also sometimes known as magneta
 $slate:        if($variant == 'light', #839496, #93a1a1); // also know as grey or carbon
 
-$bg_primary:   if($variant == 'light', #eee8d5, #073642); // window bg
-$fg_primary:   if($variant == 'light', #073642, #eee8d5); // window text
+$window_bg:    if($variant == 'light', #eee8d5, #073642); // window bg
+$window_fg:    if($variant == 'light', #073642, #eee8d5); // window text
 
-$bg_secondary: if($variant == 'light', #fdf6e3, #002b36); // textviews and view bg
-$fg_secondary: if($variant == 'light', #002b36, #fdf6e3); // view text
+$view_bg:      if($variant == 'light', #fdf6e3, #002b36); // textviews and view bg
+$view_fg:      if($variant == 'light', #002b36, #fdf6e3); // view text
 
-$bg_alt:       if($variant == 'light', #e8e0c7, #094554); // Headerbar and sidebars
-$bg_alt2:      if($variant == 'light', #fdf6e3, #0b5365); // Popovers and menus
-$fg_alt:       if($variant == 'light', #002b36, #fdf6e3);
+$header_bg:    if($variant == 'light', #fdf6e3, #0b5365); // Headerbar and sidebars
+$header_fg:    if($variant == 'light', #002b36, #fdf6e3);
+$menu_bg:      if($variant == 'light', #fdf6e3, #0b5365); // Popovers and menus

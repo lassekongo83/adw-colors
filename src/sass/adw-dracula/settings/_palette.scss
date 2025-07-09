@@ -13,12 +13,12 @@ $purple:       #bd93f9; // sometimes also known as magneta or violet
 $pink:         #ff79c6; // sometimes also known as magneta
 $slate:        #708089; // sometimes also know as grey or carbon
 
-$bg_primary:   #282a36; // window bg
-$fg_primary:   #f8f8f2; // window text
+$window_bg:    #282a36; // window bg
+$window_fg:    #f8f8f2; // window text
 
-$bg_secondary: #20212b; // textviews and view bg
-$fg_secondary: #f8f8f2; // view text
+$view_bg:      #20212b; // textviews and view bg
+$view_fg:      #f8f8f2; // view text
 
-$bg_alt:       #44475a; // Headerbar and sidebars
-$bg_alt2:      #4c5065; // Popovers and menus
-$fg_alt:       #f8f8f2;
+$header_bg:    #44475a; // Headerbar and sidebars
+$header_fg:    #f8f8f2;
+$menu_bg:      #4c5065; // Popovers and menus

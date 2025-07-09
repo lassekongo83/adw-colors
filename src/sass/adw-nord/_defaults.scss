@@ -4,29 +4,29 @@
 // For a list of available colors, see:
 // GTK4: https://gitlab.gnome.org/GNOME/libadwaita/-/blob/main/src/stylesheet/_defaults.scss
 // GTK3: https://github.com/lassekongo83/adw-gtk3/blob/main/gtk/src/adw-gtk3/gtk-3.0/_defaults.scss
-@define-color window_bg_color #{$bg_primary};
-@define-color window_fg_color #{$fg_primary};
-@define-color view_bg_color #{$bg_secondary};
-@define-color view_fg_color #{$fg_secondary};
+@define-color window_bg_color #{$window_bg};
+@define-color window_fg_color #{$window_fg};
+@define-color view_bg_color #{$view_bg};
+@define-color view_fg_color #{$view_fg};
 @define-color accent_bg_color #{$cyan};
 @define-color accent_fg_color white;
-@define-color headerbar_bg_color #{$bg_alt};
-@define-color headerbar_fg_color #{$fg_alt};
+@define-color headerbar_bg_color #{$header_bg};
+@define-color headerbar_fg_color #{$header_fg};
 @define-color headerbar_backdrop_color @window_bg_color;
-@define-color popover_bg_color #{$bg_alt2};
+@define-color popover_bg_color #{$menu_bg};
 @define-color popover_fg_color @view_fg_color;
-@define-color dialog_bg_color #{$bg_alt2};
+@define-color dialog_bg_color #{$menu_bg};
 @define-color dialog_fg_color @view_fg_color;
-@define-color card_bg_color #{$bg_alt2};
+@define-color card_bg_color #{$menu_bg};
 @define-color card_fg_color @view_fg_color;
-@define-color sidebar_bg_color #{$bg_alt};
-@define-color sidebar_fg_color #{$fg_alt};
+@define-color sidebar_bg_color #{$header_bg};
+@define-color sidebar_fg_color #{$header_fg};
 @define-color sidebar_backdrop_color @window_bg_color;
 @define-color sidebar_shade_color rgba(0,0,0,0.25);
 @define-color sidebar_border_color #{if($variant == 'light', rgba(0,0,0,0.07), rgba(0,0,0,0.36))};
 @if $toolkit == 'gtk4' {
   // secondary sidebars are only used by gtk4
-  @define-color secondary_sidebar_bg_color #{$bg_primary}; // secondary sidebars are only used by libadwaita
+  @define-color secondary_sidebar_bg_color #{$window_bg}; // secondary sidebars are only used by libadwaita
   @define-color secondary_sidebar_fg_color @view_fg_color;
   @define-color secondary_sidebar_backdrop_color @view_bg_color;
   @define-color secondary_sidebar_shade_color #{if($variant == 'light', rgba(0,0,0,0.07), rgba(0,0,0,0.25))};
