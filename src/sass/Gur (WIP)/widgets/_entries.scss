@@ -1,0 +1,22 @@
+@use '../settings' as *;
+@forward 'linked';
+
+%entry,
+entry {
+  @if $toolkit == 'gtk3' {
+    .linked:not(.vertical) > & { @extend %linked; }
+    .linked.vertical > & { @extend %linked_vertical; }  
+  }
+
+  %entry_basic, & {
+    border-radius: $button_radius;
+  }
+}
+
+@if $toolkit == 'gtk3' {
+  treeview entry {
+    &.flat, & {
+      border-radius: 0;
+    }
+  }
+}

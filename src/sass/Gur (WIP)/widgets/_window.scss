@@ -1,0 +1,77 @@
+@use '../settings' as *;
+
+// Windows
+@if $toolkit == 'gtk3' {
+  // GTK3
+  decoration, window.csd { border-radius: $window_radius $window_radius 0 0; }
+  window.background { border-radius: 0; }
+
+  decoration {
+    .tiled &,
+    .tiled-top &,
+    .tiled-bottom &,
+    .tiled-right &,
+    .tiled-left &,
+    .maximized &,
+    .fullscreen & {
+      &, headerbar, .titlebar { border-radius: 0; }
+    }
+
+    tooltip.csd & {
+      border-radius: 5px;
+      box-shadow: none;
+    }
+
+    .solid-csd & {
+      border-radius: 0;
+    }
+  }
+
+  window.maximized,
+  window.fullscreen,
+  window.tiled,
+  window.tiled-top,
+  window.tiled-bottom,
+  window.tiled-right,
+  window.tiled-left {
+    headerbar, .titlebar { border-radius: 0; }
+  }
+
+  // libhandy can handle more roundness
+  .unified decoration-overlay,
+  .unified decoration,
+  window.unified { border-radius: $window_radius; }
+  .titlebar.windowhandle { border-radius: 0; }
+} @else {
+  // GTK4
+  window.csd {
+    border-radius: $window_radius;
+
+    &.tiled,
+    &.tiled-top,
+    &.tiled-left,
+    &.tiled-right,
+    &.tiled-bottom,
+    &.maximized,
+    &.fullscreen {
+      outline: none;
+      &, headerbar, .titlebar { border-radius: 0; }
+    }
+
+    &.maximized,
+    &.fullscreen {
+      box-shadow: none;
+      transition: none;
+    }
+
+    &.ssd-frame {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &.solid-csd {
+      border-radius: 0;
+    }
+  }
+}
+

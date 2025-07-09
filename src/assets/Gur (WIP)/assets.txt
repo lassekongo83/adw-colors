@@ -1,0 +1,8 @@
+titlebutton-close
+titlebutton-close-dark
+titlebutton-maximize
+titlebutton-maximize-dark
+titlebutton-unmaximize
+titlebutton-unmaximize-dark
+titlebutton-minimize
+titlebutton-minimize-dark

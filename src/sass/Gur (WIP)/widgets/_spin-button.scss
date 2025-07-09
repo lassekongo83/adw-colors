@@ -1,0 +1,58 @@
+@use '../settings' as *;
+@forward 'entries';
+
+@mixin flat-buttons {
+  > button.image-button.up,
+  > button.image-button.down {
+    &:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+      @content;
+    }
+  }
+}
+
+spinbutton {
+  @if $toolkit == 'gtk4' {
+    @include flat-buttons {
+      border-radius: 0;
+    }
+  }
+
+  &:not(.vertical) {
+    @extend %entry;
+
+    @if $toolkit == 'gtk4' {
+      @include flat-buttons {
+        &:dir(ltr):last-child { border-radius: 0 $button_radius $button_radius 0; }
+        &:dir(rtl):first-child { border-radius: $button_radius 0 0 $button_radius; }
+      }
+    }
+
+    entry {
+      border-radius: 0;
+    }
+
+    button {
+      border-radius: 0;
+      &:dir(ltr):last-child { border-radius: 0 $button_radius $button_radius 0; }
+      &:dir(rtl):first-child { border-radius: $button_radius 0 0 $button_radius; }
+    }
+  }
+
+  &.vertical {
+    @if $toolkit == 'gtk4' {
+      border-radius: $button_radius; // GTK4 (not libadwaita) needs this
+      @include flat-buttons {
+        &:last-child { border-radius: 0 0 $button_radius $button_radius; }
+        &:first-child { border-radius: $button_radius $button_radius 0 0; }
+      }
+    }
+
+    entry { border-radius: 0; }
+
+    button {
+      &.up { border-radius: $button_radius $button_radius 0 0; }
+      &.down { border-radius: 0 0 $button_radius $button_radius; }
+    }
+  }
+}
+

@@ -315,6 +315,10 @@ rubberband {
   border-radius: 0;
 }
 
+treeview.view:selected:focus, treeview.view:selected {
+  border-radius: 0;
+}
+
 decoration, window.csd {
   border-radius: 0px 0px 0 0;
 }

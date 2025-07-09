@@ -1,0 +1,25 @@
+// This file contains the main colors for the theme
+
+@use '../../abstracts/settings' as *;
+
+// Based on the imgur palette
+// light theme / dark theme
+$red:          if($variant == 'light', #ff2a00, #ff5533);
+$orange:       if($variant == 'light', #ff7d00, #ff9733);
+$yellow:       if($variant == 'light', #f2cf0d, #ffe133);
+$green:        if($variant == 'light', #1bb76e, #32d287);
+$cyan:         if($variant == 'light', #1bb0b7, #32cad2); // also known as aqua or teal
+$blue:         if($variant == 'light', #1b73b7, #328cd2);
+$purple:       if($variant == 'light', #6b1bb7, #8432d2); // also known as magneta or violet
+$pink:         if($variant == 'light', #b71b9c, #d232b7); // also known as magneta
+$slate:        if($variant == 'light', #59636b, #6b7780); // also know as grey or carbon
+
+$bg_primary:   if($variant == 'light', #dbdde1, #27292d); // window bg
+$fg_primary:   if($variant == 'light', #27292d, #dbdde1); // window text
+
+$bg_secondary: if($variant == 'light', #fbfbfc, #1e1f22); // textviews and view bg
+$fg_secondary: if($variant == 'light', #1e1f22, #fbfbfc); // view text
+
+$bg_alt:       if($variant == 'light', #dbdde1, #33353b); // Headerbar and sidebars
+$bg_alt2:      if($variant == 'light', #ffffff, #3c3e46); // Popovers and menus
+$fg_alt:       if($variant == 'light', #3c4346, #fbfbfc);

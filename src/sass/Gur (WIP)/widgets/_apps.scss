@@ -1,0 +1,34 @@
+@use '../settings' as *;
+@forward 'linked';
+
+// Application specific fixes
+
+@if $toolkit == 'gtk4' {
+
+  // ******** //
+  // Nautilus //
+  // ******** //
+
+  #NautilusPathBar {
+    border-radius: $button_radius;
+    > scrolledwindow:dir(ltr) undershoot.left {
+      border-radius: $button_radius 0px 0px $button_radius;
+    }
+    > scrolledwindow:dir(rtl) undershoot.right {
+      border-radius: 0px $button_radius $button_radius 0px;
+    }
+  }
+
+  #NautilusPathButton,
+  .nautilus-network-view listview > row,
+  .nautilus-list-view columnview > listview > row {
+    border-radius: $button_radius;
+  }
+
+  .nautilus-grid-view gridview > child {
+    border-radius: $card_radius;
+  }
+  .nautilus-grid-view #NautilusViewCell {
+    border-radius: $card_radius;
+  }
+}

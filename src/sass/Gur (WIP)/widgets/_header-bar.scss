@@ -1,0 +1,164 @@
+@use '../settings' as *;
+
+//@if $toolkit == 'gtk4' {
+  // This makes sure most libadwaita apps have a headerbar color if specified
+  // Some apps may look wierd though
+  //.view windowhandle {
+    //background-color: $headerbar_bg_color;
+    //color: $headerbar_fg_color;
+  //}
+//}
+
+headerbar, .titlebar {
+  border-radius: $window_radius $window_radius 0 0;
+
+  @if $toolkit == 'gtk3' {
+    .tiled &,
+    .tiled-top &,
+    .tiled-right &,
+    .tiled-bottom &,
+    .tiled-left &,
+    .maximized &,
+    .fullscreen & {
+      &:backdrop, & {
+        border-radius: 0;
+      }
+    }
+  } @else {
+    &.tiled,
+    &.tiled-top,
+    &.tiled-left,
+    &.tiled-right,
+    &.tiled-bottom,
+    &.maximized,
+    &.fullscreen {
+      border-radius: 0;
+    }
+  }
+
+  &.default-decoration {
+    min-height: 36px;
+    padding: 0 6px 0 6px;
+
+    @if $toolkit == 'gtk3' {
+      button.titlebutton {
+        border-radius: 0;
+        @extend %titlebuttons;
+      }
+    } @else {
+      windowcontrols > button > image {
+        border-radius: 0;
+        @extend %titlebuttons;
+      }
+    }
+  }
+}
+
+// Titlebuttons
+%titlebuttons {
+  min-width: $titlebutton_size;
+  min-height: $titlebutton_size;
+  background-color: transparent;
+  color: transparent;
+  border-radius: $titlebutton_radius;
+  transition-property: background-color;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@if $toolkit == 'gtk4' {
+  windowcontrols > button {
+    margin: 0;
+    padding: 0;
+
+    > image {
+      @extend %titlebuttons;
+      margin: 0;
+      padding: 0;
+    }
+
+    &.maximize:hover > image, &.minimize:hover > image { background-color: $tb_color_hover; }
+
+    &.close > image {
+      background-image: -gtk-scaled(url('assets/titlebutton-close#{$asset_suffix}.png'), url('assets/titlebutton-close#{$asset_suffix}@2.png'));
+    }
+
+    &.close:hover > image {
+      background-color: $tb_close;
+      @if $variant == 'light' {
+        background-image: -gtk-scaled(url('assets/titlebutton-close-dark.png'), url('assets/titlebutton-close-dark@2.png'));
+      }
+    }
+
+    @each $name in maximize, minimize {
+      &.#{$name} > image {
+        background-image: -gtk-scaled(url('assets/titlebutton-#{$name}#{$asset_suffix}.png'), url('assets/titlebutton-#{$name}#{$asset_suffix}@2.png'));
+      }
+
+      @if $variant == 'light' {
+        &.#{$name}:hover > image {
+          background-image: -gtk-scaled(url('assets/titlebutton-#{$name}.png'), url('assets/titlebutton-#{$name}@2.png'));
+        }
+      }
+    }
+  }
+
+  .maximized windowcontrols button.maximize > image {
+    background-image: -gtk-scaled(url('assets/titlebutton-unmaximize#{$asset_suffix}.png'), url('assets/titlebutton-unmaximize#{$asset_suffix}@2.png'));
+    @if $variant == 'light' {
+      &:hover {
+        background-image: -gtk-scaled(url('assets/titlebutton-unmaximize.png'), url('assets/titlebutton-unmaximize@2.png'));
+      }
+    }
+  }
+} @else {
+  button.titlebutton:not(.appmenu) {
+    @extend %titlebuttons;
+    margin: 0 -1px;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+
+    > image { opacity: 0; }
+
+    &.maximize, &.minimize, &.close {
+      &:backdrop { opacity: 0.5; }
+    }
+
+    &.maximize:hover, &.minimize:hover { background-color: $tb_color_hover; }
+    &.close:hover { background-color: $tb_close; }
+
+    &.close {
+      background-image: -gtk-scaled(url('assets/titlebutton-close#{$asset_suffix}.png'), url('assets/titlebutton-close#{$asset_suffix}@2.png'));
+    }
+
+    &.close:hover {
+      background-color: $tb_close;
+      @if $variant == 'light' {
+        background-image: -gtk-scaled(url('assets/titlebutton-close-dark.png'), url('assets/titlebutton-close-dark@2.png'));
+      }
+    }
+
+    @each $name in maximize, minimize {
+      &.#{$name} {
+        background-image: -gtk-scaled(url('assets/titlebutton-#{$name}#{$asset_suffix}.png'), url('assets/titlebutton-#{$name}#{$asset_suffix}@2.png'));
+
+        @if $variant == 'light' {
+          &:hover {
+            background-image: -gtk-scaled(url('assets/titlebutton-#{$name}.png'), url('assets/titlebutton-#{$name}@2.png'));
+          }
+        }
+      }
+    }
+  }
+
+  .maximized button.titlebutton.maximize {
+    background-image: -gtk-scaled(url('assets/titlebutton-unmaximize#{$asset_suffix}.png'), url('assets/titlebutton-unmaximize#{$asset_suffix}@2.png'));
+    @if $variant == 'light' {
+      &:hover {
+        background-image: -gtk-scaled(url('assets/titlebutton-unmaximize.png'), url('assets/titlebutton-unmaximize@2.png'));
+      }
+    }
+  }
+}
+
