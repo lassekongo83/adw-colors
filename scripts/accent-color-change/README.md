@@ -3,7 +3,7 @@ This program can change your accent color for gnome-shell, libadwaita, GTK4, and
 Before you continue, ensure that your GTK3 theme supports accent color changes. One such theme is [adw-gtk3](https://github.com/lassekongo83/adw-gtk3).
 
 ### How to use
-1. [Download the script](https://github.com/lassekongo83/adw-colors/raw/refs/heads/main/accent-color-change/accent-color-change.sh).
+1. [Download the script](https://raw.githubusercontent.com/lassekongo83/adw-colors/refs/heads/main/scripts/accent-color-change/accent-color-change.sh).
 2. Navigate to the directory where you downloaded the script.
 3. Run the following command:
 ```bash
