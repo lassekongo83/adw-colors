@@ -18,7 +18,7 @@ You can use any theme in this repository as a template. To create a new theme, f
    * In `src/sass/MY-THEME/settings/_colors.scss`, you can define custom shades and color mixes as Sass variables.
    * In `src/sass/MY-THEME/_defaults.scss`, you can add custom named colors.
    * For a list of available default named colors, see:
-      * GTK4: https://gitlab.gnome.org/GNOME/libadwaita/-/blob/main/src/stylesheet/_defaults.scss
+      * GTK4: https://gitlab.gnome.org/GNOME/libadwaita/-/blob/main/src/stylesheet/_colors.scss
       * GTK3: https://github.com/lassekongo83/adw-gtk3/blob/main/src/sass/_defaults.scss
 5. Once you've made your edits, compile the Sass by running `sh parse-sass.sh` in the `scripts` directory. Alternatively, you can use your preferred method for compiling Sass.
 6. Your theme should now be listed when you run the installation script.
