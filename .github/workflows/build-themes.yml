@@ -13,7 +13,7 @@ jobs:
 
       # 1. Check out the repo
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           persist-credentials: true  # so we can push back
 
